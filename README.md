@@ -4,3 +4,4 @@
 
 - Evan Berlin
 - Jaden McIlhenny
+- Elizabeth Daly
