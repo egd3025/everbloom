@@ -1,7 +1,7 @@
 # Title: EverBloom
 
 # Created by: 
-* Evan B., Jude D., Pine G., Jaden M., Elizabeth D.
+* Evan B., Jude D., Pine G., Elizabeth D., Jaden M
 
 
 # List
