@@ -6,3 +6,4 @@
 - Jaden McIlhenny
 - Elizabeth Daly
 - Pine Gragg
+- Jude Denton
