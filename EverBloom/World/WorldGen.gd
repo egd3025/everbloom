@@ -23,3 +23,9 @@ func place_tiles():
 				floor.set_cell(0, Vector2i(row,col), 0, Vector2i(0,6))
 			if random_number >= 37 and random_number <= 50:
 				floor.set_cell(0, Vector2i(row,col), 0, Vector2i(0,7))
+		
+	for row in range(x):
+		for col in range(y):
+			var random_number : int = randi() % 100
+			if random_number == 50:
+				floor.set_cell(1, Vector2i(row,col), 0, Vector2i(3,0))

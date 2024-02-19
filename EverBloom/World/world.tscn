@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://bnakm63s4hcam"]
+[gd_scene load_steps=6 format=3 uid="uid://bnakm63s4hcam"]
 
-[ext_resource type="Texture2D" uid="uid://daap654ii12jx" path="res://World/Bush.png" id="1_3ssnb"]
 [ext_resource type="TileSet" uid="uid://cxa3a7h17ymwt" path="res://stardew.tres" id="1_5jp6c"]
 [ext_resource type="Script" path="res://Player/Player.gd" id="2_3431q"]
 [ext_resource type="Texture2D" uid="uid://cafvumsx4xpk8" path="res://Player/Player.png" id="2_l23w5"]
@@ -15,11 +14,10 @@ height = 10.0
 [node name="Floor" type="TileMap" parent="."]
 tile_set = ExtResource("1_5jp6c")
 format = 2
+layer_0/name = "0"
+layer_1/name = "1"
+layer_1/tile_data = PackedInt32Array()
 script = ExtResource("2_rlebr")
-
-[node name="Bush" type="Sprite2D" parent="."]
-position = Vector2(20, 19)
-texture = ExtResource("1_3ssnb")
 
 [node name="player" type="CharacterBody2D" parent="."]
 position = Vector2(87, 76)
@@ -34,8 +32,3 @@ hframes = 60
 position = Vector2(-1, 9)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_cplsi")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(72, 104, 152, 104, 152, 104, 136, 120, 136, 120, 72, 120, 72, 120, 24, 104, 24, 104)
