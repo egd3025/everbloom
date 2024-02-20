@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Player/Player.gd" id="2_3431q"]
 [ext_resource type="Script" path="res://World/WorldGen.gd" id="2_rlebr"]
 [ext_resource type="Texture2D" uid="uid://br34h1te2q78s" path="res://cup_noodle/Basic Charakter Spritesheet.png" id="4_h38wm"]
-[ext_resource type="PackedScene" uid="uid://byhgnas87o1gb" path="res://Plants/plant.tscn" id="6_sfo2u"]
+[ext_resource type="PackedScene" uid="uid://byhgnas87o1gb" path="res://Plants/Plant.tscn" id="6_sfo2u"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cplsi"]
 radius = 4.0
@@ -157,3 +157,14 @@ animation = &"side_walk"
 
 [node name="Plant" parent="." instance=ExtResource("6_sfo2u")]
 position = Vector2(53, 33)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 26.0
+offset_bottom = 14.0
+scale = Vector2(1, 0.699282)
+theme_override_font_sizes/font_size = 8
+text = "Time: "
+horizontal_alignment = 1
+vertical_alignment = 1
