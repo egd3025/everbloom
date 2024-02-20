@@ -16,16 +16,11 @@ func place_tiles():
 		for col in range(y):
 			var random_number : int = randi() % 50
 			if 0 <= random_number and random_number < 25:
-				floor.set_cell(0, Vector2i(row,col), 0, Vector2i(0,7))
+				floor.set_cell(0, Vector2i(row,col), 2, Vector2i(1,1))
 			if random_number >= 25 and random_number < 30:
-				floor.set_cell(0, Vector2i(row,col), 0, Vector2i(1,6))
+				floor.set_cell(0, Vector2i(row,col), 2, Vector2i(1,6))
 			if 30 <= random_number and random_number < 37:
-				floor.set_cell(0, Vector2i(row,col), 0, Vector2i(0,6))
+				floor.set_cell(0, Vector2i(row,col), 2, Vector2i(0,6))
 			if random_number >= 37 and random_number <= 50:
-				floor.set_cell(0, Vector2i(row,col), 0, Vector2i(0,7))
-		
-	for row in range(x):
-		for col in range(y):
-			var random_number : int = randi() % 100
-			if random_number == 50:
-				floor.set_cell(1, Vector2i(row,col), 0, Vector2i(3,0))
+				floor.set_cell(0, Vector2i(row,col), 2, Vector2i(0,5))
+

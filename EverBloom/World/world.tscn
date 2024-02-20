@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://bnakm63s4hcam"]
+[gd_scene load_steps=20 format=3 uid="uid://bnakm63s4hcam"]
 
 [ext_resource type="TileSet" uid="uid://cxa3a7h17ymwt" path="res://stardew.tres" id="1_5jp6c"]
+[ext_resource type="Script" path="res://World/world.gd" id="1_a85sf"]
 [ext_resource type="Script" path="res://Player/Player.gd" id="2_3431q"]
 [ext_resource type="Script" path="res://World/WorldGen.gd" id="2_rlebr"]
 [ext_resource type="Texture2D" uid="uid://br34h1te2q78s" path="res://cup_noodle/Basic Charakter Spritesheet.png" id="4_h38wm"]
@@ -127,6 +128,7 @@ animations = [{
 }]
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_a85sf")
 
 [node name="Floor" type="TileMap" parent="."]
 tile_set = ExtResource("1_5jp6c")
