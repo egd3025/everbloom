@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1708023821
+::res://::1708446691
 icon.svg::CompressedTexture2D::9067683324932348247::1707669761::1707669971::1::::<><>::
 ::res://Effects/::1707669971
 EnemyDeathEffect.png::CompressedTexture2D::3897041655134744968::1707669761::1707669971::1::::<><>::
@@ -28,11 +28,11 @@ SmallShadow.png::CompressedTexture2D::8422165836201531633::1707669761::170766997
 ::res://UI/::1707669971
 HeartUIEmpty.png::CompressedTexture2D::5024755551792919855::1707669761::1707669971::1::::<><>::
 HeartUIFull.png::CompressedTexture2D::1531641769722372706::1707669761::1707669971::1::::<><>::
-::res://World/::1707670151
+::res://World/::1708028124
 Bush.png::CompressedTexture2D::7160229786456911813::1707669761::1707669971::1::::<><>::
 CliffTileset.png::CompressedTexture2D::3679902854565748060::1707669761::1707669971::1::::<><>::
 DirtTileset.png::CompressedTexture2D::1337584280037106859::1707669761::1707669971::1::::<><>::
 Grass.png::CompressedTexture2D::7917118736068966980::1707669761::1707669971::1::::<><>::
 GrassBackground.png::CompressedTexture2D::4160373675470361357::1707669761::1707669971::1::::<><>::
 Tree.png::CompressedTexture2D::7807387145307635528::1707669761::1707669971::1::::<><>::
-world.tscn::PackedScene::3299505922777292380::1707670151::0::1::::<><>::uid://daap654ii12jx::::res://World/Bush.png<>res://Player/Player.gd<>uid://cafvumsx4xpk8::::res://Player/Player.png
+world.tscn::PackedScene::3299505922777292380::1708028124::0::1::::<><>::uid://daap654ii12jx::::res://World/Bush.png<>res://Player/Player.gd<>uid://cafvumsx4xpk8::::res://Player/Player.png
