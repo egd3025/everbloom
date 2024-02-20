@@ -146,6 +146,8 @@ position = Vector2(-1, 9)
 sprite_frames = SubResource("SpriteFrames_dmpkw")
 animation = &"side_idle"
 
+[node name="Camera2D" type="Camera2D" parent="player"]
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
