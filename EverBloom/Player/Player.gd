@@ -3,13 +3,17 @@ extends CharacterBody2D
 const speed = 100
 var current_dir = "none"
 
-
+# when the player loads -  the first animation shown is the front_idle
 func _ready():
 	$AnimatedSprite2D.play("front_idle")
 
+
 func _physics_process(delta):
 	player_movement(delta)
-
+	
+	
+# player movement direction 
+# - x and y values keep you moving in only one direction even if there is mult input
 func player_movement(delta):
 	if Input.is_action_pressed("ui_right"):
 		current_dir = "right"
@@ -31,14 +35,12 @@ func player_movement(delta):
 		play_anim(1)
 		velocity.y = -speed
 		velocity.x = 0
-	else:
+	else: # when the player is still - facing any direction
 		play_anim(0)
 		velocity.x = 0
 		velocity.y = 0
 		
 	move_and_slide()
-
-
 
 
 func play_anim(movement):
@@ -69,17 +71,4 @@ func play_anim(movement):
 			anim.play("back_walk")
 		elif movement == 0:
 			anim.play("back_idle")
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
