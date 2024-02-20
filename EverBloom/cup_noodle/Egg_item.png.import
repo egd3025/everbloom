@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://br34h1te2q78s"
-path="res://.godot/imported/Basic Charakter Spritesheet.png-39d08c81a5e76ecfdb87bd7cf91126ca.ctex"
+uid="uid://nxuklf2b5lvd"
+path="res://.godot/imported/Egg_item.png-e12dfde1a49e4a74840ad3e161330a8e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Basic Charakter Spritesheet.png"
-dest_files=["res://.godot/imported/Basic Charakter Spritesheet.png-39d08c81a5e76ecfdb87bd7cf91126ca.ctex"]
+source_file="res://cup_noodle/Egg_item.png"
+dest_files=["res://.godot/imported/Egg_item.png-e12dfde1a49e4a74840ad3e161330a8e.ctex"]
 
 [params]
 
