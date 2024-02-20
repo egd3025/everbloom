@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5r10syl42xci"
-path="res://.godot/imported/Basic Charakter Actions.png-546308bbd577141e2e03a5435ef679d7.ctex"
+uid="uid://cjt578lh1na6p"
+path="res://.godot/imported/Tilled_Dirt.png-daec1e435f379ad44f4e4e8821179cdd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Basic Charakter Actions.png"
-dest_files=["res://.godot/imported/Basic Charakter Actions.png-546308bbd577141e2e03a5435ef679d7.ctex"]
+source_file="res://cup_noodle/Tilled_Dirt.png"
+dest_files=["res://.godot/imported/Tilled_Dirt.png-daec1e435f379ad44f4e4e8821179cdd.ctex"]
 
 [params]
 
