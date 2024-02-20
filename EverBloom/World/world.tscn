@@ -1,15 +1,202 @@
+<<<<<<< HEAD
+[gd_scene load_steps=25 format=3 uid="uid://bnakm63s4hcam"]
+=======
 [gd_scene load_steps=6 format=3 uid="uid://bnakm63s4hcam"]
+>>>>>>> main
 
 [ext_resource type="TileSet" uid="uid://cxa3a7h17ymwt" path="res://stardew.tres" id="1_5jp6c"]
 [ext_resource type="Script" path="res://Player/Player.gd" id="2_3431q"]
+<<<<<<< HEAD
+[ext_resource type="Texture2D" uid="uid://dyirrmrlvmtj0" path="res://Player/Basic Charakter Spritesheet.png" id="3_ivbkx"]
+[ext_resource type="Texture2D" uid="uid://cu5n3wc25qful" path="res://Player/Basic Charakter Actions.png" id="4_akv3y"]
+=======
 [ext_resource type="Texture2D" uid="uid://cafvumsx4xpk8" path="res://Player/Player.png" id="2_l23w5"]
 [ext_resource type="Script" path="res://World/WorldGen.gd" id="2_rlebr"]
+>>>>>>> main
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cplsi"]
 radius = 4.0
 height = 10.0
 
+<<<<<<< HEAD
+[sub_resource type="AtlasTexture" id="AtlasTexture_flnba"]
+atlas = ExtResource("3_ivbkx")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dewyb"]
+atlas = ExtResource("3_ivbkx")
+region = Rect2(48, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlhrr"]
+atlas = ExtResource("3_ivbkx")
+region = Rect2(96, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rc11j"]
+atlas = ExtResource("3_ivbkx")
+region = Rect2(144, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmh7y"]
+atlas = ExtResource("4_akv3y")
+region = Rect2(0, 432, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0emi"]
+atlas = ExtResource("4_akv3y")
+region = Rect2(48, 432, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04jum"]
+atlas = ExtResource("3_ivbkx")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cn8x"]
+atlas = ExtResource("3_ivbkx")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w24a7"]
+atlas = ExtResource("3_ivbkx")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fv4b5"]
+atlas = ExtResource("3_ivbkx")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpiwh"]
+atlas = ExtResource("4_akv3y")
+region = Rect2(0, 384, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbdxs"]
+atlas = ExtResource("4_akv3y")
+region = Rect2(48, 384, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jylnl"]
+atlas = ExtResource("3_ivbkx")
+region = Rect2(0, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14lfd"]
+atlas = ExtResource("3_ivbkx")
+region = Rect2(48, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4ixp"]
+atlas = ExtResource("3_ivbkx")
+region = Rect2(96, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_unax2"]
+atlas = ExtResource("3_ivbkx")
+region = Rect2(144, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00tc7"]
+atlas = ExtResource("4_akv3y")
+region = Rect2(0, 528, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5jqi"]
+atlas = ExtResource("4_akv3y")
+region = Rect2(48, 528, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dmpkw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flnba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dewyb")
+}],
+"loop": true,
+"name": &"back_idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rlhrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rc11j")
+}],
+"loop": true,
+"name": &"back_walk",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmh7y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0emi")
+}],
+"loop": true,
+"name": &"back_water",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04jum")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6cn8x")
+}],
+"loop": true,
+"name": &"front_idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w24a7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fv4b5")
+}],
+"loop": true,
+"name": &"front_walk",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lpiwh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbdxs")
+}],
+"loop": true,
+"name": &"front_water",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jylnl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14lfd")
+}],
+"loop": true,
+"name": &"side_idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4ixp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unax2")
+}],
+"loop": true,
+"name": &"side_walk",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00tc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5jqi")
+}],
+"loop": true,
+"name": &"side_water",
+"speed": 3.0
+}]
+
+[node name="world" type="Node2D"]
+=======
 [node name="World" type="Node2D"]
+>>>>>>> main
 
 [node name="Floor" type="TileMap" parent="."]
 tile_set = ExtResource("1_5jp6c")
@@ -20,15 +207,26 @@ layer_1/tile_data = PackedInt32Array()
 script = ExtResource("2_rlebr")
 
 [node name="player" type="CharacterBody2D" parent="."]
-position = Vector2(87, 76)
+position = Vector2(112, 54)
 script = ExtResource("2_3431q")
 metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="player"]
-texture = ExtResource("2_l23w5")
-hframes = 60
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
 position = Vector2(-1, 9)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_cplsi")
+<<<<<<< HEAD
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
+position = Vector2(-1, 9)
+sprite_frames = SubResource("SpriteFrames_dmpkw")
+animation = &"front_water"
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(72, 104, 152, 104, 152, 104, 136, 120, 136, 120, 72, 120, 72, 120, 24, 104, 24, 104)
+=======
+>>>>>>> main
