@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bnakm63s4hcam"]
+[gd_scene load_steps=19 format=3 uid="uid://bnakm63s4hcam"]
 
 [ext_resource type="TileSet" uid="uid://cxa3a7h17ymwt" path="res://stardew.tres" id="1_5jp6c"]
 [ext_resource type="Script" path="res://Player/Player.gd" id="2_3431q"]
@@ -9,6 +9,22 @@
 radius = 4.0
 height = 10.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fm7ui"]
+atlas = ExtResource("4_h38wm")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dky31"]
+atlas = ExtResource("4_h38wm")
+region = Rect2(48, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gc255"]
+atlas = ExtResource("4_h38wm")
+region = Rect2(96, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_waspg"]
+atlas = ExtResource("4_h38wm")
+region = Rect2(144, 48, 48, 48)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_brolr"]
 atlas = ExtResource("4_h38wm")
 region = Rect2(0, 0, 48, 48)
@@ -17,8 +33,54 @@ region = Rect2(0, 0, 48, 48)
 atlas = ExtResource("4_h38wm")
 region = Rect2(48, 0, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1enp3"]
+atlas = ExtResource("4_h38wm")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3oph"]
+atlas = ExtResource("4_h38wm")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrj75"]
+atlas = ExtResource("4_h38wm")
+region = Rect2(0, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvm18"]
+atlas = ExtResource("4_h38wm")
+region = Rect2(48, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ri4e"]
+atlas = ExtResource("4_h38wm")
+region = Rect2(96, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kj6l4"]
+atlas = ExtResource("4_h38wm")
+region = Rect2(144, 144, 48, 48)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_u4ifb"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fm7ui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dky31")
+}],
+"loop": true,
+"name": &"back_idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gc255")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_waspg")
+}],
+"loop": true,
+"name": &"back_walk",
+"speed": 3.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_brolr")
@@ -29,6 +91,39 @@ animations = [{
 "loop": true,
 "name": &"front_idle",
 "speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1enp3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3oph")
+}],
+"loop": true,
+"name": &"front_walk",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrj75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvm18")
+}],
+"loop": true,
+"name": &"side_idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ri4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kj6l4")
+}],
+"loop": true,
+"name": &"side_walk",
+"speed": 3.0
 }]
 
 [node name="World" type="Node2D"]
@@ -53,4 +148,6 @@ shape = SubResource("CapsuleShape2D_cplsi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
 sprite_frames = SubResource("SpriteFrames_u4ifb")
-animation = &"front_idle"
+animation = &"side_walk"
+
+[node name="Camera2D" type="Camera2D" parent="player"]
