@@ -1,13 +1,35 @@
-[gd_scene load_steps=6 format=3 uid="uid://bnakm63s4hcam"]
+[gd_scene load_steps=9 format=3 uid="uid://bnakm63s4hcam"]
 
 [ext_resource type="TileSet" uid="uid://cxa3a7h17ymwt" path="res://stardew.tres" id="1_5jp6c"]
 [ext_resource type="Script" path="res://Player/Player.gd" id="2_3431q"]
-[ext_resource type="Texture2D" uid="uid://cafvumsx4xpk8" path="res://Player/Player.png" id="2_l23w5"]
 [ext_resource type="Script" path="res://World/WorldGen.gd" id="2_rlebr"]
+[ext_resource type="Texture2D" uid="uid://br34h1te2q78s" path="res://Player/Basic Charakter Spritesheet.png" id="4_h38wm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cplsi"]
 radius = 4.0
 height = 10.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_brolr"]
+atlas = ExtResource("4_h38wm")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_btqsn"]
+atlas = ExtResource("4_h38wm")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u4ifb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_brolr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_btqsn")
+}],
+"loop": true,
+"name": &"front_idle",
+"speed": 2.0
+}]
 
 [node name="World" type="Node2D"]
 
@@ -24,11 +46,11 @@ position = Vector2(87, 76)
 script = ExtResource("2_3431q")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="player"]
-texture = ExtResource("2_l23w5")
-hframes = 60
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
 position = Vector2(-1, 9)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_cplsi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
+sprite_frames = SubResource("SpriteFrames_u4ifb")
+animation = &"front_idle"
