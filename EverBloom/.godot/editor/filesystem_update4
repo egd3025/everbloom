@@ -1,10 +1,5 @@
 res://options_menu.tscn
 res://start_menu.tscn
 res://World/world.tscn
-<<<<<<< HEAD
-res://Player/player.tscn
-res://Player/Player.gd
-=======
 res://stardew.tres
 res://World/WorldGen.gd
->>>>>>> main
