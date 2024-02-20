@@ -1,5 +1,4 @@
-res://options_menu.tscn
 res://start_menu.tscn
+res://Player/Player.gd
 res://World/world.tscn
 res://stardew.tres
-res://World/WorldGen.gd
