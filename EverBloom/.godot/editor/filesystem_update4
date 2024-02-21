@@ -1,6 +1,10 @@
-res://start_menu.tscn
-res://Pause Menu.tscn
 res://World/world.tscn
 res://stardew.tres
-res://World/world.gd
 res://World/WorldGen.gd
+res://start_menu.tscn
+res://Plant/plant.gd
+res://Plant/plant.tscn
+res://World/world.gd
+res://Plants/plant.tscn
+res://Plants/Plant.gd
+res://Plants/Plant.tscn
