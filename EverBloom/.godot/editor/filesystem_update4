@@ -1,4 +1,6 @@
 res://Plants/Plant.tscn
 res://stardew.tres
-res://World/world.tscn
 res://start_menu.tscn
+res://World/world.tscn
+res://World/world.gd
+res://World/DayTimer.gd
