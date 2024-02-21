@@ -1,15 +1,16 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1708525966
-default_pause_theme.tres::Theme::6103211952939475506::1708525278::0::1::::<><>::uid://ce08wvscuq3os::::res://StardewValley.ttf
+::res://::1708530281
+default_pause_theme.tres::Theme::6103211952939475506::1708530053::0::1::::<><>::uid://ce08wvscuq3os::::res://StardewValley.ttf
 icon.svg::CompressedTexture2D::9067683324932348247::1708027245::1708465116::1::::<><>::
 options_menu.gd::GDScript::-1::1708460607::0::1::::<>Control<>::
 options_menu.tscn::PackedScene::7415358203266975445::1708460607::0::1::::<><>::res://options_menu.gd
-Pause Menu.tscn::PackedScene::7701961275672572257::1708525278::0::1::::<><>::uid://cs7pakuugysjy::::res://default_pause_theme.tres
+Pause Menu.gd::GDScript::-1::1708530053::0::1::::<>Control<>::
+Pause Menu.tscn::PackedScene::7701961275672572257::1708530053::0::1::::<><>::uid://cs7pakuugysjy::::res://default_pause_theme.tres<>res://Pause Menu.gd
 Stardew.png::CompressedTexture2D::980238063456035071::1708460607::1708460607::1::::<><>::
-stardew.tres::TileSet::6388886539644285167::1708525350::0::1::::<><>::uid://yjq6hhb4bn02::::res://cup_noodle/Grass.png
-StardewValley.ttf::FontFile::5107250264932118878::1708525278::1708525278::1::::<><>::
+stardew.tres::TileSet::6388886539644285167::1708528533::0::1::::<><>::uid://yjq6hhb4bn02::::res://cup_noodle/Grass.png
+StardewValley.ttf::FontFile::5107250264932118878::1708530053::1708530053::1::::<><>::
 Start Menu.gd::GDScript::-1::1708460607::0::1::::<>Control<>::
-start_menu.tscn::PackedScene::9109821508019683367::1708525350::0::1::::<><>::res://Start Menu.gd
+start_menu.tscn::PackedScene::9109821508019683367::1708529741::0::1::::<><>::res://Start Menu.gd
 ::res://cup_noodle/::1708465423
 Basic Charakter Actions.png::CompressedTexture2D::6915225368040980144::1708465423::1708465423::1::::<><>::
 Basic Charakter Spritesheet.png::CompressedTexture2D::3639208291177764452::1708465423::1708465423::1::::<><>::
@@ -49,9 +50,9 @@ Music.mp3::AudioStreamMP3::4572500087636854150::1708027245::1708027245::1::::<><
 Pause.wav::AudioStreamWAV::6079720325991448209::1708027245::1708027245::1::::<><>::
 Swipe.wav::AudioStreamWAV::935897720578182202::1708027245::1708027245::1::::<><>::
 Unpause.wav::AudioStreamWAV::2163223103701235421::1708027245::1708027245::1::::<><>::
-::res://Plants/::1708525350
+::res://Plants/::1708529741
 Plant.gd::GDScript::-1::1708525350::0::1::::<>Node2D<>::
-Plant.tscn::PackedScene::4085791121910850885::1708525350::0::1::::<><>::res://Plants/Plant.gd<>uid://c8a3mck1ac1vk::::res://cup_noodle/Basic_Plants.png
+Plant.tscn::PackedScene::4085791121910850885::1708529741::0::1::::<><>::res://Plants/Plant.gd<>uid://c8a3mck1ac1vk::::res://cup_noodle/Basic_Plants.png
 ::res://Player/::1708465423
 Player.gd::GDScript::-1::1708465423::0::1::::<>CharacterBody2D<>::
 Player.png::CompressedTexture2D::4784474688054066073::1708027245::1708027245::1::::<><>::
@@ -62,13 +63,14 @@ SmallShadow.png::CompressedTexture2D::8422165836201531633::1708027245::170802724
 ::res://UI/::1708460187
 HeartUIEmpty.png::CompressedTexture2D::5024755551792919855::1708027245::1708027245::1::::<><>::
 HeartUIFull.png::CompressedTexture2D::1531641769722372706::1708027245::1708027245::1::::<><>::
-::res://World/::1708525350
+::res://World/::1708530176
 Bush.png::CompressedTexture2D::7160229786456911813::1708027245::1708450864::1::::<><>::
 CliffTileset.png::CompressedTexture2D::3679902854565748060::1708027245::1708450864::1::::<><>::
+DayTimer.gd::GDScript::-1::1708530176::0::1::::<>Panel<>::
 DirtTileset.png::CompressedTexture2D::1337584280037106859::1708027245::1708450864::1::::<><>::
 Grass.png::CompressedTexture2D::7917118736068966980::1708027245::1708450864::1::::<><>::
 GrassBackground.png::CompressedTexture2D::4160373675470361357::1708027245::1708450864::1::::<><>::
 Tree.png::CompressedTexture2D::7807387145307635528::1708027245::1708450864::1::::<><>::
-world.gd::GDScript::-1::1708525350::0::1::::<>Node2D<>::
-world.tscn::PackedScene::3299505922777292380::1708525350::0::1::::<><>::uid://cxa3a7h17ymwt::::res://stardew.tres<>res://World/world.gd<>res://Player/Player.gd<>res://World/WorldGen.gd<>uid://br34h1te2q78s::::res://cup_noodle/Basic Charakter Spritesheet.png<>uid://byhgnas87o1gb::::res://Plants/plant.tscn
+world.gd::GDScript::-1::1708530176::0::1::::<>Node2D<>::
+world.tscn::PackedScene::3299505922777292380::1708530176::0::1::::<><>::uid://cxa3a7h17ymwt::::res://stardew.tres<>res://World/world.gd<>res://Player/Player.gd<>res://World/WorldGen.gd<>uid://br34h1te2q78s::::res://cup_noodle/Basic Charakter Spritesheet.png<>uid://byhgnas87o1gb::::res://Plants/Plant.tscn
 WorldGen.gd::GDScript::-1::1708525350::0::1::::<>TileMap<>::
