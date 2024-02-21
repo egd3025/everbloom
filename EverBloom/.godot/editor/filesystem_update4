@@ -1,2 +1,7 @@
 res://Pause Menu.tscn
+res://stardew.tres
+res://options_menu.gd
 res://Pause Menu.gd
+res://World/world.gd
+res://World/world.tscn
+res://options_menu.tscn
