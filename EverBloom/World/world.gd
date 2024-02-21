@@ -10,6 +10,8 @@ func _input(event):
 		plant1.position = get_global_mouse_position()
 		world.add_child(plant1)
 		
+	if Input.is_action_just_pressed("pause"):
+		get_tree().change_scene_to_file("res://Pause Menu.tscn")
 		
 
 
