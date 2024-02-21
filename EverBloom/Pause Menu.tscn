@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhy5gaso5ng7b"]
+[gd_scene load_steps=3 format=3 uid="uid://dhy5gaso5ng7b"]
 
 [ext_resource type="Theme" uid="uid://cs7pakuugysjy" path="res://default_pause_theme.tres" id="1_ykoja"]
+[ext_resource type="Script" path="res://Pause Menu.gd" id="2_mr4kv"]
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -9,7 +10,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme = ExtResource("1_ykoja")
+script = ExtResource("2_mr4kv")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -25,6 +29,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -30.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 32
@@ -87,3 +92,8 @@ focus_neighbor_bottom = NodePath("../ResumeButton")
 focus_next = NodePath("../ResumeButton")
 focus_previous = NodePath("../OptionsButton")
 text = "Quit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/InventoryButton" to="." method="_on_inventory_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
