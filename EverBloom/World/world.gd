@@ -10,5 +10,6 @@ func _input(event):
 		plant1.position = get_global_mouse_position()
 		world.add_child(plant1)
 		
+		
 
 

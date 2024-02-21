@@ -1,68 +1,71 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1708461661
-icon.svg::CompressedTexture2D::9067683324932348247::1707856102::1708452451::1::::<><>::
-options_menu.gd::GDScript::-1::1708461047::0::1::::<>Control<>::
-options_menu.tscn::PackedScene::7415358203266975445::1708461047::0::1::::<><>::res://options_menu.gd
-Stardew.png::CompressedTexture2D::980238063456035071::1708460208::1708460337::1::::<><>::
-stardew.tres::TileSet::6388886539644285167::1708461412::0::1::::<><>::uid://n73m3u0qfwgt::::res://Stardew.png
-Start Menu.gd::GDScript::-1::1708461047::0::1::::<>Control<>::
-start_menu.tscn::PackedScene::7302257207080772108::1708461414::0::1::::<><>::res://Start Menu.gd
-::res://cup_noodle/::1708461673
-Basic Charakter Actions.png::CompressedTexture2D::6915225368040980144::1708461393::1708461632::1::::<><>::
-Basic Charakter Spritesheet.png::CompressedTexture2D::3639208291177764452::1708461384::1708461637::1::::<><>::
-Basic_Furniture.png::CompressedTexture2D::4951633339091048558::1708461576::1708461647::1::::<><>::
-Basic_Grass_Biom_things.png::CompressedTexture2D::5244298598642653131::1708461576::1708461647::1::::<><>::
-Basic_Plants.png::CompressedTexture2D::7090794834441765388::1708461576::1708461647::1::::<><>::
-Basic_tools_and_meterials.png::CompressedTexture2D::1542717688021212783::1708461576::1708461647::1::::<><>::
-Bitmask references 1.png::CompressedTexture2D::1825699768792306785::1708461673::1708461673::1::::<><>::
-Bitmask references 2.png::CompressedTexture2D::5887546056826664605::1708461673::1708461673::1::::<><>::
-Chest.png::CompressedTexture2D::5048707438802673297::1708461576::1708461647::1::::<><>::
-Egg_item.png::CompressedTexture2D::961168440142333081::1708461576::1708461647::1::::<><>::
-Fences.png::CompressedTexture2D::5227132878100613409::1708461673::1708461673::1::::<><>::
-Free_Chicken_House.png::CompressedTexture2D::2362714261122582349::1708461576::1708461647::1::::<><>::
-Grass.png::CompressedTexture2D::1704138857155956697::1708461673::1708461673::1::::<><>::
-Hills.png::CompressedTexture2D::2449026841218551527::1708461673::1708461673::1::::<><>::
-Paths.png::CompressedTexture2D::4534691935128338449::1708461576::1708461647::1::::<><>::
-Simple_Milk_and_grass_item.png::CompressedTexture2D::6705035521247029904::1708461576::1708461659::1::::<><>::
-Tilled_Dirt.png::CompressedTexture2D::5445644543260287957::1708461673::1708461673::1::::<><>::
-Tools.png::CompressedTexture2D::5928949320355884398::1708461533::1708461655::1::::<><>::
-Water.png::CompressedTexture2D::2857293114883338811::1708461673::1708461673::1::::<><>::
-Wooden House.png::CompressedTexture2D::6055950542951679472::1708461673::1708461673::1::::<><>::
-Wood_Bridge.png::CompressedTexture2D::6521233016152463248::1708461576::1708461661::1::::<><>::
-::res://Effects/::1708452470
-EnemyDeathEffect.png::CompressedTexture2D::3897041655134744968::1707856102::1708452470::1::::<><>::
-GrassEffect.png::CompressedTexture2D::8330028443746725064::1707856102::1708452470::1::::<><>::
-HitEffect.png::CompressedTexture2D::4654676558850745169::1707856102::1708452470::1::::<><>::
-::res://Enemies/::1708452470
-Bat.png::CompressedTexture2D::1468524531572411567::1707856102::1708452470::1::::<><>::
-::res://Music and Sounds/::1707856102
-EnemyDie.wav::AudioStreamWAV::6903441330020655892::1707856102::1707856102::1::::<><>::
-Evade.wav::AudioStreamWAV::5625127609234952630::1707856102::1707856102::1::::<><>::
-Hit.wav::AudioStreamWAV::1452897930626952982::1707856102::1707856102::1::::<><>::
-Hurt.wav::AudioStreamWAV::1049818259358128273::1707856102::1707856102::1::::<><>::
-Menu Move.wav::AudioStreamWAV::351127485947128138::1707856102::1707856102::1::::<><>::
-Menu Select.wav::AudioStreamWAV::1995378356403747097::1707856102::1707856102::1::::<><>::
-Music.mp3::AudioStreamMP3::4572500087636854150::1707856102::1707856102::1::::<><>::
-Pause.wav::AudioStreamWAV::6079720325991448209::1707856102::1707856102::1::::<><>::
-Swipe.wav::AudioStreamWAV::935897720578182202::1707856102::1707856102::1::::<><>::
-Unpause.wav::AudioStreamWAV::2163223103701235421::1707856102::1707856102::1::::<><>::
-::res://Player/::1708461661
-Player.gd::GDScript::-1::1708461152::0::1::::<>CharacterBody2D<>::
-Player.png::CompressedTexture2D::4784474688054066073::1707856102::1708452433::1::::<><>::
-::res://Shadows/::1708452416
-LargeShadow.png::CompressedTexture2D::5857554281887629784::1707856102::1708452416::1::::<><>::
-MediumShadow.png::CompressedTexture2D::3597674920203819790::1707856102::1708452416::1::::<><>::
-SmallShadow.png::CompressedTexture2D::8422165836201531633::1707856102::1708452416::1::::<><>::
-::res://UI/::1708452416
-HeartUIEmpty.png::CompressedTexture2D::5024755551792919855::1707856102::1708452416::1::::<><>::
-HeartUIFull.png::CompressedTexture2D::1531641769722372706::1707856102::1708452416::1::::<><>::
-::res://World/::1708461636
-Bush.png::CompressedTexture2D::7160229786456911813::1707856102::1708452416::1::::<><>::
-CliffTileset.png::CompressedTexture2D::3679902854565748060::1707856102::1708452416::1::::<><>::
-DirtTileset.png::CompressedTexture2D::1337584280037106859::1707856102::1708452416::1::::<><>::
-Grass.png::CompressedTexture2D::7917118736068966980::1707856102::1708452391::1::::<><>::
-GrassBackground.png::CompressedTexture2D::4160373675470361357::1707856102::1708452384::1::::<><>::
-Tree.png::CompressedTexture2D::7807387145307635528::1707856102::1708452377::1::::<><>::
-world.gd::GDScript::-1::1708460208::0::1::::<>Node2D<>::
-world.tscn::PackedScene::3299505922777292380::1708461636::0::1::::<><>::uid://cxa3a7h17ymwt::::res://stardew.tres<>res://Player/Player.gd<>res://World/WorldGen.gd<>uid://br34h1te2q78s::::res://cup_noodle/Basic Charakter Spritesheet.png
-WorldGen.gd::GDScript::-1::1708460208::0::1::::<>TileMap<>::
+::res://::1708472700
+icon.svg::CompressedTexture2D::9067683324932348247::1708027284::1708471432::1::::<><>::
+options_menu.gd::GDScript::-1::1708460110::0::1::::<>Control<>::
+options_menu.tscn::PackedScene::7415358203266975445::1708460110::0::1::::<><>::res://options_menu.gd
+Stardew.png::CompressedTexture2D::980238063456035071::1708460110::1708460161::1::::<><>::
+stardew.tres::TileSet::6388886539644285167::1708471438::0::1::::<><>::uid://yjq6hhb4bn02::::res://cup_noodle/Grass.png
+Start Menu.gd::GDScript::-1::1708460110::0::1::::<>Control<>::
+start_menu.tscn::PackedScene::9109821508019683367::1708472661::0::1::::<><>::res://Start Menu.gd
+::res://cup_noodle/::1708462157
+Basic Charakter Actions.png::CompressedTexture2D::6915225368040980144::1708462157::1708462157::1::::<><>::
+Basic Charakter Spritesheet.png::CompressedTexture2D::3639208291177764452::1708462157::1708462157::1::::<><>::
+Basic_Furniture.png::CompressedTexture2D::4951633339091048558::1708462157::1708462157::1::::<><>::
+Basic_Grass_Biom_things.png::CompressedTexture2D::5244298598642653131::1708462157::1708462157::1::::<><>::
+Basic_Plants.png::CompressedTexture2D::7090794834441765388::1708462157::1708462157::1::::<><>::
+Basic_tools_and_meterials.png::CompressedTexture2D::1542717688021212783::1708462157::1708462157::1::::<><>::
+Bitmask references 1.png::CompressedTexture2D::1825699768792306785::1708462157::1708462157::1::::<><>::
+Bitmask references 2.png::CompressedTexture2D::5887546056826664605::1708462157::1708462157::1::::<><>::
+Chest.png::CompressedTexture2D::5048707438802673297::1708462157::1708462157::1::::<><>::
+Egg_item.png::CompressedTexture2D::961168440142333081::1708462157::1708462157::1::::<><>::
+Fences.png::CompressedTexture2D::5227132878100613409::1708462157::1708462157::1::::<><>::
+Free_Chicken_House.png::CompressedTexture2D::2362714261122582349::1708462157::1708462157::1::::<><>::
+Grass.png::CompressedTexture2D::1704138857155956697::1708462157::1708462157::1::::<><>::
+Hills.png::CompressedTexture2D::2449026841218551527::1708462157::1708462157::1::::<><>::
+Paths.png::CompressedTexture2D::4534691935128338449::1708462157::1708462157::1::::<><>::
+Simple_Milk_and_grass_item.png::CompressedTexture2D::6705035521247029904::1708462157::1708462157::1::::<><>::
+Tilled_Dirt.png::CompressedTexture2D::5445644543260287957::1708462157::1708462157::1::::<><>::
+Tools.png::CompressedTexture2D::5928949320355884398::1708462157::1708462157::1::::<><>::
+Water.png::CompressedTexture2D::2857293114883338811::1708462157::1708462157::1::::<><>::
+Wooden House.png::CompressedTexture2D::6055950542951679472::1708462157::1708462157::1::::<><>::
+Wood_Bridge.png::CompressedTexture2D::6521233016152463248::1708462157::1708462157::1::::<><>::
+::res://Effects/::1708027284
+EnemyDeathEffect.png::CompressedTexture2D::3897041655134744968::1708027284::1708027284::1::::<><>::
+GrassEffect.png::CompressedTexture2D::8330028443746725064::1708027284::1708027284::1::::<><>::
+HitEffect.png::CompressedTexture2D::4654676558850745169::1708027284::1708027284::1::::<><>::
+::res://Enemies/::1708027284
+Bat.png::CompressedTexture2D::1468524531572411567::1708027284::1708027284::1::::<><>::
+::res://Music and Sounds/::1708027284
+EnemyDie.wav::AudioStreamWAV::6903441330020655892::1708027284::1708027284::1::::<><>::
+Evade.wav::AudioStreamWAV::5625127609234952630::1708027284::1708027284::1::::<><>::
+Hit.wav::AudioStreamWAV::1452897930626952982::1708027284::1708027284::1::::<><>::
+Hurt.wav::AudioStreamWAV::1049818259358128273::1708027284::1708027284::1::::<><>::
+Menu Move.wav::AudioStreamWAV::351127485947128138::1708027284::1708027284::1::::<><>::
+Menu Select.wav::AudioStreamWAV::1995378356403747097::1708027284::1708027284::1::::<><>::
+Music.mp3::AudioStreamMP3::4572500087636854150::1708027284::1708027284::1::::<><>::
+Pause.wav::AudioStreamWAV::6079720325991448209::1708027284::1708027284::1::::<><>::
+Swipe.wav::AudioStreamWAV::935897720578182202::1708027284::1708027284::1::::<><>::
+Unpause.wav::AudioStreamWAV::2163223103701235421::1708027284::1708027284::1::::<><>::
+::res://Plants/::1708472661
+Plant.gd::GDScript::-1::1708471413::0::1::::<>Node2D<>::
+Plant.tscn::PackedScene::4085791121910850885::1708472661::0::1::::<><>::res://Plants/Plant.gd<>uid://c8a3mck1ac1vk::::res://cup_noodle/Basic_Plants.png
+::res://Player/::1708462157
+Player.gd::GDScript::-1::1708462157::0::1::::<>CharacterBody2D<>::
+Player.png::CompressedTexture2D::4784474688054066073::1708027284::1708027284::1::::<><>::
+::res://Shadows/::1708027284
+LargeShadow.png::CompressedTexture2D::5857554281887629784::1708027284::1708027284::1::::<><>::
+MediumShadow.png::CompressedTexture2D::3597674920203819790::1708027284::1708027284::1::::<><>::
+SmallShadow.png::CompressedTexture2D::8422165836201531633::1708027284::1708027284::1::::<><>::
+::res://UI/::1708027284
+HeartUIEmpty.png::CompressedTexture2D::5024755551792919855::1708027284::1708027284::1::::<><>::
+HeartUIFull.png::CompressedTexture2D::1531641769722372706::1708027284::1708027284::1::::<><>::
+::res://World/::1708472661
+Bush.png::CompressedTexture2D::7160229786456911813::1708027284::1708027284::1::::<><>::
+CliffTileset.png::CompressedTexture2D::3679902854565748060::1708027284::1708027284::1::::<><>::
+DirtTileset.png::CompressedTexture2D::1337584280037106859::1708027284::1708027284::1::::<><>::
+Grass.png::CompressedTexture2D::7917118736068966980::1708027284::1708027284::1::::<><>::
+GrassBackground.png::CompressedTexture2D::4160373675470361357::1708027284::1708027284::1::::<><>::
+Tree.png::CompressedTexture2D::7807387145307635528::1708027284::1708027284::1::::<><>::
+world.gd::GDScript::-1::1708471413::0::1::::<>Node2D<>::
+world.tscn::PackedScene::3299505922777292380::1708472661::0::1::::<><>::uid://cxa3a7h17ymwt::::res://stardew.tres<>res://World/world.gd<>res://Player/Player.gd<>res://World/WorldGen.gd<>uid://br34h1te2q78s::::res://cup_noodle/Basic Charakter Spritesheet.png<>uid://byhgnas87o1gb::::res://Plants/Plant.tscn
+WorldGen.gd::GDScript::-1::1708471413::0::1::::<>TileMap<>::
