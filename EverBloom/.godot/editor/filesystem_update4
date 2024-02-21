@@ -1,3 +1,6 @@
-res://stardew.tres
-res://default_pause_theme.tres
+res://start_menu.tscn
 res://Pause Menu.tscn
+res://World/world.tscn
+res://stardew.tres
+res://World/world.gd
+res://World/WorldGen.gd
