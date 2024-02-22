@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://World/world.gd" id="1_a85sf"]
 [ext_resource type="Script" path="res://Player/Player.gd" id="2_3431q"]
 [ext_resource type="Script" path="res://World/WorldGen.gd" id="2_rlebr"]
-[ext_resource type="Texture2D" uid="uid://br34h1te2q78s" path="res://cup_noodle/Basic Charakter Spritesheet.png" id="4_h38wm"]
+[ext_resource type="Texture2D" path="res://cup_noodle/Basic Charakter Spritesheet.png" id="4_h38wm"]
 [ext_resource type="PackedScene" uid="uid://byhgnas87o1gb" path="res://Plants/Plant.tscn" id="6_sfo2u"]
 [ext_resource type="Script" path="res://World/DayTimer.gd" id="7_qxuh3"]
 
