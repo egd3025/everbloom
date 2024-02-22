@@ -130,7 +130,7 @@ animations = [{
 }]
 
 [node name="World" type="Node2D"]
-process_mode = 3
+process_mode = 1
 script = ExtResource("1_a85sf")
 
 [node name="Floor" type="TileMap" parent="."]
@@ -142,7 +142,6 @@ layer_1/tile_data = PackedInt32Array()
 script = ExtResource("2_rlebr")
 
 [node name="player" type="CharacterBody2D" parent="."]
-process_mode = 1
 position = Vector2(87, 76)
 script = ExtResource("2_3431q")
 metadata/_edit_group_ = true
@@ -159,11 +158,9 @@ animation = &"side_walk"
 [node name="Camera2D" type="Camera2D" parent="player"]
 
 [node name="Plant" parent="." instance=ExtResource("6_sfo2u")]
-process_mode = 1
 position = Vector2(53, 33)
 
 [node name="Panel" type="Panel" parent="."]
-process_mode = 1
 offset_right = 56.0
 offset_bottom = 17.0
 script = ExtResource("7_qxuh3")
