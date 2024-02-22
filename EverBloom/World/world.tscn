@@ -130,6 +130,7 @@ animations = [{
 }]
 
 [node name="World" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_a85sf")
 
 [node name="Floor" type="TileMap" parent="."]

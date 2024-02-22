@@ -11,7 +11,6 @@ func _input(event):
 		world.add_child(plant1)
 		
 	if Input.is_action_just_pressed("pause"):
+		get_tree().paused = not get_tree().paused
 		get_tree().change_scene_to_file("res://Pause Menu.tscn")
 		
-
-

@@ -1,7 +1,10 @@
 extends Control
 
 func _on_back_pressed():
-	get_tree().change_scene_to_file("res://start_menu.tscn")
+	if get_tree().paused:
+		get_tree().change_scene_to_file("res://Pause Menu.tscn")
+	else:
+		get_tree().change_scene_to_file("res://start_menu.tscn")
 
 
 func _on_volume_pressed():
