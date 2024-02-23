@@ -29,5 +29,29 @@ func _input(event):
 				tilePositon.y += 1
 			"ui_up":
 				tilePositon.y -= 1
-		print(tilePositon)
+
 		floor.set_cell(0, tilePositon, 4, Vector2i(1,1))
+		
+	
+	if event.is_action("Plant"):
+		var playerLocal = player.position
+		var tilePositon = floor.local_to_map(playerLocal)
+		var direction = player.getLastInput()
+		match direction:
+			"ui_right":
+				tilePositon.x += 1
+			"ui_left":
+				tilePositon.x -= 1
+			"ui_down":
+				tilePositon.y += 1
+			"ui_up":
+				tilePositon.y -= 1
+		print(floor.get_cell_atlas_coords(0, tilePositon))
+		if floor.get_cell_atlas_coords(0, tilePositon) == Vector2i(1,1) and floor.get_cell_source_id(0, tilePositon) == 4:
+			print(true)
+			var plant1 = plant.instantiate()
+			plant1.position = floor.map_to_local(tilePositon)
+			world.add_child(plant1)
+			
+			
+		
