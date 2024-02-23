@@ -7,10 +7,6 @@ const plant = preload("res://Plants/Plant.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _input(event):
-	if event.is_action("Spawn"):
-		var plant1 = plant.instantiate()
-		plant1.position = get_global_mouse_position()
-		world.add_child(plant1)
 		
 	if Input.is_action_just_pressed("pause"):
 		get_tree().paused = not get_tree().paused
@@ -29,8 +25,10 @@ func _input(event):
 				tilePositon.y += 1
 			"ui_up":
 				tilePositon.y -= 1
-
-		floor.set_cell(0, tilePositon, 4, Vector2i(1,1))
+		if floor.get_cell_source_id(0, tilePositon) != 5:
+			
+			if floor.get_cell_atlas_coords(1, tilePositon) != Vector2i(0,0) and floor.get_cell_atlas_coords(1, tilePositon) != Vector2i(1,0):
+				floor.set_cell(0, tilePositon, 4, Vector2i(1,1))
 		
 	
 	if event.is_action("Plant"):
@@ -46,7 +44,7 @@ func _input(event):
 				tilePositon.y += 1
 			"ui_up":
 				tilePositon.y -= 1
-		print(floor.get_cell_atlas_coords(0, tilePositon))
+
 		if floor.get_cell_atlas_coords(0, tilePositon) == Vector2i(1,1) and floor.get_cell_source_id(0, tilePositon) == 4:
 			print(true)
 			var plant1 = plant.instantiate()
