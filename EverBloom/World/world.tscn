@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://World/world.gd" id="1_a85sf"]
 [ext_resource type="Script" path="res://Player/Player.gd" id="2_3431q"]
 [ext_resource type="Script" path="res://World/WorldGen.gd" id="2_rlebr"]
-[ext_resource type="Texture2D" path="res://cup_noodle/Basic Charakter Spritesheet.png" id="4_h38wm"]
+[ext_resource type="Texture2D" uid="uid://br34h1te2q78s" path="res://cup_noodle/Basic Charakter Spritesheet.png" id="4_h38wm"]
 [ext_resource type="PackedScene" uid="uid://byhgnas87o1gb" path="res://Plants/Plant.tscn" id="6_sfo2u"]
 [ext_resource type="Script" path="res://World/DayTimer.gd" id="7_qxuh3"]
 
@@ -137,8 +137,15 @@ script = ExtResource("1_a85sf")
 tile_set = ExtResource("1_5jp6c")
 format = 2
 layer_0/name = "0"
+layer_0/tile_data = PackedInt32Array(-1, 65540, 1, -458748, 65540, 1, -458747, 131076, 1, -458746, 65540, 1, -524281, 65540, 1)
 layer_1/name = "1"
-layer_1/tile_data = PackedInt32Array()
+layer_1/tile_data = PackedInt32Array(-131062, 393220, 6, -262134, 393220, 5, -196597, 589828, 5, -196599, 524292, 5, -262133, 131076, 0, -262135, 4, 0, -131063, 4, 2, -131061, 131076, 2)
+layer_2/name = "2"
+layer_2/tile_data = PackedInt32Array()
+layer_3/name = "3"
+layer_3/tile_data = PackedInt32Array()
+layer_4/name = "4"
+layer_4/tile_data = PackedInt32Array()
 script = ExtResource("2_rlebr")
 
 [node name="player" type="CharacterBody2D" parent="."]

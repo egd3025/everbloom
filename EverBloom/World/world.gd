@@ -1,9 +1,17 @@
 extends Node2D
 
+
 const plant = preload("res://Plants/Plant.tscn")
 @onready var world = $"."
 @onready var player = $player
 @onready var floor = $Floor
+var  x = 50
+var  y = 50
+var coordArray = []
+func _ready():
+	for row in range(x):
+		for col in range(y):
+			coordArray.append(Vector2i(x,y))
 
 # Called when the node enters the scene tree for the first time.
 func _input(event):
@@ -25,11 +33,11 @@ func _input(event):
 				tilePositon.y += 1
 			"ui_up":
 				tilePositon.y -= 1
-		if floor.get_cell_source_id(0, tilePositon) != 5:
-			
+		if floor.get_cell_source_id(2, tilePositon) != 5:
 			if floor.get_cell_atlas_coords(1, tilePositon) != Vector2i(0,0) and floor.get_cell_atlas_coords(1, tilePositon) != Vector2i(1,0):
-				floor.set_cell(0, tilePositon, 4, Vector2i(1,1))
-		
+				floor.set_cell(1, tilePositon, 4, Vector2i(1,1))
+				floor.set_cells_terrain_connect(1, [tilePositon], 0, 0)
+		floor.set_cells_terrain_connect(1, coordArray, 0, 0)
 	
 	if event.is_action("Plant"):
 		var playerLocal = player.position
@@ -46,7 +54,7 @@ func _input(event):
 				tilePositon.y -= 1
 
 		if floor.get_cell_atlas_coords(0, tilePositon) == Vector2i(1,1) and floor.get_cell_source_id(0, tilePositon) == 4:
-			print(true)
+
 			var plant1 = plant.instantiate()
 			plant1.position = floor.map_to_local(tilePositon)
 			world.add_child(plant1)
