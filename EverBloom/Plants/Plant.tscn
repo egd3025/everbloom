@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://c8a3mck1ac1vk" path="res://cup_noodle/Basic_Plants.png" id="2_rta03"]
 
 [node name="Plant" type="Node2D"]
+z_index = 1
+y_sort_enabled = true
 script = ExtResource("1_egb8p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
