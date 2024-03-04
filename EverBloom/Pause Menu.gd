@@ -6,7 +6,7 @@ func _on_resume_button_pressed():
 	get_tree().change_scene_to_file("res://World/world.tscn")
 	
 func _on_inventory_button_pressed():
-	pass
+	get_tree().change_scene_to_file("res://Inventory/inventory_ui.tscn")
 	
 func _on_options_button_pressed():
 	get_tree().change_scene_to_file("res://options_menu.tscn")
