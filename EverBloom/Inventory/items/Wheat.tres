@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://bov0m54vbd6lj"]
 
 [ext_resource type="Script" path="res://Inventory/inventory_item.gd" id="1_8rne1"]
-[ext_resource type="Texture2D" uid="uid://c8a3mck1ac1vk" path="res://cup_noodle/Basic_Plants.png" id="2_277iq"]
+[ext_resource type="Texture2D" uid="uid://dm8o66aeo7kfk" path="res://Inventory/Wheat_Grown.png" id="2_uv6um"]
 
 [resource]
 script = ExtResource("1_8rne1")
 name = "Wheat"
-texture = ExtResource("2_277iq")
+texture = ExtResource("2_uv6um")
