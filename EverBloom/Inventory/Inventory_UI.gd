@@ -17,3 +17,12 @@ func _input(InputEvent):
 		get_tree().change_scene_to_file("res://Pause Menu.tscn")
 	if Input.is_action_just_pressed("inventory"):
 		get_tree().change_scene_to_file("res://World/world.tscn")
+
+func _on_inventory_button_pressed():
+	get_tree().change_scene_to_file("res://World/world.tscn")
+
+func _on_almanac_button_pressed():
+	pass
+
+func _on_to_do_list_button_pressed():
+	pass

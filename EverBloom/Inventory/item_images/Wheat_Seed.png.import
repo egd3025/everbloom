@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnbd1l0ba6mhv"
-path="res://.godot/imported/Tomato_Grown.png-2be8e15eec8fb2d029e991f855c1678d.ctex"
+uid="uid://xlvtxf13flps"
+path="res://.godot/imported/Wheat_Seed.png-94ae1d5025b0c84b2a2e12d61641d372.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Inventory/Tomato_Grown.png"
-dest_files=["res://.godot/imported/Tomato_Grown.png-2be8e15eec8fb2d029e991f855c1678d.ctex"]
+source_file="res://Inventory/item_images/Wheat_Seed.png"
+dest_files=["res://.godot/imported/Wheat_Seed.png-94ae1d5025b0c84b2a2e12d61641d372.ctex"]
 
 [params]
 

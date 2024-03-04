@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx1yt6llsviiw"
-path="res://.godot/imported/Tomato_Seed.png-c8c928b55783ff9a7c42f659a7c83a09.ctex"
+uid="uid://sfx0gevdpbl8"
+path="res://.godot/imported/inventory-background.png-f0c7a43b858079b2bc4b35cddf7e391d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Inventory/Tomato_Seed.png"
-dest_files=["res://.godot/imported/Tomato_Seed.png-c8c928b55783ff9a7c42f659a7c83a09.ctex"]
+source_file="res://Inventory/item_images/inventory-background.png"
+dest_files=["res://.godot/imported/inventory-background.png-f0c7a43b858079b2bc4b35cddf7e391d.ctex"]
 
 [params]
 
