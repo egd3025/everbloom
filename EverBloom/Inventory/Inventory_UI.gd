@@ -10,7 +10,7 @@ func update_slots():
 	for i in range(min(inv.items.size(), slots.size())):
 		slots[i].update(inv.items[i])
 	
-func _input(InputEvent):
+func _input(event):
 	if Input.is_action_just_pressed("pause"):
 		if !get_tree().paused:
 			get_tree().paused = !get_tree().paused

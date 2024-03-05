@@ -75,3 +75,9 @@ func play_anim(movement):
 		elif movement == 0:
 			anim.play("back_idle")
 	
+
+func collect(item):
+	inv.insert(item)
+	
+func player():
+	pass # allows to detect when player is in range of collecting a plant
