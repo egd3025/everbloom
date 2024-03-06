@@ -14,3 +14,7 @@ func _input(event):
 		get_tree().paused = not get_tree().paused
 		get_tree().change_scene_to_file("res://Pause Menu.tscn")
 		
+	if Input.is_action_just_pressed("inventory"):
+		get_tree().change_scene_to_file("res://Inventory/inventory_ui.tscn")
+		
+		
