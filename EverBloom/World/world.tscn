@@ -2,9 +2,10 @@
 
 [ext_resource type="TileSet" uid="uid://cxa3a7h17ymwt" path="res://stardew.tres" id="1_5jp6c"]
 [ext_resource type="Script" path="res://World/world.gd" id="1_a85sf"]
-[ext_resource type="Script" path="res://Player/Player.gd" id="2_3431q"]
 [ext_resource type="Script" path="res://World/WorldGen.gd" id="2_rlebr"]
+[ext_resource type="Script" path="res://Player/Player.gd" id="4_fn72k"]
 [ext_resource type="Texture2D" uid="uid://br34h1te2q78s" path="res://cup_noodle/Basic Charakter Spritesheet.png" id="4_h38wm"]
+[ext_resource type="Resource" uid="uid://dsa4i547iaexd" path="res://Inventory/player_inv.tres" id="5_bvxdf"]
 [ext_resource type="PackedScene" uid="uid://byhgnas87o1gb" path="res://Plants/Plant.tscn" id="6_sfo2u"]
 [ext_resource type="Script" path="res://World/DayTimer.gd" id="7_qxuh3"]
 [ext_resource type="Script" path="res://World/saver_loader.gd" id="8_86fwg"]
@@ -143,8 +144,9 @@ layer_1/tile_data = PackedInt32Array()
 script = ExtResource("2_rlebr")
 
 [node name="player" type="CharacterBody2D" parent="."]
-position = Vector2(87, 76)
-script = ExtResource("2_3431q")
+position = Vector2(130, 89)
+script = ExtResource("4_fn72k")
+inv = ExtResource("5_bvxdf")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]

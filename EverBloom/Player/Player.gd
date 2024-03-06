@@ -3,6 +3,9 @@ extends CharacterBody2D
 const speed = 100
 var current_dir = "none"
 
+# Connects player to player_inv
+@export var inv: Inv
+
 # when the player loads -  the first animation shown is the front_idle
 func _ready():
 	$AnimatedSprite2D.play("front_idle")
@@ -72,3 +75,9 @@ func play_anim(movement):
 		elif movement == 0:
 			anim.play("back_idle")
 	
+
+func collect(item):
+	inv.insert(item)
+	
+func player():
+	pass # allows to detect when player is in range of collecting a plant
