@@ -7,6 +7,7 @@ var player_in_area = false
 var wheat = preload("res://Inventory/items/wheat_collectable.tscn")
 
 @export var item: InvItem
+var player = null
 
 
 # Called when the node enters the scene tree for the first time.
@@ -39,19 +40,13 @@ func _on_timer_timeout():
 		
 func _input(event):
 	if Input.is_action_pressed("collect"):
-		if player_in_area and stage < 5:
-			match stage:
-				1:
-					plant.frame = 1
-		if player_in_area and stage == 5:
+		if player_in_area and stage > 4:
 			drop_wheat()
-			match stage:
-				1:
-					plant.frame = 1
 
 func _on_pickable_area_body_entered(body):
 	if body.has_method("player"):
 		player_in_area = true
+		player = body
 
 func _on_pickable_area_body_exited(body):
 	if body.has_method("player"):
@@ -62,3 +57,4 @@ func drop_wheat():
 	wheat_instance.global_position = $Marker2D.global_position
 	# ^ takes the wheat collectable and puts it at the marker2d position
 	get_parent().add_child(wheat_instance)
+	player.collect(item)
