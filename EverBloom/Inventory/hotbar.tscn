@@ -1,0 +1,53 @@
+[gd_scene load_steps=10 format=3 uid="uid://biqtig12l8coi"]
+
+[ext_resource type="Script" path="res://Inventory/hotbar.gd" id="1_d8k3b"]
+[ext_resource type="PackedScene" uid="uid://cnxgk2pkqx14u" path="res://Inventory/item_button.tscn" id="2_fpvwt"]
+[ext_resource type="Texture2D" uid="uid://cofy74lsnx5mt" path="res://Inventory/item_images/Hoe.png" id="2_lgmll"]
+[ext_resource type="Texture2D" uid="uid://di0t0tbdw2n5k" path="res://Inventory/item_images/Watering_Can.png" id="3_s2vba"]
+[ext_resource type="Texture2D" uid="uid://xlvtxf13flps" path="res://Inventory/item_images/Wheat_Seed.png" id="4_37sh0"]
+[ext_resource type="Resource" uid="uid://bvqwlpi3b45y5" path="res://Inventory/items/Axe.tres" id="4_511m7"]
+[ext_resource type="Resource" uid="uid://c8v8eg7gxnh2g" path="res://Inventory/items/Hoe.tres" id="5_ud2k4"]
+[ext_resource type="Resource" uid="uid://utvbagomy18j" path="res://Inventory/items/Watering_Can.tres" id="7_bbfk7"]
+[ext_resource type="Resource" uid="uid://qdqoree4p8yh" path="res://Inventory/items/Wheat_Seed.tres" id="9_qtq2a"]
+
+[node name="Hotbar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d8k3b")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -54.0
+offset_top = -24.0
+offset_right = 54.0
+grow_horizontal = 2
+grow_vertical = 0
+columns = 10
+
+[node name="Item_Button1" parent="GridContainer" instance=ExtResource("2_fpvwt")]
+layout_mode = 2
+item = ExtResource("4_511m7")
+
+[node name="Item_Button2" parent="GridContainer" instance=ExtResource("2_fpvwt")]
+layout_mode = 2
+icon = ExtResource("2_lgmll")
+item = ExtResource("5_ud2k4")
+
+[node name="Item_Button3" parent="GridContainer" instance=ExtResource("2_fpvwt")]
+layout_mode = 2
+icon = ExtResource("3_s2vba")
+item = ExtResource("7_bbfk7")
+
+[node name="Item_Button4" parent="GridContainer" instance=ExtResource("2_fpvwt")]
+layout_mode = 2
+icon = ExtResource("4_37sh0")
+item = ExtResource("9_qtq2a")
