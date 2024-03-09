@@ -39,7 +39,7 @@ func _on_timer_timeout():
 
 		
 func _input(event):
-	if Input.is_action_pressed("collect"):
+	if event.is_action_pressed("collect"):
 		if player_in_area and stage > 4:
 			drop_wheat()
 

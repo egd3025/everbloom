@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3c828weofelb"]
+
+[ext_resource type="Texture2D" uid="uid://beob1uh75vjs8" path="res://Inventory/item_images/Stick.png" id="1_x85g4"]
+
+[node name="stick_collectable" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_x85g4")

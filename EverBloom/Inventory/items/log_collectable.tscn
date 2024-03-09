@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqih5x11iupgy"]
+
+[ext_resource type="Texture2D" uid="uid://cum4f75c1isau" path="res://Inventory/item_images/Log.png" id="1_fhkw6"]
+
+[node name="log_collectable" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fhkw6")
