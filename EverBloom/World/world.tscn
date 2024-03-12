@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://dsa4i547iaexd" path="res://Inventory/player_inv.tres" id="5_bvxdf"]
 [ext_resource type="PackedScene" uid="uid://byhgnas87o1gb" path="res://Plants/Plant.tscn" id="6_sfo2u"]
 [ext_resource type="Script" path="res://World/DayTimer.gd" id="7_qxuh3"]
-[ext_resource type="Script" path="res://World/saver_loader.gd" id="8_86fwg"]
+[ext_resource type="Script" path="res://load and save/saver_loader.gd" id="8_86fwg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cplsi"]
 radius = 4.0
