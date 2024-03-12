@@ -12,11 +12,11 @@ func update_slots():
 		slots[i].update(inv.slots[i])
 	
 func _input(event):
-	if Input.is_action_just_pressed("pause"):
+	if event.is_action_pressed("pause"):
 		if !get_tree().paused:
 			get_tree().paused = !get_tree().paused
 		get_tree().change_scene_to_file("res://Pause Menu.tscn")
-	if Input.is_action_just_pressed("inventory"):
+	if event.is_action_pressed("inventory"):
 		get_tree().change_scene_to_file("res://World/world.tscn")
 
 func _on_inventory_button_pressed():
