@@ -1,13 +1,13 @@
-[gd_scene load_steps=23 format=3 uid="uid://bnakm63s4hcam"]
+[gd_scene load_steps=23 format=3 uid="uid://bpgqeypf22j18"]
 
 [ext_resource type="TileSet" uid="uid://cxa3a7h17ymwt" path="res://stardew.tres" id="1_5jp6c"]
-[ext_resource type="Script" path="res://World/world.gd" id="1_a85sf"]
+[ext_resource type="Script" path="res://World/world.gd" id="1_yfac7"]
 [ext_resource type="Script" path="res://World/WorldGen.gd" id="2_rlebr"]
 [ext_resource type="Script" path="res://Player/Player.gd" id="4_fn72k"]
 [ext_resource type="Texture2D" uid="uid://br34h1te2q78s" path="res://cup_noodle/Basic Charakter Spritesheet.png" id="4_h38wm"]
 [ext_resource type="Resource" uid="uid://dsa4i547iaexd" path="res://Inventory/player_inv.tres" id="5_bvxdf"]
 [ext_resource type="PackedScene" uid="uid://byhgnas87o1gb" path="res://Plants/Plant.tscn" id="6_sfo2u"]
-[ext_resource type="Script" path="res://World/DayTimer.gd" id="7_qxuh3"]
+[ext_resource type="Script" path="res://World/DayCycle_Label.gd" id="8_gcads"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cplsi"]
 radius = 4.0
@@ -132,7 +132,7 @@ animations = [{
 
 [node name="World" type="Node2D"]
 process_mode = 1
-script = ExtResource("1_a85sf")
+script = ExtResource("1_yfac7")
 
 [node name="Floor" type="TileMap" parent="."]
 tile_set = ExtResource("1_5jp6c")
@@ -165,19 +165,18 @@ position = Vector2(53, 33)
 [node name="Panel" type="Panel" parent="."]
 offset_right = 56.0
 offset_bottom = 17.0
-script = ExtResource("7_qxuh3")
+script = ExtResource("8_gcads")
 
 [node name="DayCycle_Label" type="Label" parent="Panel"]
-layout_mode = 0
 offset_right = 56.0
 offset_bottom = 17.0
 theme_override_font_sizes/font_size = 12
-text = "Morning"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Timer" type="Timer" parent="Panel"]
-wait_time = 10.0
+[node name="day_timer" type="Timer" parent="Panel"]
+wait_time = 120.0
+one_shot = true
 autostart = true
 
-[connection signal="timeout" from="Panel/Timer" to="Panel" method="_on_timer_timeout"]
+[connection signal="timeout" from="Panel/day_timer" to="Panel" method="_on_timer_timeout"]
