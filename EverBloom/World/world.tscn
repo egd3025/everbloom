@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://bnakm63s4hcam"]
+[gd_scene load_steps=23 format=3 uid="uid://bnakm63s4hcam"]
 
 [ext_resource type="TileSet" uid="uid://cxa3a7h17ymwt" path="res://stardew.tres" id="1_5jp6c"]
 [ext_resource type="Script" path="res://World/world.gd" id="1_a85sf"]
-[ext_resource type="Script" path="res://Player/Player.gd" id="2_3431q"]
 [ext_resource type="Script" path="res://World/WorldGen.gd" id="2_rlebr"]
+[ext_resource type="Script" path="res://Player/Player.gd" id="4_fn72k"]
 [ext_resource type="Texture2D" uid="uid://br34h1te2q78s" path="res://cup_noodle/Basic Charakter Spritesheet.png" id="4_h38wm"]
+[ext_resource type="Resource" uid="uid://dsa4i547iaexd" path="res://Inventory/player_inv.tres" id="5_bvxdf"]
 [ext_resource type="PackedScene" uid="uid://byhgnas87o1gb" path="res://Plants/Plant.tscn" id="6_sfo2u"]
 [ext_resource type="Script" path="res://World/DayTimer.gd" id="7_qxuh3"]
 
@@ -131,32 +132,20 @@ animations = [{
 
 [node name="World" type="Node2D"]
 process_mode = 1
-y_sort_enabled = true
 script = ExtResource("1_a85sf")
 
 [node name="Floor" type="TileMap" parent="."]
-z_index = 1
-y_sort_enabled = true
 tile_set = ExtResource("1_5jp6c")
 format = 2
 layer_0/name = "0"
-layer_0/tile_data = PackedInt32Array(-196591, 262148, 1, -196590, 589828, 6, -131054, 131076, 2, -131055, 327684, 1, -131056, 65540, 1, -196592, 131076, 2, -262127, 262148, 1, -65519, 131076, 2, -65520, 393220, 6, -131057, 65540, 1, -65521, 393220, 6, -65522, 4, 2, -131058, 524292, 6, -196593, 393220, 6, -196594, 327684, 6, -262129, 65540, 1, -262128, 196612, 5, -327664, 65540, 1, -327663, 65540, 1, -262126, 131076, 2, -327662, 589828, 5, -393200, 458756, 5, -393199, 327684, 5, -393198, 131076, 0, -327665, 65540, 1, -262130, 65540, 1, -327666, 65540, 1, -393202, 327684, 5, -393201, 327684, 5, -196595, 4, 2, -262131, 524292, 6, -327667, 524292, 6, -393203, 4, 0, -393205, 65540, 0, -393209, 196612, 0, -458746, 65540, 1, -393210, 65540, 0, -327674, 524292, 2, -458747, 458756, 3, -458748, 262148, 1, -393212, 458756, 2, -327676, 655364, 3, -327677, 589828, 1, -393213, 524292, 3, -458749, 65540, 0, -327678, 65540, 1, -393214, 524292, 3, -458750, 65540, 0, -327679, 65540, 1, -393215, 524292, 3, -458751, 196612, 0, -327680, 65540, 1, -393216, 524292, 3, -262143, 65540, 1, -262144, 65540, 1, -196609, 589828, 3, -262145, 589828, 1, -327681, 589828, 2, -262146, 327684, 4, -196608, 393220, 3, -131073, 393220, 3, -196610, 327684, 3, -196611, 4, 2, -262147, 524292, 5, -196607, 393220, 3, -262142, 65540, 1, -262141, 589828, 0, -262140, 131076, 1, -196605, 393220, 3, -196606, 393220, 3, -131074, 4, 3, -196604, 458756, 1, -327675, 131076, 3, -131068, 65540, 2, -1, 65540, 1, -327682, 4, 1, -393217, 65540, 0, -393218, 196612, 0, -327683, 4, 0, -458752, 196612, 0, -524281, 65540, 1, -327673, 458756, 3, -458740, 4, 3, -327669, 458756, 3, -327670, 4, 3, -458739, 458756, 3, -524275, 196612, 0)
 layer_1/name = "1"
-layer_1/tile_data = PackedInt32Array(-131062, 393220, 6, -262134, 393220, 5, -196597, 589828, 5, -196599, 524292, 5, -262133, 131076, 0, -262135, 4, 0, -131063, 4, 2, -131061, 131076, 2)
-layer_2/name = "2"
-layer_2/y_sort_enabled = true
-layer_2/tile_data = PackedInt32Array()
-layer_3/name = "3"
-layer_3/tile_data = PackedInt32Array()
-layer_4/name = "4"
-layer_4/tile_data = PackedInt32Array()
+layer_1/tile_data = PackedInt32Array()
 script = ExtResource("2_rlebr")
 
 [node name="player" type="CharacterBody2D" parent="."]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(87, 76)
-script = ExtResource("2_3431q")
+position = Vector2(130, 89)
+script = ExtResource("4_fn72k")
+inv = ExtResource("5_bvxdf")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
