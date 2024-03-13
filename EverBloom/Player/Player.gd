@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const speed = 100
+const speed = 50
 var current_dir = "none"
 
 # Connects player to player_inv
