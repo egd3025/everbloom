@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dxl0dlv2jc1f5"]
-
-[ext_resource type="Texture2D" uid="uid://xlvtxf13flps" path="res://Inventory/item_images/Wheat_Seed.png" id="1_ukcc3"]
-
-[node name="wheat_seed_collectable" type="StaticBody2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_ukcc3")
