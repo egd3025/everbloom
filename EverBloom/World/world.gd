@@ -17,4 +17,7 @@ func _input(event):
 	if Input.is_action_just_pressed("inventory"):
 		get_tree().change_scene_to_file("res://Inventory/inventory_ui.tscn")
 		
-		
+
+
+func _on_day_timer_timeout():
+	pass # Replace with function body.
