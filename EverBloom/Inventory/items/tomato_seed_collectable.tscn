@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://svi74ord2s2a"]
+
+[ext_resource type="Texture2D" uid="uid://dx1yt6llsviiw" path="res://Inventory/item_images/Tomato_Seed.png" id="1_hlhxg"]
+
+[node name="tomato_seed_collectable" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_hlhxg")
