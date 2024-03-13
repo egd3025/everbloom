@@ -1,12 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://byhgnas87o1gb"]
+[gd_scene load_steps=5 format=3 uid="uid://byhgnas87o1gb"]
 
 [ext_resource type="Script" path="res://Plants/Plant.gd" id="1_egb8p"]
 [ext_resource type="Texture2D" uid="uid://c8a3mck1ac1vk" path="res://cup_noodle/Basic_Plants.png" id="2_rta03"]
+[ext_resource type="Resource" uid="uid://bov0m54vbd6lj" path="res://Inventory/items/Wheat.tres" id="2_t4qk8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_74do7"]
+radius = 15.0333
 
 [node name="Plant" type="Node2D"]
-z_index = 1
-y_sort_enabled = true
 script = ExtResource("1_egb8p")
+item = ExtResource("2_t4qk8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_rta03")
@@ -15,4 +18,13 @@ vframes = 2
 
 [node name="Timer" type="Timer" parent="."]
 
+[node name="pickable_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickable_area"]
+shape = SubResource("CircleShape2D_74do7")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="pickable_area" to="." method="_on_pickable_area_body_entered"]
+[connection signal="body_exited" from="pickable_area" to="." method="_on_pickable_area_body_exited"]
