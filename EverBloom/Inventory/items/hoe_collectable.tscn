@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bb1cw8elsohrh"]
-
-[ext_resource type="Texture2D" uid="uid://cofy74lsnx5mt" path="res://Inventory/item_images/Hoe.png" id="1_bxvp0"]
-
-[node name="hoe_collectable" type="StaticBody2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_bxvp0")
