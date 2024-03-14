@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://br34h1te2q78s" path="res://cup_noodle/Basic Charakter Spritesheet.png" id="4_h38wm"]
 [ext_resource type="Resource" uid="uid://dsa4i547iaexd" path="res://Inventory/player_inv.tres" id="5_bvxdf"]
 [ext_resource type="PackedScene" uid="uid://byhgnas87o1gb" path="res://Plants/Plant.tscn" id="6_sfo2u"]
-[ext_resource type="Script" path="res://World/DayTimer.gd" id="7_qxuh3"]
+[ext_resource type="Script" path="res://World/Panel.gd" id="8_mk3i5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cplsi"]
 radius = 4.0
@@ -171,7 +171,7 @@ position = Vector2(53, 33)
 [node name="Panel" type="Panel" parent="."]
 offset_right = 56.0
 offset_bottom = 17.0
-script = ExtResource("7_qxuh3")
+script = ExtResource("8_mk3i5")
 
 [node name="DayCycle_Label" type="Label" parent="Panel"]
 layout_mode = 0
@@ -181,9 +181,3 @@ theme_override_font_sizes/font_size = 12
 text = "Morning"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Timer" type="Timer" parent="Panel"]
-wait_time = 10.0
-autostart = true
-
-[connection signal="timeout" from="Panel/Timer" to="Panel" method="_on_timer_timeout"]
