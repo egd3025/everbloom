@@ -499,9 +499,8 @@ texture = ExtResource("1_ixsi7")
 8:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:6/0/physics_layer_0/angular_velocity = 0.0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t2tev"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wofjc"]
 texture = ExtResource("4_h34bj")
-margins = Vector2i(0, 1)
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -727,7 +726,6 @@ margins = Vector2i(0, 1)
 6:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:5/0/physics_layer_0/angular_velocity = 0.0
 7:5/0 = 0
-7:5/0/terrain_set = 0
 7:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:5/0/physics_layer_0/angular_velocity = 0.0
 8:5/0 = 0
@@ -797,4 +795,4 @@ terrain_set_0/terrain_0/color = Color(0.717647, 0, 0.258824, 1)
 sources/2 = SubResource("TileSetAtlasSource_t4pcs")
 sources/0 = SubResource("TileSetAtlasSource_inrql")
 sources/1 = SubResource("TileSetAtlasSource_7mwv3")
-sources/3 = SubResource("TileSetAtlasSource_t2tev")
+sources/6 = SubResource("TileSetAtlasSource_wofjc")

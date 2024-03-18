@@ -23,11 +23,8 @@ func _input(event):
 		var coord = to_local(Vector2(player.position.x,player.position.y))
 		coord = floor.local_to_map(coord)
 		var coordList = []
-		for x in range(-1, 2):
-			for y in range(-1,2):
-				coordList.append(Vector2i(player.position.x + x,player.position.y + y))
-		floor.set_cell(1, coord, 3, Vector2(1,1))
-		floor.set_cells_terrain_connect(1, coordList, 0, 0)
+		floor.set_cell(1, coord, 6, Vector2(1,1))
+		floor.set_cells_terrain_connect(1, [coord], 0, 0)
 
 		
 	
