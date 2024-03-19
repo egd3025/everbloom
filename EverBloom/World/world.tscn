@@ -181,3 +181,21 @@ theme_override_font_sizes/font_size = 12
 text = "Morning"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="save" type="Button" parent="Panel"]
+layout_mode = 0
+offset_top = 17.0
+offset_right = 8.0
+offset_bottom = 25.0
+text = "save"
+
+[node name="load" type="Button" parent="Panel"]
+layout_mode = 0
+offset_top = 48.0
+offset_right = 8.0
+offset_bottom = 56.0
+text = "load"
+
+[connection signal="pressed" from="Panel/save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Panel/save" to="Panel" method="_on_save_pressed"]
+[connection signal="pressed" from="Panel/load" to="Panel" method="_on_load_pressed"]
