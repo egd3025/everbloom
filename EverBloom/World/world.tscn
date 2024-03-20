@@ -196,6 +196,5 @@ offset_right = 8.0
 offset_bottom = 56.0
 text = "load"
 
-[connection signal="pressed" from="Panel/save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="Panel/save" to="Panel" method="_on_save_pressed"]
 [connection signal="pressed" from="Panel/load" to="Panel" method="_on_load_pressed"]
