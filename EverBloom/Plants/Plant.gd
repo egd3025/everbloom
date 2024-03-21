@@ -31,7 +31,7 @@ func _process(delta):
 			plant.frame = 5
 		
 
-
+	
 func _on_timer_timeout():
 	if stage <= 5:
 		stage += 1
