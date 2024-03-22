@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bnakm63s4hcam"]
+[gd_scene load_steps=36 format=3 uid="uid://bnakm63s4hcam"]
 
 [ext_resource type="TileSet" uid="uid://cxa3a7h17ymwt" path="res://stardew.tres" id="1_5jp6c"]
 [ext_resource type="Script" path="res://World/world.gd" id="1_a85sf"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://br34h1te2q78s" path="res://cup_noodle/Basic Charakter Spritesheet.png" id="4_h38wm"]
 [ext_resource type="Resource" uid="uid://dsa4i547iaexd" path="res://Inventory/player_inv.tres" id="5_bvxdf"]
 [ext_resource type="PackedScene" uid="uid://byhgnas87o1gb" path="res://Plants/Plant.tscn" id="6_sfo2u"]
+[ext_resource type="Texture2D" uid="uid://c5r10syl42xci" path="res://cup_noodle/Basic Charakter Actions.png" id="7_j8vuu"]
 [ext_resource type="Script" path="res://World/Panel.gd" id="8_mk3i5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cplsi"]
@@ -60,6 +61,54 @@ region = Rect2(96, 144, 48, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_kj6l4"]
 atlas = ExtResource("4_h38wm")
 region = Rect2(144, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnq52"]
+atlas = ExtResource("7_j8vuu")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6he5"]
+atlas = ExtResource("7_j8vuu")
+region = Rect2(48, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wnf7"]
+atlas = ExtResource("7_j8vuu")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ac4e8"]
+atlas = ExtResource("7_j8vuu")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4230"]
+atlas = ExtResource("7_j8vuu")
+region = Rect2(0, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5bv7"]
+atlas = ExtResource("7_j8vuu")
+region = Rect2(48, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tygus"]
+atlas = ExtResource("7_j8vuu")
+region = Rect2(0, 432, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54muw"]
+atlas = ExtResource("7_j8vuu")
+region = Rect2(48, 432, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cor2e"]
+atlas = ExtResource("7_j8vuu")
+region = Rect2(0, 384, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y45bo"]
+atlas = ExtResource("7_j8vuu")
+region = Rect2(48, 384, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0iic8"]
+atlas = ExtResource("7_j8vuu")
+region = Rect2(0, 528, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqkpa"]
+atlas = ExtResource("7_j8vuu")
+region = Rect2(48, 528, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u4ifb"]
 animations = [{
@@ -128,6 +177,72 @@ animations = [{
 "loop": true,
 "name": &"side_walk",
 "speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnq52")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6he5")
+}],
+"loop": true,
+"name": &"till_back",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wnf7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ac4e8")
+}],
+"loop": true,
+"name": &"till_front",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4230")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o5bv7")
+}],
+"loop": true,
+"name": &"till_side",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tygus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54muw")
+}],
+"loop": true,
+"name": &"water_back",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cor2e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y45bo")
+}],
+"loop": true,
+"name": &"water_front",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0iic8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqkpa")
+}],
+"loop": true,
+"name": &"water_side",
+"speed": 2.0
 }]
 
 [node name="World" type="Node2D"]
@@ -164,7 +279,9 @@ shape = SubResource("CapsuleShape2D_cplsi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
 sprite_frames = SubResource("SpriteFrames_u4ifb")
-animation = &"side_walk"
+animation = &"front_walk"
+frame = 1
+frame_progress = 0.891388
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 
