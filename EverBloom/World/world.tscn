@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bnakm63s4hcam"]
+[gd_scene load_steps=37 format=3 uid="uid://bnakm63s4hcam"]
 
 [ext_resource type="TileSet" uid="uid://cxa3a7h17ymwt" path="res://stardew.tres" id="1_5jp6c"]
 [ext_resource type="Script" path="res://World/world.gd" id="1_a85sf"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://byhgnas87o1gb" path="res://Plants/Plant.tscn" id="6_sfo2u"]
 [ext_resource type="Texture2D" uid="uid://c5r10syl42xci" path="res://cup_noodle/Basic Charakter Actions.png" id="7_j8vuu"]
 [ext_resource type="Script" path="res://World/Panel.gd" id="8_mk3i5"]
+[ext_resource type="Script" path="res://World/saveLoadMenu.gd" id="10_2aius"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cplsi"]
 radius = 4.0
@@ -302,19 +303,37 @@ text = "Morning"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="save" type="Button" parent="Saving_Time" groups=["Persist"]]
-layout_mode = 0
-offset_top = 17.0
-offset_right = 8.0
-offset_bottom = 25.0
+[node name="saveLoadMenu" type="VBoxContainer" parent="Saving_Time"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.295
+anchor_top = 5.249
+anchor_right = 2.295
+anchor_bottom = 5.249
+offset_left = -33.52
+offset_top = -64.233
+offset_right = 33.48
+offset_bottom = 71.767
+script = ExtResource("10_2aius")
+
+[node name="resume" type="Button" parent="Saving_Time/saveLoadMenu" groups=["Persist"]]
+layout_mode = 2
+text = "resume"
+
+[node name="save" type="Button" parent="Saving_Time/saveLoadMenu" groups=["Persist"]]
+layout_mode = 2
 text = "save"
 
-[node name="load" type="Button" parent="Saving_Time" groups=["Persist"]]
-layout_mode = 0
-offset_top = 48.0
-offset_right = 8.0
-offset_bottom = 56.0
+[node name="load" type="Button" parent="Saving_Time/saveLoadMenu" groups=["Persist"]]
+layout_mode = 2
 text = "load"
 
-[connection signal="pressed" from="Saving_Time/save" to="Saving_Time" method="_on_save_pressed"]
-[connection signal="pressed" from="Saving_Time/load" to="Saving_Time" method="_on_load_pressed"]
+[node name="exit" type="Button" parent="Saving_Time/saveLoadMenu" groups=["Persist"]]
+layout_mode = 2
+text = "exit
+"
+
+[connection signal="pressed" from="Saving_Time/saveLoadMenu/resume" to="Saving_Time/saveLoadMenu" method="_on_resume_pressed"]
+[connection signal="pressed" from="Saving_Time/saveLoadMenu/save" to="Saving_Time" method="_on_save_pressed"]
+[connection signal="pressed" from="Saving_Time/saveLoadMenu/load" to="Saving_Time" method="_on_load_pressed"]
+[connection signal="pressed" from="Saving_Time/saveLoadMenu/exit" to="Saving_Time/saveLoadMenu" method="_on_exit_pressed"]
