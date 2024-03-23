@@ -288,12 +288,12 @@ frame_progress = 0.891388
 [node name="Plant" parent="." groups=["Persist"] instance=ExtResource("6_sfo2u")]
 position = Vector2(53, 33)
 
-[node name="Panel" type="Panel" parent="." groups=["Persist"]]
+[node name="Saving_Time" type="Panel" parent="." groups=["Persist"]]
 offset_right = 56.0
 offset_bottom = 17.0
 script = ExtResource("8_mk3i5")
 
-[node name="DayCycle_Label" type="Label" parent="Panel" groups=["Persist"]]
+[node name="DayCycle_Label" type="Label" parent="Saving_Time" groups=["Persist"]]
 layout_mode = 0
 offset_right = 56.0
 offset_bottom = 17.0
@@ -302,19 +302,19 @@ text = "Morning"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="save" type="Button" parent="Panel" groups=["Persist"]]
+[node name="save" type="Button" parent="Saving_Time" groups=["Persist"]]
 layout_mode = 0
 offset_top = 17.0
 offset_right = 8.0
 offset_bottom = 25.0
 text = "save"
 
-[node name="load" type="Button" parent="Panel" groups=["Persist"]]
+[node name="load" type="Button" parent="Saving_Time" groups=["Persist"]]
 layout_mode = 0
 offset_top = 48.0
 offset_right = 8.0
 offset_bottom = 56.0
 text = "load"
 
-[connection signal="pressed" from="Panel/save" to="Panel" method="_on_save_pressed"]
-[connection signal="pressed" from="Panel/load" to="Panel" method="_on_load_pressed"]
+[connection signal="pressed" from="Saving_Time/save" to="Saving_Time" method="_on_save_pressed"]
+[connection signal="pressed" from="Saving_Time/load" to="Saving_Time" method="_on_load_pressed"]

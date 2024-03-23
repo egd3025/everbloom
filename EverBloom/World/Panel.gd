@@ -1,7 +1,8 @@
 extends Panel
 @onready var player = $"../player"
 @onready var floor = $"../Floor"
-
+@onready var world = $".."
+const plant = preload("res://Plants/Plant.tscn")
 var time_index = 0
 var times = ["10:00 AM", "12:00 PM", "02:00 PM", "04:00 PM", "06:00 PM"]
 var time_accumulator = 0
@@ -11,6 +12,7 @@ var update_interval = 20  # 2 minutes in seconds
 var DayCycle_Label: Label
 var save_pathPlayer = "user://variable.save"
 var save_tileMap = "user://map.json"
+var save_Plants = "user://plants.json"
 
 
 func _ready():
@@ -41,12 +43,14 @@ func _process(delta):
 func _on_save_pressed():
 	savePlayer()
 	saveTileMap()
+	savePlants()
 	print("GAME SAVED")
 
 
 func _on_load_pressed():
 	load_game()
 	load_Map()
+	loadPlants()
 	print("GAME LOADED")
 
 
@@ -67,6 +71,42 @@ func savePlayer():
 	var file = FileAccess.open(save_pathPlayer, FileAccess.WRITE)
 	file.store_var(player.position.x)
 	file.store_var(player.position.y)
+	
+	
+func savePlants():
+	var file = FileAccess.open(save_Plants, FileAccess.WRITE)
+	var data = {}
+	data["plants"] = []
+	for plant in get_tree().get_nodes_in_group("Plants"):
+		var stage = plant.stage
+		data["plants"].append({"x": plant.position.x, "y": plant.position.y, "stage": stage})
+	
+	file.store_line(JSON.stringify(data))
+
+func loadPlants():
+	for plant in get_tree().get_nodes_in_group("Plants"):
+		plant.queue_free()
+		
+	
+	var file = FileAccess.open(save_Plants, FileAccess.READ)
+	var data = JSON.parse_string(file.get_line())
+	print(data)
+	for tile_data in data["plants"]:
+		var x = tile_data["x"]
+		var y = tile_data["y"]
+		var stage = tile_data["stage"]
+		print(stage)
+		var plant1 = plant.instantiate()
+		plant1.position.x = x
+		plant1.position.y = y
+		plant1.set_stage(stage)
+		plant1.add_to_group("Plants")
+		world.add_child(plant1)
+
+		
+		
+	
+	
 	
 func load_game():
 	if FileAccess.file_exists(save_pathPlayer):
@@ -92,7 +132,12 @@ func load_Map():
 		var tileSource = tile_data["tileSource"]
 		var layer = tile_data["layer"]
 		floor.set_cell(layer, Vector2i(x,y), tileSource, Vector2i(tileAtlasX,tileAtlasY))
-
+		
+func load_Plants():
+	
+	var file = FileAccess.open(save_tileMap, FileAccess.READ)
+	var data = JSON.parse_string(file.get_line())
+	
 		
 	
 		
