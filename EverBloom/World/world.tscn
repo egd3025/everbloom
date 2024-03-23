@@ -130,12 +130,12 @@ animations = [{
 "speed": 3.0
 }]
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" groups=["Persist"]]
 process_mode = 1
 y_sort_enabled = true
 script = ExtResource("1_a85sf")
 
-[node name="Floor" type="TileMap" parent="."]
+[node name="Floor" type="TileMap" parent="." groups=["Persist"]]
 y_sort_enabled = true
 tile_set = ExtResource("1_5jp6c")
 format = 2
@@ -149,7 +149,7 @@ layer_2/y_sort_enabled = true
 layer_2/tile_data = PackedInt32Array()
 script = ExtResource("2_rlebr")
 
-[node name="player" type="CharacterBody2D" parent="."]
+[node name="player" type="CharacterBody2D" parent="." groups=["Persist"]]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(130, 89)
@@ -157,26 +157,26 @@ script = ExtResource("4_fn72k")
 inv = ExtResource("5_bvxdf")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player" groups=["Persist"]]
 position = Vector2(-1, 9)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_cplsi")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player" groups=["Persist"]]
 sprite_frames = SubResource("SpriteFrames_u4ifb")
 animation = &"side_walk"
 
-[node name="Camera2D" type="Camera2D" parent="player"]
+[node name="Camera2D" type="Camera2D" parent="player" groups=["Persist"]]
 
-[node name="Plant" parent="." instance=ExtResource("6_sfo2u")]
+[node name="Plant" parent="." groups=["Persist"] instance=ExtResource("6_sfo2u")]
 position = Vector2(53, 33)
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." groups=["Persist"]]
 offset_right = 56.0
 offset_bottom = 17.0
 script = ExtResource("8_mk3i5")
 
-[node name="DayCycle_Label" type="Label" parent="Panel"]
+[node name="DayCycle_Label" type="Label" parent="Panel" groups=["Persist"]]
 layout_mode = 0
 offset_right = 56.0
 offset_bottom = 17.0
@@ -185,14 +185,14 @@ text = "Morning"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="save" type="Button" parent="Panel"]
+[node name="save" type="Button" parent="Panel" groups=["Persist"]]
 layout_mode = 0
 offset_top = 17.0
 offset_right = 8.0
 offset_bottom = 25.0
 text = "save"
 
-[node name="load" type="Button" parent="Panel"]
+[node name="load" type="Button" parent="Panel" groups=["Persist"]]
 layout_mode = 0
 offset_top = 48.0
 offset_right = 8.0
