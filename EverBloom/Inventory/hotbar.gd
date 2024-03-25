@@ -1,16 +1,18 @@
-extends Control
+extends Inv
 
-# @onready var player : Player = get_tree().get_first_node_in_group("player") 
-# ^this is to connect player to hotbar so we can separate equippable items
-# items and not. 
-#^^^ figure this mess out girl :((
+class_name HotBar
 
-@onready var grid_container : GridContainer = $GridContainer
+signal hotupdate
 
-func _ready():
-	pass
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func insert(item: InvItem):
+	var itemslots = slots.filter(func(slot): return slot.item == item)
+	# is this item already in the inventory? add it to the rest
+	if !itemslots.is_empty():
+		itemslots[0].amount += 1
+	else:
+		var emptyslots = slots.filter(func(slot): return slot.item == null)
+		# item is not in the inventory already, goes into a new slot
+		if !emptyslots.is_empty():
+			emptyslots[0].item = item
+			emptyslots[0].amount = 1
+	hotupdate.emit()

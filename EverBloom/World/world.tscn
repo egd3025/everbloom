@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Player/Player.gd" id="4_fn72k"]
 [ext_resource type="Texture2D" uid="uid://br34h1te2q78s" path="res://cup_noodle/Basic Charakter Spritesheet.png" id="4_h38wm"]
 [ext_resource type="Resource" uid="uid://dsa4i547iaexd" path="res://Inventory/player_inv.tres" id="5_bvxdf"]
+[ext_resource type="Resource" uid="uid://bq3httew1fs3h" path="res://Inventory/player_hotbar.tres" id="6_pdglf"]
 [ext_resource type="PackedScene" uid="uid://byhgnas87o1gb" path="res://Plants/Plant.tscn" id="6_sfo2u"]
 [ext_resource type="Texture2D" uid="uid://c5r10syl42xci" path="res://cup_noodle/Basic Charakter Actions.png" id="7_j8vuu"]
 [ext_resource type="Script" path="res://World/Panel.gd" id="8_mk3i5"]
@@ -268,9 +269,10 @@ script = ExtResource("2_rlebr")
 [node name="player" type="CharacterBody2D" parent="." groups=["Persist"]]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(130, 89)
+position = Vector2(127, 90)
 script = ExtResource("4_fn72k")
 inv = ExtResource("5_bvxdf")
+hotbar = ExtResource("6_pdglf")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player" groups=["Persist"]]

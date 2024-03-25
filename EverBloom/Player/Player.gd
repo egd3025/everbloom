@@ -5,6 +5,7 @@ var current_dir = "none"
 
 # Connects player to player_inv
 @export var inv: Inv
+@export var hotbar: HotBar 
 
 # when the player loads -  the first animation shown is the front_idle
 func _ready():
