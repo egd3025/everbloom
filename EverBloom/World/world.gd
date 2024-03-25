@@ -39,5 +39,3 @@ func _input(event):
 			floor.set_cell(2, coord, 6, Vector2(1,1))
 			floor.set_cells_terrain_connect(2, [coord], 0, 0)
 
-		
-	
