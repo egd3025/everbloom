@@ -11,6 +11,7 @@ func _input(event):
 		var plant1 = plant.instantiate()
 		plant1.position = get_global_mouse_position()
 		world.add_child(plant1)
+		plant1.add_to_group("Plants")
 		
 	if Input.is_action_just_pressed("pause"):
 		get_tree().paused = not get_tree().paused
@@ -27,5 +28,3 @@ func _input(event):
 			floor.set_cell(2, coord, 6, Vector2(1,1))
 			floor.set_cells_terrain_connect(2, [coord], 0, 0)
 
-		
-	

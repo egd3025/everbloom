@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bnakm63s4hcam"]
+[gd_scene load_steps=37 format=3 uid="uid://bnakm63s4hcam"]
 
 [ext_resource type="TileSet" uid="uid://cxa3a7h17ymwt" path="res://stardew.tres" id="1_5jp6c"]
 [ext_resource type="Script" path="res://World/world.gd" id="1_a85sf"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://byhgnas87o1gb" path="res://Plants/Plant.tscn" id="6_sfo2u"]
 [ext_resource type="Texture2D" uid="uid://c5r10syl42xci" path="res://cup_noodle/Basic Charakter Actions.png" id="7_j8vuu"]
 [ext_resource type="Script" path="res://World/Panel.gd" id="8_mk3i5"]
+[ext_resource type="Script" path="res://World/saveLoadMenu.gd" id="10_2aius"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cplsi"]
 radius = 4.0
@@ -245,12 +246,12 @@ animations = [{
 "speed": 2.0
 }]
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" groups=["Persist"]]
 process_mode = 1
 y_sort_enabled = true
 script = ExtResource("1_a85sf")
 
-[node name="Floor" type="TileMap" parent="."]
+[node name="Floor" type="TileMap" parent="." groups=["Persist"]]
 y_sort_enabled = true
 tile_set = ExtResource("1_5jp6c")
 format = 2
@@ -264,7 +265,7 @@ layer_2/y_sort_enabled = true
 layer_2/tile_data = PackedInt32Array()
 script = ExtResource("2_rlebr")
 
-[node name="player" type="CharacterBody2D" parent="."]
+[node name="player" type="CharacterBody2D" parent="." groups=["Persist"]]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(130, 89)
@@ -272,28 +273,28 @@ script = ExtResource("4_fn72k")
 inv = ExtResource("5_bvxdf")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player" groups=["Persist"]]
 position = Vector2(-1, 9)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_cplsi")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player" groups=["Persist"]]
 sprite_frames = SubResource("SpriteFrames_u4ifb")
 animation = &"front_walk"
 frame = 1
 frame_progress = 0.891388
 
-[node name="Camera2D" type="Camera2D" parent="player"]
+[node name="Camera2D" type="Camera2D" parent="player" groups=["Persist"]]
 
-[node name="Plant" parent="." instance=ExtResource("6_sfo2u")]
+[node name="Plant" parent="." groups=["Persist"] instance=ExtResource("6_sfo2u")]
 position = Vector2(53, 33)
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Saving_Time" type="Panel" parent="." groups=["Persist"]]
 offset_right = 56.0
 offset_bottom = 17.0
 script = ExtResource("8_mk3i5")
 
-[node name="DayCycle_Label" type="Label" parent="Panel"]
+[node name="DayCycle_Label" type="Label" parent="Saving_Time" groups=["Persist"]]
 layout_mode = 0
 offset_right = 56.0
 offset_bottom = 17.0
@@ -301,3 +302,38 @@ theme_override_font_sizes/font_size = 12
 text = "Morning"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="saveLoadMenu" type="VBoxContainer" parent="Saving_Time"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.295
+anchor_top = 5.249
+anchor_right = 2.295
+anchor_bottom = 5.249
+offset_left = -33.52
+offset_top = -64.233
+offset_right = 33.48
+offset_bottom = 71.767
+script = ExtResource("10_2aius")
+
+[node name="resume" type="Button" parent="Saving_Time/saveLoadMenu" groups=["Persist"]]
+layout_mode = 2
+text = "resume"
+
+[node name="save" type="Button" parent="Saving_Time/saveLoadMenu" groups=["Persist"]]
+layout_mode = 2
+text = "save"
+
+[node name="load" type="Button" parent="Saving_Time/saveLoadMenu" groups=["Persist"]]
+layout_mode = 2
+text = "load"
+
+[node name="exit" type="Button" parent="Saving_Time/saveLoadMenu" groups=["Persist"]]
+layout_mode = 2
+text = "exit
+"
+
+[connection signal="pressed" from="Saving_Time/saveLoadMenu/resume" to="Saving_Time/saveLoadMenu" method="_on_resume_pressed"]
+[connection signal="pressed" from="Saving_Time/saveLoadMenu/save" to="Saving_Time" method="_on_save_pressed"]
+[connection signal="pressed" from="Saving_Time/saveLoadMenu/load" to="Saving_Time" method="_on_load_pressed"]
+[connection signal="pressed" from="Saving_Time/saveLoadMenu/exit" to="Saving_Time/saveLoadMenu" method="_on_exit_pressed"]
