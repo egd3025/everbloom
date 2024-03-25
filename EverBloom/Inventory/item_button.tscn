@@ -1,8 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://cnxgk2pkqx14u"]
-
-[ext_resource type="Texture2D" uid="uid://rowm18isvpkc" path="res://Inventory/item_images/Axe.png" id="1_7on6y"]
-[ext_resource type="Script" path="res://Inventory/Item_Button.gd" id="2_jaou0"]
-
-[node name="Item_Button1" type="Button"]
-icon = ExtResource("1_7on6y")
-script = ExtResource("2_jaou0")
