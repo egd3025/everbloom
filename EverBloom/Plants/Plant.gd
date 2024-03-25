@@ -6,6 +6,7 @@ var player_in_area = false
 # allows for the collectable version of the wheat to spawn in on command 
 var wheat = preload("res://Inventory/items/wheat_collectable.tscn")
 
+
 @export var item: InvItem
 var player = null
 
@@ -58,3 +59,17 @@ func drop_wheat():
 	# ^ takes the wheat collectable and puts it at the marker2d position
 	get_parent().add_child(wheat_instance)
 	player.collect(item)
+
+func set_stage(newStage):
+	stage = newStage
+	match stage:
+		1:
+			plant.frame = 1
+		2:
+			plant.frame = 2
+		3:
+			plant.frame = 3
+		4:
+			plant.frame = 4
+		5:
+			plant.frame = 5
