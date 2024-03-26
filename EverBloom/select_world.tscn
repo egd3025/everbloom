@@ -44,9 +44,9 @@ text = "New World"
 layout_mode = 2
 text = "Back"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/start_world" to="." method="_on_start_world_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/start_world" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/new_world" to="." method="_on_new_world_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/start_world" to="." method="_on_start_world_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/new_world" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/new_world" to="." method="_on_new_world_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/back" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/back" to="." method="_on_back_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bnakm63s4hcam"]
+[gd_scene load_steps=41 format=3 uid="uid://bnakm63s4hcam"]
 
 [ext_resource type="TileSet" uid="uid://cxa3a7h17ymwt" path="res://stardew.tres" id="1_5jp6c"]
 [ext_resource type="Script" path="res://World/world.gd" id="1_a85sf"]
@@ -6,8 +6,13 @@
 [ext_resource type="Script" path="res://Player/Player.gd" id="4_fn72k"]
 [ext_resource type="Texture2D" uid="uid://br34h1te2q78s" path="res://cup_noodle/Basic Charakter Spritesheet.png" id="4_h38wm"]
 [ext_resource type="Resource" uid="uid://dsa4i547iaexd" path="res://Inventory/player_inv.tres" id="5_bvxdf"]
+[ext_resource type="Resource" uid="uid://bq3httew1fs3h" path="res://Inventory/player_hotbar.tres" id="6_pdglf"]
 [ext_resource type="PackedScene" uid="uid://byhgnas87o1gb" path="res://Plants/Plant.tscn" id="6_sfo2u"]
+[ext_resource type="Texture2D" uid="uid://c5r10syl42xci" path="res://cup_noodle/Basic Charakter Actions.png" id="7_j8vuu"]
 [ext_resource type="Script" path="res://World/Panel.gd" id="8_mk3i5"]
+[ext_resource type="Script" path="res://World/TimeOfDay.gd" id="9_qo0eo"]
+[ext_resource type="Script" path="res://World/saveLoadMenu.gd" id="10_2aius"]
+[ext_resource type="Texture2D" uid="uid://bvag036rmdj4y" path="res://cup_noodle_UI/Sprite sheet for Basic Pack.png" id="10_piybb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cplsi"]
 radius = 4.0
@@ -60,6 +65,54 @@ region = Rect2(96, 144, 48, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_kj6l4"]
 atlas = ExtResource("4_h38wm")
 region = Rect2(144, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnq52"]
+atlas = ExtResource("7_j8vuu")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6he5"]
+atlas = ExtResource("7_j8vuu")
+region = Rect2(48, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wnf7"]
+atlas = ExtResource("7_j8vuu")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ac4e8"]
+atlas = ExtResource("7_j8vuu")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4230"]
+atlas = ExtResource("7_j8vuu")
+region = Rect2(0, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5bv7"]
+atlas = ExtResource("7_j8vuu")
+region = Rect2(48, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tygus"]
+atlas = ExtResource("7_j8vuu")
+region = Rect2(0, 432, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54muw"]
+atlas = ExtResource("7_j8vuu")
+region = Rect2(48, 432, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cor2e"]
+atlas = ExtResource("7_j8vuu")
+region = Rect2(0, 384, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y45bo"]
+atlas = ExtResource("7_j8vuu")
+region = Rect2(48, 384, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0iic8"]
+atlas = ExtResource("7_j8vuu")
+region = Rect2(0, 528, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqkpa"]
+atlas = ExtResource("7_j8vuu")
+region = Rect2(48, 528, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u4ifb"]
 animations = [{
@@ -128,14 +181,84 @@ animations = [{
 "loop": true,
 "name": &"side_walk",
 "speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnq52")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6he5")
+}],
+"loop": true,
+"name": &"till_back",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wnf7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ac4e8")
+}],
+"loop": true,
+"name": &"till_front",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4230")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o5bv7")
+}],
+"loop": true,
+"name": &"till_side",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tygus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54muw")
+}],
+"loop": true,
+"name": &"water_back",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cor2e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y45bo")
+}],
+"loop": true,
+"name": &"water_front",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0iic8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqkpa")
+}],
+"loop": true,
+"name": &"water_side",
+"speed": 2.0
 }]
 
-[node name="World" type="Node2D"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pg5m4"]
+atlas = ExtResource("10_piybb")
+region = Rect2(504, 155, 35, 17)
+
+[node name="World" type="Node2D" groups=["Persist"]]
 process_mode = 1
 y_sort_enabled = true
 script = ExtResource("1_a85sf")
 
-[node name="Floor" type="TileMap" parent="."]
+[node name="Floor" type="TileMap" parent="." groups=["Persist"]]
 y_sort_enabled = true
 tile_set = ExtResource("1_5jp6c")
 format = 2
@@ -145,38 +268,59 @@ layer_1/name = "1"
 layer_1/y_sort_enabled = true
 layer_1/z_index = 1
 layer_1/tile_data = PackedInt32Array()
-layer_2/y_sort_enabled = true
 layer_2/tile_data = PackedInt32Array()
 script = ExtResource("2_rlebr")
 
-[node name="player" type="CharacterBody2D" parent="."]
+[node name="player" type="CharacterBody2D" parent="." groups=["Persist"]]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(130, 89)
+position = Vector2(127, 90)
 script = ExtResource("4_fn72k")
 inv = ExtResource("5_bvxdf")
+hotbar = ExtResource("6_pdglf")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player" groups=["Persist"]]
 position = Vector2(-1, 9)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_cplsi")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player" groups=["Persist"]]
 sprite_frames = SubResource("SpriteFrames_u4ifb")
-animation = &"side_walk"
+animation = &"front_walk"
+frame = 1
+frame_progress = 0.891388
 
-[node name="Camera2D" type="Camera2D" parent="player"]
+[node name="Camera2D" type="Camera2D" parent="player" groups=["Persist"]]
+script = ExtResource("9_qo0eo")
 
-[node name="Plant" parent="." instance=ExtResource("6_sfo2u")]
+[node name="DayCycleLabelImage" type="TextureRect" parent="player/Camera2D"]
+offset_left = -156.0
+offset_top = -87.0
+offset_right = -91.0
+offset_bottom = -69.0
+texture = SubResource("AtlasTexture_pg5m4")
+
+[node name="DayCycle_Label2" type="Label" parent="player/Camera2D/DayCycleLabelImage"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 3.0
+offset_right = 64.0
+offset_bottom = 17.0
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plant" parent="." groups=["Persist"] instance=ExtResource("6_sfo2u")]
 position = Vector2(53, 33)
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Saving_Time" type="Panel" parent="." groups=["Persist"]]
 offset_right = 56.0
 offset_bottom = 17.0
 script = ExtResource("8_mk3i5")
 
-[node name="DayCycle_Label" type="Label" parent="Panel"]
+[node name="DayCycle_Label" type="Label" parent="Saving_Time" groups=["Persist"]]
+visible = false
 layout_mode = 0
 offset_right = 56.0
 offset_bottom = 17.0
@@ -184,3 +328,38 @@ theme_override_font_sizes/font_size = 12
 text = "Morning"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="saveLoadMenu" type="VBoxContainer" parent="Saving_Time"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.295
+anchor_top = 5.249
+anchor_right = 2.295
+anchor_bottom = 5.249
+offset_left = -33.52
+offset_top = -64.233
+offset_right = 33.48
+offset_bottom = 71.767
+script = ExtResource("10_2aius")
+
+[node name="resume" type="Button" parent="Saving_Time/saveLoadMenu" groups=["Persist"]]
+layout_mode = 2
+text = "resume"
+
+[node name="save" type="Button" parent="Saving_Time/saveLoadMenu" groups=["Persist"]]
+layout_mode = 2
+text = "save"
+
+[node name="load" type="Button" parent="Saving_Time/saveLoadMenu" groups=["Persist"]]
+layout_mode = 2
+text = "load"
+
+[node name="exit" type="Button" parent="Saving_Time/saveLoadMenu" groups=["Persist"]]
+layout_mode = 2
+text = "exit
+"
+
+[connection signal="pressed" from="Saving_Time/saveLoadMenu/resume" to="Saving_Time/saveLoadMenu" method="_on_resume_pressed"]
+[connection signal="pressed" from="Saving_Time/saveLoadMenu/save" to="Saving_Time" method="_on_save_pressed"]
+[connection signal="pressed" from="Saving_Time/saveLoadMenu/load" to="Saving_Time" method="_on_load_pressed"]
+[connection signal="pressed" from="Saving_Time/saveLoadMenu/exit" to="Saving_Time/saveLoadMenu" method="_on_exit_pressed"]
