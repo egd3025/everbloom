@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qyk8oofmr6gc"
-path="res://.godot/imported/sale bear.png-73483f75ab623f113d0a10f004d40a09.ctex"
+uid="uid://cyesrghxqqx13"
+path="res://.godot/imported/sale bear.png-e5c24dae3695925e9f804d1b773d88ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://custom_sprites/sale bear.png"
-dest_files=["res://.godot/imported/sale bear.png-73483f75ab623f113d0a10f004d40a09.ctex"]
+source_file="res://sale bear.png"
+dest_files=["res://.godot/imported/sale bear.png-e5c24dae3695925e9f804d1b773d88ca.ctex"]
 
 [params]
 
