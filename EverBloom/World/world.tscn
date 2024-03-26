@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bnakm63s4hcam"]
+[gd_scene load_steps=41 format=3 uid="uid://bnakm63s4hcam"]
 
 [ext_resource type="TileSet" uid="uid://cxa3a7h17ymwt" path="res://stardew.tres" id="1_5jp6c"]
 [ext_resource type="Script" path="res://World/world.gd" id="1_a85sf"]
@@ -10,7 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://byhgnas87o1gb" path="res://Plants/Plant.tscn" id="6_sfo2u"]
 [ext_resource type="Texture2D" uid="uid://c5r10syl42xci" path="res://cup_noodle/Basic Charakter Actions.png" id="7_j8vuu"]
 [ext_resource type="Script" path="res://World/Panel.gd" id="8_mk3i5"]
+[ext_resource type="Script" path="res://World/TimeOfDay.gd" id="9_qo0eo"]
 [ext_resource type="Script" path="res://World/saveLoadMenu.gd" id="10_2aius"]
+[ext_resource type="Texture2D" uid="uid://bvag036rmdj4y" path="res://cup_noodle_UI/Sprite sheet for Basic Pack.png" id="10_piybb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cplsi"]
 radius = 4.0
@@ -247,6 +249,10 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_pg5m4"]
+atlas = ExtResource("10_piybb")
+region = Rect2(504, 155, 35, 17)
+
 [node name="World" type="Node2D" groups=["Persist"]]
 process_mode = 1
 y_sort_enabled = true
@@ -286,6 +292,24 @@ frame = 1
 frame_progress = 0.891388
 
 [node name="Camera2D" type="Camera2D" parent="player" groups=["Persist"]]
+script = ExtResource("9_qo0eo")
+
+[node name="DayCycleLabelImage" type="TextureRect" parent="player/Camera2D"]
+offset_left = -156.0
+offset_top = -87.0
+offset_right = -91.0
+offset_bottom = -69.0
+texture = SubResource("AtlasTexture_pg5m4")
+
+[node name="DayCycle_Label2" type="Label" parent="player/Camera2D/DayCycleLabelImage"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 3.0
+offset_right = 64.0
+offset_bottom = 17.0
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Plant" parent="." groups=["Persist"] instance=ExtResource("6_sfo2u")]
 position = Vector2(53, 33)
@@ -296,6 +320,7 @@ offset_bottom = 17.0
 script = ExtResource("8_mk3i5")
 
 [node name="DayCycle_Label" type="Label" parent="Saving_Time" groups=["Persist"]]
+visible = false
 layout_mode = 0
 offset_right = 56.0
 offset_bottom = 17.0
