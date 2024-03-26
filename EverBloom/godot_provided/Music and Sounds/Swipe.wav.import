@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://nlmdmeffxh8u"
-path="res://.godot/imported/Swipe.wav-1b0f341b1727da219872e70c921da651.sample"
+path="res://.godot/imported/Swipe.wav-d8e826b90d01c8db9dfed2cb19e134a1.sample"
 
 [deps]
 
-source_file="res://Music and Sounds/Swipe.wav"
-dest_files=["res://.godot/imported/Swipe.wav-1b0f341b1727da219872e70c921da651.sample"]
+source_file="res://godot_provided/Music and Sounds/Swipe.wav"
+dest_files=["res://.godot/imported/Swipe.wav-d8e826b90d01c8db9dfed2cb19e134a1.sample"]
 
 [params]
 

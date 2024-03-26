@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v266fdhga6v3"
-path="res://.godot/imported/HeartUIFull.png-e9d9ebbeee52aaa00895457d920c0f53.ctex"
+uid="uid://bgsc7g7df8a0q"
+path="res://.godot/imported/eli character sprite sheet.png-30447839210d1f831b7fcb2df5d5e9e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/HeartUIFull.png"
-dest_files=["res://.godot/imported/HeartUIFull.png-e9d9ebbeee52aaa00895457d920c0f53.ctex"]
+source_file="res://custom_sprites/eli character sprite sheet.png"
+dest_files=["res://.godot/imported/eli character sprite sheet.png-30447839210d1f831b7fcb2df5d5e9e2.ctex"]
 
 [params]
 

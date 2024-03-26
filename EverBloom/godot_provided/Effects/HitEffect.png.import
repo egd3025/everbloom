@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpppcfc6tmqiy"
-path="res://.godot/imported/LargeShadow.png-f9f465d3bd6a830d0053dcccc744b5ab.ctex"
+uid="uid://b7k03wmcg7hpx"
+path="res://.godot/imported/HitEffect.png-e8259fb077c928c04bc06201fff7086f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Shadows/LargeShadow.png"
-dest_files=["res://.godot/imported/LargeShadow.png-f9f465d3bd6a830d0053dcccc744b5ab.ctex"]
+source_file="res://godot_provided/Effects/HitEffect.png"
+dest_files=["res://.godot/imported/HitEffect.png-e8259fb077c928c04bc06201fff7086f.ctex"]
 
 [params]
 
