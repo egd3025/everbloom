@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v266fdhga6v3"
-path="res://.godot/imported/HeartUIFull.png-e9d9ebbeee52aaa00895457d920c0f53.ctex"
+uid="uid://dqxel7i30g3xk"
+path="res://.godot/imported/GrassEffect.png-a5e6216e33a262620645b9bb759efb71.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/HeartUIFull.png"
-dest_files=["res://.godot/imported/HeartUIFull.png-e9d9ebbeee52aaa00895457d920c0f53.ctex"]
+source_file="res://godot_provided/Effects/GrassEffect.png"
+dest_files=["res://.godot/imported/GrassEffect.png-a5e6216e33a262620645b9bb759efb71.ctex"]
 
 [params]
 
