@@ -62,7 +62,7 @@ func savePlants():
 	data["plants"] = []
 	for plant in get_tree().get_nodes_in_group("Plants"):
 		var stage = plant.stage
-		data["plants"].append({"x": plant.position.x, "y": plant.position.y, "stage": stage})
+		data["plants"].append({"x": plant.position.x, "y": plant.position.y, "stage": stage, "time": plant.getTimerLeft()})
 	file.store_line(JSON.stringify(data))
 
 func loadPlants():
@@ -77,12 +77,14 @@ func loadPlants():
 		var x = tile_data["x"]
 		var y = tile_data["y"]
 		var stage = tile_data["stage"]
+		var timeLeft = tile_data["time"]
 		print(stage)
 		var plant1 = plant.instantiate()
 		plant1.position.x = x
 		plant1.position.y = y
 		plant1.set_stage(stage)
 		plant1.add_to_group("Plants")
+		plant1.setTimerLeft(timeLeft)
 		world.add_child(plant1)
 
 		
@@ -115,10 +117,6 @@ func load_Map():
 		var layer = tile_data["layer"]
 		floor.set_cell(layer, Vector2i(x,y), tileSource, Vector2i(tileAtlasX,tileAtlasY))
 		
-func load_Plants():
-	
-	var file = FileAccess.open(save_tileMap, FileAccess.READ)
-	var data = JSON.parse_string(file.get_line())
 	
 		
 	
