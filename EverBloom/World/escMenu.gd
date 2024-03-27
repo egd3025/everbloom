@@ -18,3 +18,7 @@ func _on_game_manager_toggle_game_paused(is_paused : bool):
 		show()
 	else:
 		hide()
+
+
+func _on_resume_button_pressed():
+	game_manager.game_paused = false
