@@ -64,28 +64,36 @@ func savePlants():
 		var stage = plant.stage
 		data["plants"].append({"x": plant.position.x, "y": plant.position.y, "stage": stage, "time": plant.getTimerLeft()})
 	file.store_line(JSON.stringify(data))
+	
 
 func loadPlants():
+	world.coordList = []
 	for plant in get_tree().get_nodes_in_group("Plants"):
 		plant.queue_free()
 		
 	
 	var file = FileAccess.open(save_Plants, FileAccess.READ)
 	var data = JSON.parse_string(file.get_line())
-	print(data)
+	var coordList = []
+	
 	for tile_data in data["plants"]:
 		var x = tile_data["x"]
 		var y = tile_data["y"]
 		var stage = tile_data["stage"]
 		var timeLeft = tile_data["time"]
-		print(stage)
 		var plant1 = plant.instantiate()
 		plant1.position.x = x
 		plant1.position.y = y
+		
+		var coord = floor.to_local(Vector2(x,y))
+		coord = floor.local_to_map(coord)
+		world.coordList.append([coord, plant1])
+		
 		plant1.set_stage(stage)
 		plant1.add_to_group("Plants")
 		plant1.setTimerLeft(timeLeft)
 		world.add_child(plant1)
+		
 
 		
 		

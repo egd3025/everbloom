@@ -1,6 +1,7 @@
 extends Node2D
 @onready var plant = $Sprite2D
 @onready var timer = $Timer
+@onready var world = $".."
 
 var stage = 0
 var player_in_area = false
@@ -52,12 +53,15 @@ func _on_timer_timeout():
 		plant.frame = 4
 	if stage == 5:
 		plant.frame = 5
-	timer.start(5)
+	timer.start(1)
 		
 func _input(event):
 	if event.is_action_pressed("collect"):
 		if player_in_area and stage > 4:
 			drop_wheat()
+
+			
+			
 
 func _on_pickable_area_body_entered(body):
 	if body.has_method("player"):
@@ -73,6 +77,7 @@ func drop_wheat():
 	wheat_instance.global_position = $Marker2D.global_position
 	# ^ takes the wheat collectable and puts it at the marker2d position
 	get_parent().add_child(wheat_instance)
+	wheat_instance.queue_free()
 	player.collect(item)
 
 func set_stage(newStage):

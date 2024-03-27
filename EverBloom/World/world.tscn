@@ -284,7 +284,6 @@ position = Vector2(127, 90)
 script = ExtResource("4_fn72k")
 inv = ExtResource("5_bvxdf")
 hotbar = ExtResource("6_pdglf")
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/player"]
 position = Vector2(-1, 9)

@@ -13,8 +13,7 @@ func _input(event):
 		coord = floor.local_to_map(coord)
 		
 		for plantCoord in coordList:
-			print(plantCoord, Vector2(coord.x, coord.y))
-			if plantCoord == coord:
+			if plantCoord[0] == coord:
 				flag = false
 	
 		if floor.get_cell_atlas_coords(2, coord) == Vector2i(1,1) and flag:
@@ -23,8 +22,22 @@ func _input(event):
 			plant1.position = coord
 			world.add_child(plant1)
 			plant1.add_to_group("Plants")
-			coordList.append(floor.local_to_map(coord))
+			coordList.append([floor.local_to_map(coord), plant1])
+			print(coordList)
+
+	if event.is_action_pressed("collect"):
+		var coord = to_local(Vector2(player.position.x,player.position.y))
+		coord = floor.local_to_map(coord)
+		for x in range(len(coordList)):
+			if coordList[x][0] == coord:
+				if coordList[x][1].stage > 4:
+					coordList[x][1].queue_free()
+					coordList.remove_at(x)
+					break
 		
+			
+		
+	
 	if Input.is_action_just_pressed("pause"):
 		get_tree().paused = not get_tree().paused
 		get_tree().change_scene_to_file("res://Pause Menu.tscn")
