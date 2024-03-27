@@ -1,6 +1,6 @@
 extends Panel
 
-@export var game_manager : GameManager
+
 
 @onready var player = $"../player"
 @onready var floor = $"../Floor"
