@@ -5,6 +5,7 @@ extends Panel
 @onready var player = $"../player"
 @onready var floor = $"../Floor"
 @onready var world = $".."
+
 const plant = preload("res://Plants/Plant.tscn")
 
 var save_pathPlayer = "user://variable.save"
@@ -62,7 +63,6 @@ func savePlants():
 	for plant in get_tree().get_nodes_in_group("Plants"):
 		var stage = plant.stage
 		data["plants"].append({"x": plant.position.x, "y": plant.position.y, "stage": stage})
-	
 	file.store_line(JSON.stringify(data))
 
 func loadPlants():

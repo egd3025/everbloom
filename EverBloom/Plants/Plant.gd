@@ -34,9 +34,18 @@ func _process(delta):
 
 	
 func _on_timer_timeout():
-	if stage <= 5:
+	if stage <= 4:
 		stage += 1
-		
+	if stage == 1:
+		plant.frame = 1
+	if stage == 2:
+		plant.frame = 2
+	if stage == 3:
+		plant.frame = 3
+	if stage == 4:
+		plant.frame = 4
+	if stage == 5:
+		plant.frame = 5
 
 		
 func _input(event):
@@ -62,14 +71,16 @@ func drop_wheat():
 
 func set_stage(newStage):
 	stage = newStage
-	match stage:
-		1:
-			plant.frame = 1
-		2:
-			plant.frame = 2
-		3:
-			plant.frame = 3
-		4:
-			plant.frame = 4
-		5:
-			plant.frame = 5
+	if stage == 1:
+		plant.frame = 1
+	if stage == 2:
+		plant.frame = 2
+	if stage == 3:
+		plant.frame = 3
+	if stage == 4:
+		plant.frame = 4
+	if stage == 5:
+		plant.frame = 5
+
+func set_frame(newFrame):
+	plant.frame = newFrame

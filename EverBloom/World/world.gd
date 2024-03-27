@@ -22,6 +22,7 @@ func _input(event):
 			var plant1 = plant.instantiate()
 			plant1.position = coord
 			world.add_child(plant1)
+			plant1.add_to_group("Plants")
 			coordList.append(floor.local_to_map(coord))
 		
 	if Input.is_action_just_pressed("pause"):
