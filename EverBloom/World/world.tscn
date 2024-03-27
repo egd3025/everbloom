@@ -1,5 +1,6 @@
-[gd_scene load_steps=41 format=3 uid="uid://bnakm63s4hcam"]
+[gd_scene load_steps=42 format=3 uid="uid://bnakm63s4hcam"]
 
+[ext_resource type="Script" path="res://World/GameManager.gd" id="1_2ss7h"]
 [ext_resource type="TileSet" uid="uid://cxa3a7h17ymwt" path="res://stardew.tres" id="1_5jp6c"]
 [ext_resource type="Script" path="res://World/world.gd" id="1_a85sf"]
 [ext_resource type="Script" path="res://World/WorldGen.gd" id="2_rlebr"]
@@ -253,12 +254,15 @@ animations = [{
 atlas = ExtResource("10_piybb")
 region = Rect2(504, 155, 35, 17)
 
-[node name="World" type="Node2D" groups=["Persist"]]
+[node name="GameManager" type="Node"]
+script = ExtResource("1_2ss7h")
+
+[node name="World" type="Node2D" parent="." groups=["Persist"]]
 process_mode = 1
 y_sort_enabled = true
 script = ExtResource("1_a85sf")
 
-[node name="Floor" type="TileMap" parent="." groups=["Persist"]]
+[node name="Floor" type="TileMap" parent="World" groups=["Persist"]]
 y_sort_enabled = true
 tile_set = ExtResource("1_5jp6c")
 format = 2
@@ -271,7 +275,7 @@ layer_1/tile_data = PackedInt32Array()
 layer_2/tile_data = PackedInt32Array()
 script = ExtResource("2_rlebr")
 
-[node name="player" type="CharacterBody2D" parent="." groups=["Persist"]]
+[node name="player" type="CharacterBody2D" parent="World" groups=["Persist"]]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(127, 90)
@@ -280,28 +284,28 @@ inv = ExtResource("5_bvxdf")
 hotbar = ExtResource("6_pdglf")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player" groups=["Persist"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/player" groups=["Persist"]]
 position = Vector2(-1, 9)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_cplsi")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player" groups=["Persist"]]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="World/player" groups=["Persist"]]
 sprite_frames = SubResource("SpriteFrames_u4ifb")
 animation = &"front_walk"
 frame = 1
 frame_progress = 0.891388
 
-[node name="Camera2D" type="Camera2D" parent="player" groups=["Persist"]]
+[node name="Camera2D" type="Camera2D" parent="World/player" groups=["Persist"]]
 script = ExtResource("9_qo0eo")
 
-[node name="DayCycleLabelImage" type="TextureRect" parent="player/Camera2D"]
+[node name="DayCycleLabelImage" type="TextureRect" parent="World/player/Camera2D"]
 offset_left = -156.0
 offset_top = -87.0
 offset_right = -91.0
 offset_bottom = -69.0
 texture = SubResource("AtlasTexture_pg5m4")
 
-[node name="DayCycle_Label2" type="Label" parent="player/Camera2D/DayCycleLabelImage"]
+[node name="DayCycle_Label2" type="Label" parent="World/player/Camera2D/DayCycleLabelImage"]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = 3.0
@@ -311,15 +315,15 @@ theme_override_font_sizes/font_size = 12
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Plant" parent="." groups=["Persist"] instance=ExtResource("6_sfo2u")]
+[node name="Plant" parent="World" groups=["Persist"] instance=ExtResource("6_sfo2u")]
 position = Vector2(53, 33)
 
-[node name="Saving_Time" type="Panel" parent="." groups=["Persist"]]
+[node name="Saving_Time" type="Panel" parent="World" groups=["Persist"]]
 offset_right = 56.0
 offset_bottom = 17.0
 script = ExtResource("8_mk3i5")
 
-[node name="DayCycle_Label" type="Label" parent="Saving_Time" groups=["Persist"]]
+[node name="DayCycle_Label" type="Label" parent="World/Saving_Time" groups=["Persist"]]
 visible = false
 layout_mode = 0
 offset_right = 56.0
@@ -329,7 +333,7 @@ text = "Morning"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="saveLoadMenu" type="VBoxContainer" parent="Saving_Time"]
+[node name="saveLoadMenu" type="VBoxContainer" parent="World/Saving_Time"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 2.295
@@ -342,24 +346,24 @@ offset_right = 33.48
 offset_bottom = 71.767
 script = ExtResource("10_2aius")
 
-[node name="resume" type="Button" parent="Saving_Time/saveLoadMenu" groups=["Persist"]]
+[node name="resume" type="Button" parent="World/Saving_Time/saveLoadMenu" groups=["Persist"]]
 layout_mode = 2
 text = "resume"
 
-[node name="save" type="Button" parent="Saving_Time/saveLoadMenu" groups=["Persist"]]
+[node name="save" type="Button" parent="World/Saving_Time/saveLoadMenu" groups=["Persist"]]
 layout_mode = 2
 text = "save"
 
-[node name="load" type="Button" parent="Saving_Time/saveLoadMenu" groups=["Persist"]]
+[node name="load" type="Button" parent="World/Saving_Time/saveLoadMenu" groups=["Persist"]]
 layout_mode = 2
 text = "load"
 
-[node name="exit" type="Button" parent="Saving_Time/saveLoadMenu" groups=["Persist"]]
+[node name="exit" type="Button" parent="World/Saving_Time/saveLoadMenu" groups=["Persist"]]
 layout_mode = 2
 text = "exit
 "
 
-[connection signal="pressed" from="Saving_Time/saveLoadMenu/resume" to="Saving_Time/saveLoadMenu" method="_on_resume_pressed"]
-[connection signal="pressed" from="Saving_Time/saveLoadMenu/save" to="Saving_Time" method="_on_save_pressed"]
-[connection signal="pressed" from="Saving_Time/saveLoadMenu/load" to="Saving_Time" method="_on_load_pressed"]
-[connection signal="pressed" from="Saving_Time/saveLoadMenu/exit" to="Saving_Time/saveLoadMenu" method="_on_exit_pressed"]
+[connection signal="pressed" from="World/Saving_Time/saveLoadMenu/resume" to="World/Saving_Time/saveLoadMenu" method="_on_resume_pressed"]
+[connection signal="pressed" from="World/Saving_Time/saveLoadMenu/save" to="World/Saving_Time" method="_on_save_pressed"]
+[connection signal="pressed" from="World/Saving_Time/saveLoadMenu/load" to="World/Saving_Time" method="_on_load_pressed"]
+[connection signal="pressed" from="World/Saving_Time/saveLoadMenu/exit" to="World/Saving_Time/saveLoadMenu" method="_on_exit_pressed"]
