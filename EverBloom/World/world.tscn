@@ -256,6 +256,7 @@ atlas = ExtResource("10_piybb")
 region = Rect2(504, 155, 35, 17)
 
 [node name="GameManager" type="Node"]
+process_mode = 3
 script = ExtResource("1_2ss7h")
 
 [node name="World" type="Node2D" parent="." groups=["Persist"]]
