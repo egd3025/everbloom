@@ -1,6 +1,6 @@
-[gd_scene load_steps=42 format=3 uid="uid://bnakm63s4hcam"]
+[gd_scene load_steps=43 format=3 uid="uid://bnakm63s4hcam"]
 
-[ext_resource type="Script" path="res://World/GameManager.gd" id="1_2ss7h"]
+[ext_resource type="Script" path="res://game_manager.gd" id="1_2ss7h"]
 [ext_resource type="TileSet" uid="uid://cxa3a7h17ymwt" path="res://stardew.tres" id="1_5jp6c"]
 [ext_resource type="Script" path="res://World/world.gd" id="1_a85sf"]
 [ext_resource type="Script" path="res://World/WorldGen.gd" id="2_rlebr"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://World/TimeOfDay.gd" id="9_qo0eo"]
 [ext_resource type="Script" path="res://World/saveLoadMenu.gd" id="10_2aius"]
 [ext_resource type="Texture2D" uid="uid://bvag036rmdj4y" path="res://cup_noodle_UI/Sprite sheet for Basic Pack.png" id="10_piybb"]
+[ext_resource type="PackedScene" uid="uid://d25ql0dxu6fxj" path="res://esc_menu.tscn" id="15_wyql4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cplsi"]
 radius = 4.0
@@ -323,17 +324,7 @@ offset_right = 56.0
 offset_bottom = 17.0
 script = ExtResource("8_mk3i5")
 
-[node name="DayCycle_Label" type="Label" parent="World/Saving_Time" groups=["Persist"]]
-visible = false
-layout_mode = 0
-offset_right = 56.0
-offset_bottom = 17.0
-theme_override_font_sizes/font_size = 12
-text = "Morning"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="saveLoadMenu" type="VBoxContainer" parent="World/Saving_Time"]
+[node name="saveLoadMenu" type="VBoxContainer" parent="World/Saving_Time" node_paths=PackedStringArray("game_manager")]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 2.295
@@ -345,6 +336,7 @@ offset_top = -64.233
 offset_right = 33.48
 offset_bottom = 71.767
 script = ExtResource("10_2aius")
+game_manager = NodePath("../../..")
 
 [node name="resume" type="Button" parent="World/Saving_Time/saveLoadMenu" groups=["Persist"]]
 layout_mode = 2
@@ -362,6 +354,10 @@ text = "load"
 layout_mode = 2
 text = "exit
 "
+
+[node name="CanvasLayer" type="CanvasLayer" parent="World"]
+
+[node name="escMenu" parent="World/CanvasLayer" instance=ExtResource("15_wyql4")]
 
 [connection signal="pressed" from="World/Saving_Time/saveLoadMenu/resume" to="World/Saving_Time/saveLoadMenu" method="_on_resume_pressed"]
 [connection signal="pressed" from="World/Saving_Time/saveLoadMenu/save" to="World/Saving_Time" method="_on_save_pressed"]
