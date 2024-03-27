@@ -1,5 +1,5 @@
 extends Control
-
+@onready var saving_time = $"../../Saving_Time"
 @export var game_manager : GameManager
 
 
@@ -22,3 +22,21 @@ func _on_game_manager_toggle_game_paused(is_paused : bool):
 
 func _on_resume_button_pressed():
 	game_manager.game_paused = false
+
+
+func _on_save_button_pressed():
+	saving_time.savePlayer()
+	saving_time.saveTileMap()
+	saving_time.savePlants()
+	print("GAME SAVED")
+
+
+func _on_load_button_pressed():
+	saving_time.load_game()
+	saving_time.load_Map()
+	saving_time.loadPlants()
+	print("GAME LOADED")
+
+
+func _on_exit_button_pressed():
+	get_tree().quit()
