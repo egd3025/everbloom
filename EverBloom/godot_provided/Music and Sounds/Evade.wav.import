@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cme4basrj2r0y"
-path="res://.godot/imported/Evade.wav-cd612618661f05b5e39dccebc8901a0b.sample"
+path="res://.godot/imported/Evade.wav-eeabfe3589753419cf371a21d6388bfe.sample"
 
 [deps]
 
-source_file="res://Music and Sounds/Evade.wav"
-dest_files=["res://.godot/imported/Evade.wav-cd612618661f05b5e39dccebc8901a0b.sample"]
+source_file="res://godot_provided/Music and Sounds/Evade.wav"
+dest_files=["res://.godot/imported/Evade.wav-eeabfe3589753419cf371a21d6388bfe.sample"]
 
 [params]
 

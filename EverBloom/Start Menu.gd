@@ -1,6 +1,7 @@
 extends Control
 
-func _on_start_pressed():
+
+func _on_play_pressed():
 	get_tree().change_scene_to_file("res://select_world.tscn")
 
 func _on_options_pressed():
