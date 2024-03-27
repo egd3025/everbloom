@@ -321,8 +321,11 @@ vertical_alignment = 1
 position = Vector2(53, 33)
 
 [node name="Saving_Time" type="Panel" parent="World" groups=["Persist"]]
-offset_right = 56.0
-offset_bottom = 17.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("8_mk3i5")
 
 [node name="saveLoadMenu" type="VBoxContainer" parent="World/Saving_Time"]
@@ -332,11 +335,12 @@ anchor_left = 2.295
 anchor_top = 5.249
 anchor_right = 2.295
 anchor_bottom = 5.249
-offset_left = -33.52
-offset_top = -64.233
-offset_right = 33.48
-offset_bottom = 71.767
+offset_left = 97.0
+offset_top = 28.0
+offset_right = 164.0
+offset_bottom = 164.0
 script = ExtResource("10_2aius")
+metadata/_edit_group_ = true
 
 [node name="resume" type="Button" parent="World/Saving_Time/saveLoadMenu" groups=["Persist"]]
 layout_mode = 2
