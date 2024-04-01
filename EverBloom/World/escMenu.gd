@@ -28,6 +28,7 @@ func _on_save_button_pressed():
 	saving_time.savePlayer()
 	saving_time.saveTileMap()
 	saving_time.savePlants()
+	saving_time.saveInv()
 	print("GAME SAVED")
 
 
@@ -35,6 +36,7 @@ func _on_load_button_pressed():
 	saving_time.load_game()
 	saving_time.load_Map()
 	saving_time.loadPlants()
+	saving_time.loadInv()
 	print("GAME LOADED")
 
 

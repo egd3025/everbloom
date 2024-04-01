@@ -11,6 +11,7 @@ const plant = preload("res://Plants/Plant.tscn")
 var save_pathPlayer = "user://variable.save"
 var save_tileMap = "user://map.json"
 var save_Plants = "user://plants.json"
+var save_Inv = "user://inventory.json"
 
 
 func _ready():
@@ -19,14 +20,11 @@ func _ready():
 func _process(delta):
 	pass
 
-
-
-
-
 func _on_save_pressed():
 	savePlayer()
 	saveTileMap()
 	savePlants()
+	saveInv()
 	print("GAME SAVED")
 
 
@@ -65,6 +63,23 @@ func savePlants():
 		data["plants"].append({"x": plant.position.x, "y": plant.position.y, "stage": stage, "time": plant.getTimerLeft()})
 	file.store_line(JSON.stringify(data))
 	
+func saveInv():
+	var file = FileAccess.open(save_Inv, FileAccess.WRITE)
+	var data = {}
+	data["items"] = []
+	for item in player.inv.slots:
+		data["items"].append({"item": item})
+	file.store_line(JSON.stringify(data))
+	
+	
+	
+func loadInv():
+	var file = FileAccess.open(save_Inv, FileAccess.READ)
+	var data = JSON.parse_string(file.get_line())
+	for item in data["items"]:
+		print(item["item"])
+		player.collect(item["item"])
+	
 
 func loadPlants():
 	world.coordList = []
@@ -95,11 +110,6 @@ func loadPlants():
 		world.add_child(plant1)
 		
 
-		
-		
-	
-	
-	
 func load_game():
 	if FileAccess.file_exists(save_pathPlayer):
 		var file = FileAccess.open(save_pathPlayer, FileAccess.READ)
