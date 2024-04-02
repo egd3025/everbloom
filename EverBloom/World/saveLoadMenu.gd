@@ -12,8 +12,9 @@ func _process(delta):
 	pass
 	
 func _input(event):
-	if event.is_action_pressed("saveMenu"):
-		show()
+	#if event.is_action_pressed("saveMenu"):
+		#show()
+	pass
 
 
 
