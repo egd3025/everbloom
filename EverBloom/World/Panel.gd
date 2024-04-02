@@ -1,3 +1,6 @@
+# gdlint: disable=format checks
+# gdlint: disable=class checks
+
 extends Panel
 
 
