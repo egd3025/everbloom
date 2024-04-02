@@ -1,7 +1,7 @@
 extends Control
 
 ##saving_time and game_gamanger are needed here.  
-##saving_time is being pulled into this script.
+##saving_time is being pulled into this script to use its methods.
 ##game_manager is being exported to, so as to pause the game.
 @onready var saving_time = $"../../Saving_Time"
 @export var game_manager : GameManager
