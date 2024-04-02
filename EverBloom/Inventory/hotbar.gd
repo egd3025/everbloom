@@ -1,3 +1,5 @@
+# gdlint: disable=format checks
+# gdlint: disable=class checks
 extends Inv
 
 class_name HotBar
