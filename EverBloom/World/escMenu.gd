@@ -1,29 +1,34 @@
 extends Control
+
+##saving_time and game_gamanger are needed here.  
+##saving_time is being pulled into this script.
+##game_manager is being exported to, so as to pause the game.
 @onready var saving_time = $"../../Saving_Time"
 @export var game_manager : GameManager
 
 
-# Called when the node enters the scene tree for the first time.
+
+## Called when the node enters the scene tree for the first time.
 func _ready():
 	hide()
 	game_manager.connect("toggle_game_paused" , _on_game_manager_toggle_game_paused)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+## Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
-
+##shows or hides game if the world is paused
 func _on_game_manager_toggle_game_paused(is_paused : bool):
 	if(is_paused):
 		show()
 	else:
 		hide()
 
-
+##unpauses the game and hides the esc menu otherwise
 func _on_resume_button_pressed():
 	game_manager.game_paused = false
 
-
+## saves the different vars for each save methods
 func _on_save_button_pressed():
 	saving_time.savePlayer()
 	saving_time.saveTileMap()
@@ -31,7 +36,7 @@ func _on_save_button_pressed():
 	#saving_time.saveInv()
 	print("GAME SAVED")
 
-
+## loads the different vars for each method in load
 func _on_load_button_pressed():
 	saving_time.load_game()
 	saving_time.load_Map()
@@ -39,6 +44,6 @@ func _on_load_button_pressed():
 	#saving_time.loadInv()
 	print("GAME LOADED")
 
-
+## quits the game directly 
 func _on_exit_button_pressed():
 	get_tree().quit()
