@@ -1,3 +1,6 @@
+# gdlint: disable=format checks
+# gdlint: disable=class checks
+
 extends Panel
 
 
@@ -5,11 +8,13 @@ extends Panel
 @onready var player = $"../player"
 @onready var floor = $"../Floor"
 @onready var world = $".."
+
 const plant = preload("res://Plants/Plant.tscn")
 
 var save_pathPlayer = "user://variable.save"
 var save_tileMap = "user://map.json"
 var save_Plants = "user://plants.json"
+var save_Inv = "user://inventory.json"
 
 
 func _ready():
@@ -18,14 +23,11 @@ func _ready():
 func _process(delta):
 	pass
 
-
-
-
-
 func _on_save_pressed():
 	savePlayer()
 	saveTileMap()
 	savePlants()
+	saveInv()
 	print("GAME SAVED")
 
 
@@ -61,35 +63,56 @@ func savePlants():
 	data["plants"] = []
 	for plant in get_tree().get_nodes_in_group("Plants"):
 		var stage = plant.stage
-		data["plants"].append({"x": plant.position.x, "y": plant.position.y, "stage": stage})
-	
+		data["plants"].append({"x": plant.position.x, "y": plant.position.y, "stage": stage, "time": plant.getTimerLeft()})
 	file.store_line(JSON.stringify(data))
+	
+func saveInv():
+	var file = FileAccess.open(save_Inv, FileAccess.WRITE)
+	var data = {}
+	data["items"] = []
+	for item in player.inv.slots:
+		data["items"].append({"item": item})
+	file.store_line(JSON.stringify(data))
+	
+	
+	
+func loadInv():
+	var file = FileAccess.open(save_Inv, FileAccess.READ)
+	var data = JSON.parse_string(file.get_line())
+	for item in data["items"]:
+		print(item["item"])
+		player.collect(item["item"])
+	
 
 func loadPlants():
+	world.coordList = []
 	for plant in get_tree().get_nodes_in_group("Plants"):
 		plant.queue_free()
 		
 	
 	var file = FileAccess.open(save_Plants, FileAccess.READ)
 	var data = JSON.parse_string(file.get_line())
-	print(data)
+	var coordList = []
+	
 	for tile_data in data["plants"]:
 		var x = tile_data["x"]
 		var y = tile_data["y"]
 		var stage = tile_data["stage"]
-		print(stage)
+		var timeLeft = tile_data["time"]
 		var plant1 = plant.instantiate()
 		plant1.position.x = x
 		plant1.position.y = y
+		
+		var coord = floor.to_local(Vector2(x,y))
+		coord = floor.local_to_map(coord)
+		world.coordList.append([coord, plant1])
+		
 		plant1.set_stage(stage)
 		plant1.add_to_group("Plants")
+		plant1.setTimerLeft(timeLeft)
 		world.add_child(plant1)
+		
 
-		
-		
-	
-	
-	
 func load_game():
 	if FileAccess.file_exists(save_pathPlayer):
 		var file = FileAccess.open(save_pathPlayer, FileAccess.READ)
@@ -115,10 +138,6 @@ func load_Map():
 		var layer = tile_data["layer"]
 		floor.set_cell(layer, Vector2i(x,y), tileSource, Vector2i(tileAtlasX,tileAtlasY))
 		
-func load_Plants():
-	
-	var file = FileAccess.open(save_tileMap, FileAccess.READ)
-	var data = JSON.parse_string(file.get_line())
 	
 		
 	

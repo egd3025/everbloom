@@ -24,3 +24,6 @@ func insert(item: InvItem):
 			emptyslots[0].amount = 1
 			isAdded = true;
 	update.emit()
+
+func clear():
+	slots.clear()
