@@ -30,7 +30,7 @@ func _physics_process(delta):
 	# Sprinting   
 	# FOR LATER IMPLEMENTATION       
 	if Input.is_action_pressed("ui_sprint"):
-		speed = 100
+		speed = 75
 	elif Input.is_action_just_released("ui_sprint"):
 		speed = 50  
 	# Apply movement if the player is not tilling
