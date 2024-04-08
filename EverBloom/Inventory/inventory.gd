@@ -6,6 +6,7 @@ signal update
 
 @export var slots: Array[InvSlot]
 
+# Adding items to the inventory
 func insert(item: InvItem):
 	var isAdded = false;
 	var itemslots = slots.filter(func(slot): return slot.item == item)
@@ -23,7 +24,8 @@ func insert(item: InvItem):
 			emptyslots[0].item = item
 			emptyslots[0].amount = 1
 			isAdded = true;
-	update.emit()
+	# send the new inventory stats to the ui
+	update.emit() 
 
 func clear():
 	slots.clear()

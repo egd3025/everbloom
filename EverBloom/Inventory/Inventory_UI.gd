@@ -1,23 +1,26 @@
 extends Control
 
+# loads in the player's inventory to manipulate and iterate through
 @onready var inv: Inv = preload("res://Inventory/player_inv.tres")
-@onready var hotbar: Inv = preload("res://Inventory/player_hotbar.tres")
+# creates an array for our slot items so that we CAN iterate
 @onready var slots: Array = $NinePatchRect/GridContainer.get_children()
 
 func _ready():
+	# whenever inventory sends the update signal after a collection,
+	# the UI gets updated to display the change
 	inv.update.connect(update_slots)
-	hotbar.hotupdate.connect(update_hotbar)
 	update_slots()
 	
 func update_slots():
+	# iterates through the current slots array and makes sure it matches
+	# the actual player inventory
 	for i in range(min(inv.slots.size(), slots.size())):
 		slots[i].update(inv.slots[i])
 	
-func update_hotbar():
-	for i in range(min(hotbar.slots.size(), slots.size())):
-		slots[i].update(hotbar.slots[i])
 	
 func _input(event):
+	# scene changes depending on different inputs
+	# allows player to open inventory and pause menu
 	if event.is_action_pressed("pause"):
 		if !get_tree().paused:
 			get_tree().paused = !get_tree().paused

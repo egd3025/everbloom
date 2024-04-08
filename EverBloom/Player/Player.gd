@@ -5,7 +5,6 @@ extends CharacterBody2D
 
 # Connects player to player_inv
 @export var inv: Inv
-@export var hotbar: HotBar 
 
 # Node references
 @onready var animation_sprite = $AnimatedSprite2D
@@ -92,8 +91,8 @@ func _on_animated_sprite_2d_animation_finished():
 	is_tilling = false
 	
 	
-
 func collect(item):
+	# sends the item collected from plant to inventory
 	inv.insert(item)
 	
 func player():
