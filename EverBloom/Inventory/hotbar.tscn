@@ -1,45 +1,94 @@
-[gd_scene load_steps=3 format=3 uid="uid://biqtig12l8coi"]
+[gd_scene load_steps=8 format=3 uid="uid://dat3hur2wmdbq"]
 
+[ext_resource type="Texture2D" uid="uid://d2anmtjgxw7ye" path="res://cup_noodle_UI/buttons/Square Buttons 26x26.png" id="1_1xm2a"]
 [ext_resource type="Script" path="res://Inventory/hotbar.gd" id="1_d8k3b"]
-[ext_resource type="PackedScene" uid="uid://bug1d87b8l0js" path="res://Inventory/hotbar_slot.tscn" id="2_d6q2c"]
+[ext_resource type="Texture2D" uid="uid://rowm18isvpkc" path="res://Inventory/item_images/Axe.png" id="2_uquvo"]
+[ext_resource type="Texture2D" uid="uid://cofy74lsnx5mt" path="res://Inventory/item_images/Hoe.png" id="3_cvqre"]
+[ext_resource type="Texture2D" uid="uid://di0t0tbdw2n5k" path="res://Inventory/item_images/Watering_Can.png" id="4_eqyvg"]
+[ext_resource type="Texture2D" uid="uid://xlvtxf13flps" path="res://Inventory/item_images/Wheat_Seed.png" id="5_khgmj"]
 
-[node name="Hotbar" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 31.0
-offset_top = -1.0
-offset_right = 31.0
-offset_bottom = -1.0
-grow_horizontal = 2
-grow_vertical = 2
+[sub_resource type="AtlasTexture" id="AtlasTexture_nb1yd"]
+atlas = ExtResource("1_1xm2a")
+region = Rect2(6, 57, 34, 32)
+
+[node name="Hotbar" type="CanvasLayer"]
 script = ExtResource("1_d8k3b")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 89.0
-offset_bottom = 17.0
+[node name="Slot1" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(37, 37)
+offset_left = 91.0
+offset_top = 153.0
+offset_right = 128.0
+offset_bottom = 190.0
+scale = Vector2(0.75, 0.75)
+texture = SubResource("AtlasTexture_nb1yd")
 
-[node name="Hotbar_Slot1" parent="." instance=ExtResource("2_d6q2c")]
-layout_mode = 0
+[node name="Slot1_Selected" type="TextureRect" parent="Slot1"]
+custom_minimum_size = Vector2(37, 37)
+offset_right = 37.0
+offset_bottom = 37.0
+texture = SubResource("AtlasTexture_nb1yd")
 
-[node name="Hotbar_Slot2" parent="." instance=ExtResource("2_d6q2c")]
-layout_mode = 0
-offset_left = 18.0
-offset_right = 34.0
+[node name="Sprite2D" type="Sprite2D" parent="Slot1"]
+position = Vector2(18, 18)
+texture = ExtResource("2_uquvo")
 
-[node name="Hotbar_Slot3" parent="." instance=ExtResource("2_d6q2c")]
-layout_mode = 0
-offset_left = 36.0
-offset_right = 52.0
+[node name="Slot2" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(37, 37)
+offset_left = 115.0
+offset_top = 151.0
+offset_right = 155.0
+offset_bottom = 191.0
+scale = Vector2(0.75, 0.75)
+texture = SubResource("AtlasTexture_nb1yd")
 
-[node name="Hotbar_Slot4" parent="." instance=ExtResource("2_d6q2c")]
-layout_mode = 0
-offset_left = 54.0
-offset_right = 70.0
+[node name="Slot2_Selected" type="TextureRect" parent="Slot2"]
+visible = false
+custom_minimum_size = Vector2(37, 37)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_nb1yd")
 
-[node name="Hotbar_Slot5" parent="." instance=ExtResource("2_d6q2c")]
-layout_mode = 0
-offset_left = 72.0
-offset_right = 88.0
+[node name="Sprite2D" type="Sprite2D" parent="Slot2"]
+position = Vector2(21, 20)
+texture = ExtResource("3_cvqre")
+
+[node name="Slot3" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(37, 37)
+offset_left = 142.0
+offset_top = 151.0
+offset_right = 180.0
+offset_bottom = 191.0
+scale = Vector2(0.75, 0.75)
+texture = SubResource("AtlasTexture_nb1yd")
+
+[node name="Slot3_Selected" type="TextureRect" parent="Slot3"]
+visible = false
+custom_minimum_size = Vector2(37, 37)
+offset_right = 38.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_nb1yd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Slot3"]
+position = Vector2(21, 18)
+texture = ExtResource("4_eqyvg")
+
+[node name="Slot4" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(37, 37)
+offset_left = 168.0
+offset_top = 150.0
+offset_right = 208.0
+offset_bottom = 190.0
+scale = Vector2(0.75, 0.75)
+texture = SubResource("AtlasTexture_nb1yd")
+
+[node name="Slot4_Selected" type="TextureRect" parent="Slot4"]
+visible = false
+custom_minimum_size = Vector2(37, 37)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_nb1yd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Slot4"]
+position = Vector2(21, 19)
+texture = ExtResource("5_khgmj")

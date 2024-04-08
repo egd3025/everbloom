@@ -5,7 +5,9 @@ const plant = preload("res://Plants/Plant.tscn")
 @onready var floor = $Floor
 @onready var player = $player
 var coordList = []
-# Called when the node enters the scene tree for the first time.
+# makes a variable to recieve the signal from hotbar
+var hotbarSelected = 2;
+
 func _input(event):
 	if event.is_action("Plant"):
 		var flag = true
@@ -46,10 +48,13 @@ func _input(event):
 		get_tree().change_scene_to_file("res://Inventory/inventory_ui.tscn")
 		
 	if event.is_action("till"):
-		var coord = to_local(Vector2(player.position.x,player.position.y))
-		coord = floor.local_to_map(coord)
-		var coordList = []
-		if floor.get_cell_source_id(1, coord) != 0:
-			floor.set_cell(2, coord, 6, Vector2(1,1))
-			floor.set_cells_terrain_connect(2, [coord], 0, 0)
+		# check that hotbar is correct for tilling
+		if hotbarSelected == 2:
+			# if so, continue. If not do nothing
+			var coord = to_local(Vector2(player.position.x,player.position.y))
+			coord = floor.local_to_map(coord)
+			var coordList = []
+			if floor.get_cell_source_id(1, coord) != 0:
+				floor.set_cell(2, coord, 6, Vector2(1,1))
+				floor.set_cells_terrain_connect(2, [coord], 0, 0)
 
