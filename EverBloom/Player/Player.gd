@@ -42,6 +42,8 @@ func _physics_process(delta):
 	if !Input.is_anything_pressed():
 		if is_tilling == false:
 			animation  = returned_direction(new_direction)	+ "_idle"
+
+
 			
 func _input(event):
 	#input event for our tilling
