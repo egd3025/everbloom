@@ -6,21 +6,8 @@ const plant = preload("res://Plants/Plant.tscn")
 @onready var player = $player
 var coordList = []
 # makes a variable to recieve the signal from hotbar
-var hotbar;
-var hotbarSelected = 1; # a variable we can play with
+var hotbarSelected = 2;
 
-func _ready():
-	# recieve the signals from hotbar and send them to the
-	# update function with correct parameter
-	hotbar.selectedNum_1.connect(hotbarUpdate(1));
-	hotbar.selectedNum_2.connect(hotbarUpdate(2));
-	hotbar.selectedNum_3.connect(hotbarUpdate(3));
-	hotbar.selectedNum_4.connect(hotbarUpdate(4));
-	
-func hotbarUpdate(num):
-	# makes the hotbar variable match the actual selected slot
-	hotbarSelected = num;
-	
 func _input(event):
 	if event.is_action("Plant"):
 		var flag = true

@@ -24,7 +24,6 @@ scale = Vector2(0.75, 0.75)
 texture = SubResource("AtlasTexture_nb1yd")
 
 [node name="Slot1_Selected" type="TextureRect" parent="Slot1"]
-visible = false
 custom_minimum_size = Vector2(37, 37)
 offset_right = 37.0
 offset_bottom = 37.0
