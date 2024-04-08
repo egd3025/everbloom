@@ -9,9 +9,12 @@ func _ready():
 
 
 func place_tiles():
+	# limits the area of generated tiles
 	var  x = 20
 	var  y = 25
 	
+	# the smaller ranges for row and col signify where the
+	# tiles should begin generating
 	for row in range(-20,x+1):
 		for col in range(-25,y+1):
 			var random_number : int = randi() % 50
