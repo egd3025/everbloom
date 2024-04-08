@@ -7,13 +7,13 @@
 [ext_resource type="Script" path="res://Player/Player.gd" id="4_fn72k"]
 [ext_resource type="Texture2D" uid="uid://br34h1te2q78s" path="res://cup_noodle/Basic Charakter Spritesheet.png" id="4_h38wm"]
 [ext_resource type="Resource" uid="uid://dsa4i547iaexd" path="res://Inventory/player_inv.tres" id="5_bvxdf"]
-[ext_resource type="Resource" uid="uid://bq3httew1fs3h" path="res://Inventory/player_hotbar.tres" id="6_pdglf"]
 [ext_resource type="PackedScene" uid="uid://byhgnas87o1gb" path="res://Plants/Plant.tscn" id="6_sfo2u"]
 [ext_resource type="Texture2D" uid="uid://c5r10syl42xci" path="res://cup_noodle/Basic Charakter Actions.png" id="7_j8vuu"]
 [ext_resource type="Script" path="res://World/Panel.gd" id="8_mk3i5"]
 [ext_resource type="Script" path="res://World/TimeOfDay.gd" id="9_qo0eo"]
 [ext_resource type="Script" path="res://World/saveLoadMenu.gd" id="10_2aius"]
 [ext_resource type="Texture2D" uid="uid://bvag036rmdj4y" path="res://cup_noodle_UI/Sprite sheet for Basic Pack.png" id="10_piybb"]
+[ext_resource type="PackedScene" uid="uid://dat3hur2wmdbq" path="res://Inventory/hotbar.tscn" id="11_h2i3k"]
 [ext_resource type="PackedScene" uid="uid://basgntyoppjkk" path="res://World/esc_menu.tscn" id="15_3h46d"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cplsi"]
@@ -283,7 +283,6 @@ y_sort_enabled = true
 position = Vector2(127, 90)
 script = ExtResource("4_fn72k")
 inv = ExtResource("5_bvxdf")
-hotbar = ExtResource("6_pdglf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/player"]
 position = Vector2(-1, 9)
@@ -313,6 +312,8 @@ offset_bottom = 17.0
 theme_override_font_sizes/font_size = 12
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Hotbar" parent="World/player" instance=ExtResource("11_h2i3k")]
 
 [node name="Plant" parent="World" instance=ExtResource("6_sfo2u")]
 position = Vector2(53, 33)
