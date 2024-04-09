@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddwb4plsfqclh"]
+[gd_scene load_steps=6 format=3 uid="uid://ddwb4plsfqclh"]
 
 [ext_resource type="Theme" uid="uid://cs7pakuugysjy" path="res://default_pause_theme.tres" id="1_6gngm"]
 [ext_resource type="Script" path="res://options_menu.gd" id="1_jyb13"]
+[ext_resource type="Texture2D" uid="uid://bgqw4o63yyj3h" path="res://custom_sprites/world screens.png" id="3_3lkjv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_265a4"]
+atlas = ExtResource("3_3lkjv")
+region = Rect2(3, 34, 90, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3d5p"]
+atlas = ExtResource("3_3lkjv")
+region = Rect2(99, 36, 90, 25)
 
 [node name="Start Menu" type="Control"]
 process_mode = 3
@@ -37,9 +46,10 @@ layout_mode = 2
 layout_mode = 2
 text = "Volume"
 
-[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Back" type="TextureButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Back"
+texture_normal = SubResource("AtlasTexture_265a4")
+texture_pressed = SubResource("AtlasTexture_m3d5p")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
