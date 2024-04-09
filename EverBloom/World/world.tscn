@@ -450,6 +450,14 @@ process_mode = 2
 game_manager = NodePath("../../..")
 
 [connection signal="animation_finished" from="World/player/AnimatedSprite2D" to="World/player" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="selectedNum_1" from="World/player/Hotbar" to="World" method="_on_hotbar_selected_num_1"]
+[connection signal="selectedNum_1" from="World/player/Hotbar" to="World/player" method="_on_hotbar_selected_num_1"]
+[connection signal="selectedNum_2" from="World/player/Hotbar" to="World" method="_on_hotbar_selected_num_2"]
+[connection signal="selectedNum_2" from="World/player/Hotbar" to="World/player" method="_on_hotbar_selected_num_2"]
+[connection signal="selectedNum_3" from="World/player/Hotbar" to="World" method="_on_hotbar_selected_num_3"]
+[connection signal="selectedNum_3" from="World/player/Hotbar" to="World/player" method="_on_hotbar_selected_num_3"]
+[connection signal="selectedNum_4" from="World/player/Hotbar" to="World" method="_on_hotbar_selected_num_4"]
+[connection signal="selectedNum_4" from="World/player/Hotbar" to="World/player" method="_on_hotbar_selected_num_4"]
 [connection signal="pressed" from="World/Saving_Time/saveLoadMenu/resume" to="World/Saving_Time/saveLoadMenu" method="_on_resume_pressed"]
 [connection signal="pressed" from="World/Saving_Time/saveLoadMenu/save" to="World/Saving_Time" method="_on_save_pressed"]
 [connection signal="pressed" from="World/Saving_Time/saveLoadMenu/load" to="World/Saving_Time" method="_on_load_pressed"]
