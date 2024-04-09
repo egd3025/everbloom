@@ -5,6 +5,7 @@ extends TileMap
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#runs on start to place all the tiles
 	place_tiles()
 
 
@@ -17,6 +18,7 @@ func place_tiles():
 	# tiles should begin generating
 	for row in range(-20,x+1):
 		for col in range(-25,y+1):
+			#each set cell is a some sort of grass tile
 			var random_number : int = randi() % 50
 			if 0 <= random_number and random_number < 25:
 				floor.set_cell(0, Vector2i(row,col), 2, Vector2i(1,1))
@@ -26,6 +28,7 @@ func place_tiles():
 				floor.set_cell(0, Vector2i(row,col), 2, Vector2i(0,6))
 			if random_number >= 37 and random_number <= 50:
 				floor.set_cell(0, Vector2i(row,col), 2, Vector2i(0,5))
+	#loops for trees
 	for row in range(-20,x+1):
 		for col in range(-25,y+1):
 			var random_number : int = randi() % 50
