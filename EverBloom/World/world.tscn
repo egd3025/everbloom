@@ -14,8 +14,8 @@
 [ext_resource type="Script" path="res://World/TimeOfDay.gd" id="9_qo0eo"]
 [ext_resource type="Script" path="res://World/saveLoadMenu.gd" id="10_2aius"]
 [ext_resource type="Texture2D" uid="uid://bvag036rmdj4y" path="res://cup_noodle_UI/Sprite sheet for Basic Pack.png" id="10_piybb"]
-[ext_resource type="PackedScene" uid="uid://dat3hur2wmdbq" path="res://Inventory/hotbar.tscn" id="11_h2i3k"]
-[ext_resource type="PackedScene" uid="uid://basgntyoppjkk" path="res://World/esc_menu.tscn" id="15_3h46d"]
+[ext_resource type="PackedScene" uid="uid://biqtig12l8coi" path="res://Inventory/hotbar.tscn" id="11_h2i3k"]
+[ext_resource type="PackedScene" path="res://World/esc_menu.tscn" id="15_3h46d"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cplsi"]
 radius = 4.0
