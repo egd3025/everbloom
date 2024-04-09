@@ -13,11 +13,14 @@ var wheat = preload("res://Inventory/items/wheat_collectable.tscn")
 var player = null
 
 func setTimerLeft(time):
+	#set the timer left on the plant
+	#used in loading and saving 
 	var timer = $Timer
 	timer.wait_time = time
 	timer.start()
 	
 func getTimerLeft():
+	#get the timer left
 	return timer.get_time_left()
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -27,6 +30,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	#checks the stage and sets the respective stage
 	if stage == 1:
 		plant.frame = 1
 	if stage == 2:
@@ -41,6 +45,7 @@ func _process(delta):
 
 	
 func _on_timer_timeout():
+	#stage incrementer on the timer end
 	if stage <= 4:
 		stage += 1
 	if stage == 1:
@@ -56,6 +61,8 @@ func _on_timer_timeout():
 	timer.start(1)
 		
 func _input(event):
+	#if the player is in the range of the plant and the stage if final
+	#then collect
 	if event.is_action_pressed("collect"):
 		if player_in_area and stage > 4:
 			drop_wheat()
@@ -81,6 +88,7 @@ func drop_wheat():
 	player.collect(item)
 
 func set_stage(newStage):
+	#sets stage (used in saving and loading)
 	stage = newStage
 
 

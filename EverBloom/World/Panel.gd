@@ -27,7 +27,7 @@ func _on_save_pressed():
 	savePlayer()
 	saveTileMap()
 	savePlants()
-	saveInv()
+	#saveInv()
 	print("GAME SAVED")
 
 
@@ -39,61 +39,56 @@ func _on_load_pressed():
 
 
 func saveTileMap():
+	#opens the save file
 	var file = FileAccess.open(save_tileMap, FileAccess.WRITE)
+	#creates a dict
 	var data = {}
-	
 	data["tiles"] = []
+	#for each tile in each layer, save the data that makes it that specific tile 
 	for layer in range(floor.get_layers_count()):
 		for cell in floor.get_used_cells(layer):
 			var tileAtlas = floor.get_cell_atlas_coords(layer, Vector2i(cell.x,cell.y))
 			var tileSource = floor.get_cell_source_id(layer, Vector2i(cell.x,cell.y))
 			data["tiles"].append({"x": cell.x, "y": cell.y, "tileAtlas.x": tileAtlas.x, "tileAtlas.y": tileAtlas.y, "tileSource": tileSource, "layer": layer})
-
+	
+	#store it as a json file
 	file.store_line(JSON.stringify(data))
 	
 func savePlayer():
+	#saves the position of the player 
 	var file = FileAccess.open(save_pathPlayer, FileAccess.WRITE)
 	file.store_var(player.position.x)
 	file.store_var(player.position.y)
 	
 	
 func savePlants():
+	#opens the file
 	var file = FileAccess.open(save_Plants, FileAccess.WRITE)
+	#create the dictionary to save data
 	var data = {}
 	data["plants"] = []
+	#for each plant in the group "plant" save the stage and coordinates and the time left on the timer
 	for plant in get_tree().get_nodes_in_group("Plants"):
 		var stage = plant.stage
 		data["plants"].append({"x": plant.position.x, "y": plant.position.y, "stage": stage, "time": plant.getTimerLeft()})
+	#save the data as a json
 	file.store_line(JSON.stringify(data))
-	
-func saveInv():
-	var file = FileAccess.open(save_Inv, FileAccess.WRITE)
-	var data = {}
-	data["items"] = []
-	for item in player.inv.slots:
-		data["items"].append({"item": item})
-	file.store_line(JSON.stringify(data))
-	
-	
-	
-func loadInv():
-	var file = FileAccess.open(save_Inv, FileAccess.READ)
-	var data = JSON.parse_string(file.get_line())
-	for item in data["items"]:
-		print(item["item"])
-		player.collect(item["item"])
 	
 
 func loadPlants():
+	#removes all the plants from the world
 	world.coordList = []
 	for plant in get_tree().get_nodes_in_group("Plants"):
 		plant.queue_free()
 		
-	
+	#opens the file
 	var file = FileAccess.open(save_Plants, FileAccess.READ)
 	var data = JSON.parse_string(file.get_line())
+	#creates a new plant coordinate list
 	var coordList = []
-	
+	#loads in the all the data for each plant
+	#it then creates a plant for each one saved and gives it
+	#that respective data
 	for tile_data in data["plants"]:
 		var x = tile_data["x"]
 		var y = tile_data["y"]
@@ -103,10 +98,11 @@ func loadPlants():
 		plant1.position.x = x
 		plant1.position.y = y
 		
+		#add it to the coordinate list
 		var coord = floor.to_local(Vector2(x,y))
 		coord = floor.local_to_map(coord)
 		world.coordList.append([coord, plant1])
-		
+		#set the stages and time and adds it to the group and as a child of the world
 		plant1.set_stage(stage)
 		plant1.add_to_group("Plants")
 		plant1.setTimerLeft(timeLeft)
@@ -114,6 +110,7 @@ func loadPlants():
 		
 
 func load_game():
+	#loads the player
 	if FileAccess.file_exists(save_pathPlayer):
 		var file = FileAccess.open(save_pathPlayer, FileAccess.READ)
 		player.position.x = file.get_var(player.position.x)
@@ -125,10 +122,12 @@ func load_game():
 		print("No save Data")
 		
 func load_Map():
+	#loads the saved tile map
+	#it clears the floor
 	floor.clear()
 	var file = FileAccess.open(save_tileMap, FileAccess.READ)
 	var data = JSON.parse_string(file.get_line())
-
+	#loops for each tile, creates a tile in that coordinate with its respective data
 	for tile_data in data["tiles"]:
 		var x = tile_data["x"]
 		var y = tile_data["y"]

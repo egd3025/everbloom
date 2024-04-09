@@ -5,10 +5,10 @@ extends CharacterBody2D
 
 # Connects player to player_inv
 @export var inv: Inv
-
+signal update
 # Node references
 @onready var animation_sprite = $AnimatedSprite2D
-
+var save_Inv = "user://inventory.json"
 # Player states
 @export var speed = 50
 var is_tilling = false
@@ -99,3 +99,38 @@ func collect(item):
 	
 func player():
 	pass # allows to detect when player is in range of collecting a plant
+
+func saveInv():
+	#opens a file with the file path
+	var file = FileAccess.open(save_Inv, FileAccess.WRITE)
+	#creats dictionary for items
+	var data = {}
+	data["items"] = []
+	#loops for all the slots of inventory
+	for slot in inv.slots:
+		#if there is an item
+		if slot.amount != 0:
+			#add it to the dictionary
+			data["items"].append({"amount": slot.amount, "name": slot.item.name})
+	#turn the dictionary into json file
+	file.store_line(JSON.stringify(data))
+	
+	
+	
+func loadInv():
+	#get the item logo
+	var item : InvItem = preload("res://Inventory/items/Wheat.tres")
+	#open the file with the json data
+	var file = FileAccess.open(save_Inv, FileAccess.READ)
+	var data = JSON.parse_string(file.get_line())
+	#count used to index the item slots
+	var count = 0
+	#loop for each item saved
+	for savedItem in data["items"]:
+		#insert it and add the amount
+		inv.insert(item)
+		inv.slots[count].amount = savedItem["amount"]
+
+		count += 1
+	#sends signal to the inventory ui to update
+	update.emit()

@@ -5,6 +5,7 @@ extends Control
 ##game_manager is being exported to, so as to pause the game.
 @onready var saving_time = $"../../Saving_Time"
 @export var game_manager : GameManager
+@onready var player = $"../../player"
 
 
 
@@ -33,7 +34,7 @@ func _on_save_button_pressed():
 	saving_time.savePlayer()
 	saving_time.saveTileMap()
 	saving_time.savePlants()
-	#saving_time.saveInv()
+	player.saveInv()
 	print("GAME SAVED")
 
 ## loads the different vars for each method in load
@@ -41,7 +42,7 @@ func _on_load_button_pressed():
 	saving_time.load_game()
 	saving_time.load_Map()
 	saving_time.loadPlants()
-	#saving_time.loadInv()
+	player.loadInv()
 	print("GAME LOADED")
 
 ## quits the game directly 
