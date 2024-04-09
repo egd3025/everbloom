@@ -1,8 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://8jjgk6pbe8af"]
+[gd_scene load_steps=11 format=3 uid="uid://8jjgk6pbe8af"]
 
 [ext_resource type="Theme" uid="uid://cs7pakuugysjy" path="res://default_pause_theme.tres" id="1_ykoja"]
 [ext_resource type="Script" path="res://Pause Menu.gd" id="2_mr4kv"]
+[ext_resource type="Texture2D" uid="uid://bgqw4o63yyj3h" path="res://custom_sprites/world screens.png" id="3_7sgdh"]
 [ext_resource type="Texture2D" uid="uid://da3i2y8r7vbjo" path="res://custom_sprites/start screen buttons.png" id="4_eioc3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y62ot"]
+atlas = ExtResource("3_7sgdh")
+region = Rect2(3, 34, 90, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdql0"]
+atlas = ExtResource("3_7sgdh")
+region = Rect2(99, 36, 90, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_74gfm"]
 atlas = ExtResource("4_eioc3")
@@ -71,7 +80,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_vertical = 10
 
-[node name="ResumeButton" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="ResumeButton" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -79,7 +88,8 @@ focus_neighbor_top = NodePath("../QuitButton")
 focus_neighbor_bottom = NodePath("../InventoryButton")
 focus_next = NodePath("../InventoryButton")
 focus_previous = NodePath("../QuitButton")
-text = "Resume"
+texture_normal = SubResource("AtlasTexture_y62ot")
+texture_pressed = SubResource("AtlasTexture_sdql0")
 
 [node name="InventoryButton" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2

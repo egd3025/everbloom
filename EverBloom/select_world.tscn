@@ -1,7 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://kcoae3wmv4aa"]
+[gd_scene load_steps=10 format=3 uid="uid://kcoae3wmv4aa"]
 
 [ext_resource type="Theme" uid="uid://cs7pakuugysjy" path="res://default_pause_theme.tres" id="1_6538b"]
 [ext_resource type="Script" path="res://select_world.gd" id="2_c8y5d"]
+[ext_resource type="Texture2D" uid="uid://bgqw4o63yyj3h" path="res://custom_sprites/world screens.png" id="3_kv0oj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivnk1"]
+atlas = ExtResource("3_kv0oj")
+region = Rect2(4, 98, 90, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6fjv"]
+atlas = ExtResource("3_kv0oj")
+region = Rect2(100, 100, 90, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vd7l2"]
+atlas = ExtResource("3_kv0oj")
+region = Rect2(4, 66, 90, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gh87l"]
+atlas = ExtResource("3_kv0oj")
+region = Rect2(100, 68, 90, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofsf8"]
+atlas = ExtResource("3_kv0oj")
+region = Rect2(3, 34, 90, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3geij"]
+atlas = ExtResource("3_kv0oj")
+region = Rect2(99, 36, 90, 25)
 
 [node name="select_world" type="Control"]
 layout_mode = 3
@@ -32,21 +57,24 @@ offset_bottom = 121.0
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="start_world" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="start_world" type="TextureButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Start World"
+texture_normal = SubResource("AtlasTexture_ivnk1")
+texture_pressed = SubResource("AtlasTexture_l6fjv")
 
-[node name="new_world" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="new_world" type="TextureButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "New World"
+texture_normal = SubResource("AtlasTexture_vd7l2")
+texture_pressed = SubResource("AtlasTexture_gh87l")
 
-[node name="back" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="back" type="TextureButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Back"
+texture_normal = SubResource("AtlasTexture_ofsf8")
+texture_pressed = SubResource("AtlasTexture_3geij")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/start_world" to="." method="_on_start_world_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/start_world" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/new_world" to="." method="_on_new_world_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/new_world" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/new_world" to="." method="_on_new_world_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/back" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/back" to="." method="_on_back_pressed"]
