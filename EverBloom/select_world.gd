@@ -1,6 +1,8 @@
 extends Control
 
-#select menu
+##select menu: menu for the select world, which just starts the world that is saved or a
+## new world if no save is available.  There is also a back function to go to the 
+## start menu.
 
 
 func _on_start_world_pressed():
