@@ -7,30 +7,32 @@ const plant = preload("res://Plants/Plant.tscn")
 #coordinate list for all the plants 
 var coordList = []
 # makes a variable to recieve the signal from hotbar
-var hotbarSelected = 2;
+var hotbarSelected = 1;
 
 func _input(event):
 	if event.is_action("Plant"):
-		#flag to see if there is already plant on that tile
-		var flag = true
-		#gets the players position on the tile map
-		var coord = to_local(Vector2(player.position.x,player.position.y))
-		coord = floor.local_to_map(coord)
-		#checks to see if there is a plant whos coordinates are that tile
-		for plantCoord in coordList:
-			if plantCoord[0] == coord:
-				flag = false
-		#if there isnt a plant and the tile is tilled dirt
-		if floor.get_cell_atlas_coords(2, coord) == Vector2i(1,1) and flag:
-			coord = floor.map_to_local(coord)
-			#create a plant instance
-			var plant1 = plant.instantiate()
-			#set coords
-			plant1.position = coord
-			#add it as a child of the world and at it to the group "plants" for saving
-			world.add_child(plant1)
-			plant1.add_to_group("Plants")
-			coordList.append([floor.local_to_map(coord), plant1])
+		if hotbarSelected == 4:
+			# Check if we are holding seeds to plant first
+			#flag to see if there is already plant on that tile
+			var flag = true
+			#gets the players position on the tile map
+			var coord = to_local(Vector2(player.position.x,player.position.y))
+			coord = floor.local_to_map(coord)
+			#checks to see if there is a plant whos coordinates are that tile
+			for plantCoord in coordList:
+				if plantCoord[0] == coord:
+					flag = false
+			#if there isnt a plant and the tile is tilled dirt
+			if floor.get_cell_atlas_coords(2, coord) == Vector2i(1,1) and flag:
+				coord = floor.map_to_local(coord)
+				#create a plant instance
+				var plant1 = plant.instantiate()
+				#set coords
+				plant1.position = coord
+				#add it as a child of the world and at it to the group "plants" for saving
+				world.add_child(plant1)
+				plant1.add_to_group("Plants")
+				coordList.append([floor.local_to_map(coord), plant1])
 
 	if event.is_action_pressed("collect"):
 		#get the players coordinates
@@ -67,3 +69,23 @@ func _input(event):
 				floor.set_cell(2, coord, 6, Vector2(1,1))
 				floor.set_cells_terrain_connect(2, [coord], 0, 0)
 
+
+# Functions to process signal from hotbar
+func _on_hotbar_selected_num_1():
+	# selected slot 1, matches hotbar variable
+	hotbarSelected = 1;
+
+
+func _on_hotbar_selected_num_2():
+	# selected slot 2, matches hotbar variable
+	hotbarSelected = 2;
+
+
+func _on_hotbar_selected_num_3():
+	# selected slot 3, matches hotbar variable
+	hotbarSelected = 3;
+
+
+func _on_hotbar_selected_num_4():
+	# selected slot 4, matches hotbar variable
+	hotbarSelected = 4;
