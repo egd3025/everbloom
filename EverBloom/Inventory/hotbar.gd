@@ -26,18 +26,18 @@ func _input(_event):
 	if Input.is_action_just_pressed("1"):
 		selectedNum = 1;
 		selectedSlot = $Slot1/Slot1_Selected;
-		selectedNum_1.emit(1);
+		selectedNum_1.emit();
 	if Input.is_action_just_pressed("2"):
 		selectedNum = 2;
 		selectedSlot = $Slot2/Slot2_Selected;
-		selectedNum_2.emit(2);
+		selectedNum_2.emit();
 	if Input.is_action_just_pressed("3"):
 		selectedNum = 3;
 		selectedSlot = $Slot3/Slot3_Selected;
-		selectedNum_3.emit(3);
+		selectedNum_3.emit();
 	if Input.is_action_just_pressed("4"):
 		selectedNum = 4;
 		selectedSlot = $Slot4/Slot4_Selected;
-		selectedNum_4.emit(4);
+		selectedNum_4.emit();
 	# visibly select the correct thing
 	selectedSlot.visible = true;

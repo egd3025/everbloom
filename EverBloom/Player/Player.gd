@@ -12,6 +12,8 @@ var save_Inv = "user://inventory.json"
 # Player states
 @export var speed = 50
 var is_tilling = false
+# Make a variable to store the selected hotbar slot
+var hotbarSelected = 1;
 
 #direction and animation to be updated throughout game state
 var new_direction = Vector2(0,1) #only move one spaces
@@ -48,9 +50,11 @@ func _input(event):
 	#input event for our tilling
 	if event.is_action_pressed("till"):
 		#tilling anim
-		is_tilling = true
-		var animation  = "till_" + returned_direction(new_direction)
-		animation_sprite.play(animation)
+		if hotbarSelected == 2:
+			# check if we're holding the hoe before playing the animation
+			is_tilling = true
+			var animation  = "till_" + returned_direction(new_direction)
+			animation_sprite.play(animation)
 
 # Animation Direction
 func returned_direction(direction : Vector2):
@@ -134,3 +138,23 @@ func loadInv():
 		count += 1
 	#sends signal to the inventory ui to update
 	update.emit()
+
+# Functions to process the signal from hotbar
+func _on_hotbar_selected_num_1():
+	# selected slot 1, matches hotbar variable
+	hotbarSelected = 1;
+
+
+func _on_hotbar_selected_num_2():
+	# selected slot 2, matches hotbar variable
+	hotbarSelected = 2;
+
+
+func _on_hotbar_selected_num_3():
+	# selected slot 3, matches hotbar variable
+	hotbarSelected = 3;
+
+
+func _on_hotbar_selected_num_4():
+	# selected slot 4, matches hotbar variable
+	hotbarSelected = 4;
