@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://bnakm63s4hcam"]
+[gd_scene load_steps=66 format=3 uid="uid://bnakm63s4hcam"]
 
 [ext_resource type="Script" path="res://World/game_manager.gd" id="1_2ss7h"]
 [ext_resource type="TileSet" uid="uid://cxa3a7h17ymwt" path="res://stardew.tres" id="1_5jp6c"]
@@ -26,6 +26,12 @@
 [ext_resource type="Texture2D" uid="uid://qyk8oofmr6gc" path="res://custom_sprites/sale bear.png" id="18_tjon1"]
 [ext_resource type="Texture2D" uid="uid://cgym3jp30l7it" path="res://cup_noodle/Basic_Grass_Biom_things.png" id="19_opden"]
 [ext_resource type="Texture2D" uid="uid://cy560w18wxpeu" path="res://cup_noodle/Wood_Bridge.png" id="20_3q3v7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3blwf"]
+size = Vector2(37, 39.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2cmh"]
+size = Vector2(53.75, 19.25)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cplsi"]
 radius = 4.0
@@ -624,9 +630,17 @@ script = ExtResource("1_a85sf")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="World"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/StaticBody2D"]
+[node name="WorldBorderCollission" type="CollisionPolygon2D" parent="World/StaticBody2D"]
 build_mode = 1
 polygon = PackedVector2Array(-34, -2, 321, -1, 319, 177, -32, 177, -31, 2, -178, 0, -176, 304, 447, 304, 446, -127, -176, -129, -176, -4)
+
+[node name="HouseCollission" type="CollisionShape2D" parent="World/StaticBody2D"]
+position = Vector2(7.5, 8.25)
+shape = SubResource("RectangleShape2D_3blwf")
+
+[node name="ExampleBearCollission" type="CollisionShape2D" parent="World/StaticBody2D"]
+position = Vector2(153.125, 6.375)
+shape = SubResource("RectangleShape2D_t2cmh")
 
 [node name="Floor" type="TileMap" parent="World"]
 y_sort_enabled = true
