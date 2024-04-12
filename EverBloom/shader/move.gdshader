@@ -6,6 +6,8 @@ void vertex() {
 
 void fragment() {
 	// Called for every pixel the material is visible on.
+	//UV.x - TIME * 0.01, UV.y IS FOR HORIZONTAL MOVEMENT
+	//UV.x, UV.y - TIME * 0.01 IS FOR VERTICAL
 	COLOR = texture(TEXTURE, vec2(UV.x - TIME * 0.01, UV.y ));
 }
 
