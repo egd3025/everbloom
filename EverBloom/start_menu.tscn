@@ -67,7 +67,9 @@ under canvas item >  material > material - shadermaterial > \"move.gdshader\" is
 horixontal from left to right
 (UV.x - TIME * 0.01, UV.y )
 vertical from top down
-(UV.x , UV.y  - TIME * 0.01)"
+(UV.x , UV.y  - TIME * 0.01)
+
+https://www.youtube.com/watch?v=6Vfu1PhTiqo"
 texture_repeat = 2
 material = SubResource("ShaderMaterial_uf5vp")
 layout_mode = 1
