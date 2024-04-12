@@ -669,6 +669,7 @@ texture = SubResource("AtlasTexture_pg5m4")
 
 [node name="DayCycle_Label2" type="Label" parent="World/player/Camera2D/DayCycleLabelImage"]
 modulate = Color(0, 0, 0, 1)
+texture_filter = 3
 layout_mode = 0
 offset_left = 3.0
 offset_right = 64.0
