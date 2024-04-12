@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://00dg16oiyej"]
+[gd_scene load_steps=10 format=3 uid="uid://00dg16oiyej"]
 
 [ext_resource type="Script" path="res://Inventory/Inventory_UI.gd" id="1_gwhdc"]
-[ext_resource type="Texture2D" uid="uid://sfx0gevdpbl8" path="res://Inventory/item_images/inventory-background.png" id="2_2yepr"]
 [ext_resource type="Texture2D" uid="uid://blwuthsf8ljs3" path="res://cup_noodle_UI/Dialouge UI/Premade dialog box medium.png" id="2_ai6bu"]
 [ext_resource type="PackedScene" uid="uid://b56j1qcxe3igr" path="res://Inventory/inventory_ui_slot.tscn" id="3_1dwlq"]
 [ext_resource type="Texture2D" uid="uid://dnpnkgkxp8ev7" path="res://cup_noodle_UI/Dialouge UI/Emotes/Teemo Basic emote animations sprite sheet.png" id="3_cnyu8"]
+[ext_resource type="Texture2D" uid="uid://qymqgnh6bw34" path="res://cup_noodle_UI/Setting menu.png" id="4_uquv3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4rsoh"]
 atlas = ExtResource("3_cnyu8")
@@ -17,6 +17,10 @@ region = Rect2(37, 290, 23, 30)
 [sub_resource type="AtlasTexture" id="AtlasTexture_d6own"]
 atlas = ExtResource("3_cnyu8")
 region = Rect2(37, 258, 23, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87p7j"]
+atlas = ExtResource("4_uquv3")
+region = Rect2(139, 12, 106, 122)
 
 [node name="Inventory_UI" type="Control"]
 process_mode = 3
@@ -87,9 +91,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 114.0
 offset_top = 88.0
-offset_right = 113.0
-offset_bottom = 88.0
-texture = ExtResource("2_2yepr")
+offset_right = 116.0
+offset_bottom = 92.0
+texture = SubResource("AtlasTexture_87p7j")
 patch_margin_left = 6
 patch_margin_top = 6
 patch_margin_right = 6
@@ -102,10 +106,10 @@ anchor_left = 0.5
 anchor_top = 0.471
 anchor_right = 0.5
 anchor_bottom = 0.471
-offset_left = -38.0
-offset_top = -26.144
-offset_right = 38.0
-offset_bottom = 29.856
+offset_left = -39.0
+offset_top = -27.144
+offset_right = 37.0
+offset_bottom = 28.856
 grow_horizontal = 2
 grow_vertical = 2
 columns = 4
