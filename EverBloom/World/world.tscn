@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://bnakm63s4hcam"]
+[gd_scene load_steps=67 format=3 uid="uid://bnakm63s4hcam"]
 
 [ext_resource type="Script" path="res://World/game_manager.gd" id="1_2ss7h"]
 [ext_resource type="TileSet" uid="uid://cxa3a7h17ymwt" path="res://stardew.tres" id="1_5jp6c"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://qyk8oofmr6gc" path="res://custom_sprites/sale bear.png" id="18_tjon1"]
 [ext_resource type="Texture2D" uid="uid://cgym3jp30l7it" path="res://cup_noodle/Basic_Grass_Biom_things.png" id="19_opden"]
 [ext_resource type="Texture2D" uid="uid://cy560w18wxpeu" path="res://cup_noodle/Wood_Bridge.png" id="20_3q3v7"]
+[ext_resource type="Texture2D" uid="uid://da3i2y8r7vbjo" path="res://custom_sprites/start screen buttons.png" id="24_l7ytr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cplsi"]
 radius = 4.0
@@ -613,6 +614,14 @@ sources/6 = SubResource("TileSetAtlasSource_8ael8")
 sources/7 = SubResource("TileSetAtlasSource_gcnth")
 sources/8 = SubResource("TileSetAtlasSource_2f46t")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_bpo8a"]
+atlas = ExtResource("24_l7ytr")
+region = Rect2(4, 66, 90, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2oovt"]
+atlas = ExtResource("24_l7ytr")
+region = Rect2(100, 68, 90, 25)
+
 [node name="GameManager" type="Node"]
 process_mode = 3
 script = ExtResource("1_2ss7h")
@@ -729,16 +738,15 @@ text = "save"
 layout_mode = 2
 text = "load"
 
-[node name="exit" type="Button" parent="World/Saving_Time/saveLoadMenu"]
+[node name="exit" type="TextureButton" parent="World/Saving_Time/saveLoadMenu"]
 layout_mode = 2
-text = "exit
-"
+texture_normal = SubResource("AtlasTexture_bpo8a")
+texture_pressed = SubResource("AtlasTexture_2oovt")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="World"]
 
 [node name="escMenu" parent="World/CanvasLayer" node_paths=PackedStringArray("game_manager") instance=ExtResource("15_3h46d")]
 process_mode = 2
-visible = false
 game_manager = NodePath("../../..")
 
 [node name="FreeChickenHouse" type="Sprite2D" parent="."]

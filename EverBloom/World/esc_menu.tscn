@@ -1,6 +1,41 @@
-[gd_scene load_steps=2 format=3 uid="uid://basgntyoppjkk"]
+[gd_scene load_steps=13 format=3 uid="uid://basgntyoppjkk"]
 
 [ext_resource type="Script" path="res://World/escMenu.gd" id="1_7vc22"]
+[ext_resource type="Texture2D" uid="uid://drywlkm6flfgf" path="res://custom_sprites/inventory button.png" id="2_nvuq2"]
+[ext_resource type="Texture2D" uid="uid://bgqw4o63yyj3h" path="res://custom_sprites/world screens.png" id="3_jge0c"]
+[ext_resource type="Texture2D" uid="uid://da3i2y8r7vbjo" path="res://custom_sprites/start screen buttons.png" id="4_i4pjq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cv8no"]
+atlas = ExtResource("2_nvuq2")
+region = Rect2(3, 66, 90, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24xov"]
+atlas = ExtResource("2_nvuq2")
+region = Rect2(99, 68, 90, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2rls"]
+atlas = ExtResource("2_nvuq2")
+region = Rect2(3, 98, 90, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jk3kx"]
+atlas = ExtResource("2_nvuq2")
+region = Rect2(99, 100, 90, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5o3tq"]
+atlas = ExtResource("3_jge0c")
+region = Rect2(4, 98, 90, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jdj5"]
+atlas = ExtResource("3_jge0c")
+region = Rect2(100, 100, 90, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0cc6"]
+atlas = ExtResource("4_i4pjq")
+region = Rect2(4, 66, 90, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnehv"]
+atlas = ExtResource("4_i4pjq")
+region = Rect2(100, 68, 90, 25)
 
 [node name="escMenu" type="Control"]
 process_mode = 1
@@ -39,21 +74,25 @@ layout_mode = 2
 text = "PAUSED"
 horizontal_alignment = 1
 
-[node name="ResumeButton" type="Button" parent="Panel/VBoxContainer"]
+[node name="ResumeButton" type="TextureButton" parent="Panel/VBoxContainer"]
 layout_mode = 2
-text = "Resume"
+texture_normal = SubResource("AtlasTexture_cv8no")
+texture_pressed = SubResource("AtlasTexture_24xov")
 
-[node name="SaveButton" type="Button" parent="Panel/VBoxContainer"]
+[node name="SaveButton" type="TextureButton" parent="Panel/VBoxContainer"]
 layout_mode = 2
-text = "Save"
+texture_normal = SubResource("AtlasTexture_v2rls")
+texture_pressed = SubResource("AtlasTexture_jk3kx")
 
-[node name="LoadButton" type="Button" parent="Panel/VBoxContainer"]
+[node name="LoadButton" type="TextureButton" parent="Panel/VBoxContainer"]
 layout_mode = 2
-text = "Load"
+texture_normal = SubResource("AtlasTexture_5o3tq")
+texture_pressed = SubResource("AtlasTexture_3jdj5")
 
-[node name="ExitButton" type="Button" parent="Panel/VBoxContainer"]
+[node name="ExitButton" type="TextureButton" parent="Panel/VBoxContainer"]
 layout_mode = 2
-text = "Exit"
+texture_normal = SubResource("AtlasTexture_w0cc6")
+texture_pressed = SubResource("AtlasTexture_wnehv")
 
 [connection signal="pressed" from="Panel/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]
