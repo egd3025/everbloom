@@ -30,7 +30,7 @@ func place_tiles():
 				floor.set_cell(0, Vector2i(row,col), 2, Vector2i(0,5))
 	#loops for trees
 	for row in range(-2, 20):
-		for col in range(1, 11):
+		for col in range(2, 11):
 			var random_number : int = randi() % 60
 			if random_number == 49:
 				floor.set_cell(1, Vector2i(row,col), 0, Vector2i(1,0))
