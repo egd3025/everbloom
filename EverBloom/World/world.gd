@@ -4,6 +4,7 @@ const plant = preload("res://Plants/Plant.tscn")
 @onready var world = $"."
 @onready var floor = $Floor
 @onready var player = $player
+@onready var saving_time = $"../../Saving_Time"
 #coordinate list for all the plants 
 var coordList = []
 # makes a variable to recieve the signal from hotbar
@@ -51,10 +52,20 @@ func _input(event):
 		
 	
 	if Input.is_action_just_pressed("pause"):
+		saving_time.savePlayer()
+		saving_time.saveTileMap()
+		saving_time.savePlants()
+		player.saveInv()
+		print("GAME SAVED")
 		get_tree().paused = not get_tree().paused
 		get_tree().change_scene_to_file("res://Pause Menu.tscn")
 		
 	if Input.is_action_just_pressed("inventory"):
+		saving_time.savePlayer()
+		saving_time.saveTileMap()
+		saving_time.savePlants()
+		player.saveInv()
+		print("GAME SAVED")
 		get_tree().change_scene_to_file("res://Inventory/inventory_ui.tscn")
 		
 	if event.is_action("till"):
