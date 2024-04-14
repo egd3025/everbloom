@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://basgntyoppjkk"]
+[gd_scene load_steps=15 format=3 uid="uid://basgntyoppjkk"]
 
 [ext_resource type="Script" path="res://World/escMenu.gd" id="1_7vc22"]
 [ext_resource type="Texture2D" uid="uid://drywlkm6flfgf" path="res://custom_sprites/inventory button.png" id="2_nvuq2"]
@@ -35,6 +35,14 @@ region = Rect2(4, 66, 90, 27)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wnehv"]
 atlas = ExtResource("4_i4pjq")
+region = Rect2(100, 68, 90, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jh3w8"]
+atlas = ExtResource("3_jge0c")
+region = Rect2(4, 66, 90, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5au8d"]
+atlas = ExtResource("3_jge0c")
 region = Rect2(100, 68, 90, 25)
 
 [node name="escMenu" type="Control"]
@@ -94,7 +102,16 @@ layout_mode = 2
 texture_normal = SubResource("AtlasTexture_w0cc6")
 texture_pressed = SubResource("AtlasTexture_wnehv")
 
+[node name="new_world" type="TextureButton" parent="Panel"]
+offset_left = 228.0
+offset_top = 3.0
+offset_right = 318.0
+offset_bottom = 30.0
+texture_normal = SubResource("AtlasTexture_jh3w8")
+texture_pressed = SubResource("AtlasTexture_5au8d")
+
 [connection signal="pressed" from="Panel/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/LoadButton" to="." method="_on_load_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Panel/new_world" to="." method="_on_new_world_pressed"]

@@ -48,3 +48,11 @@ func _on_load_button_pressed():
 ## quits the game directly 
 func _on_exit_button_pressed():
 	get_tree().quit()
+
+
+func _on_new_world_pressed():
+	saving_time.load_game()
+	saving_time.load_Map()
+	saving_time.loadPlants()
+	player.loadInv()
+	print("NEW GAME LOADED")
