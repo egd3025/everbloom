@@ -4,11 +4,19 @@ const plant = preload("res://Plants/Plant.tscn")
 @onready var world = $"."
 @onready var floor = $Floor
 @onready var player = $player
-@onready var saving_time = $"../../Saving_Time"
+@onready var saving_time = $Saving_Time
+
 #coordinate list for all the plants 
 var coordList = []
 # makes a variable to recieve the signal from hotbar
 var hotbarSelected = 1;
+
+func _ready():
+	saving_time.load_game()
+	saving_time.load_Map()
+	saving_time.loadPlants()
+	player.loadInv()
+	print("GAME LOADED")
 
 func _input(event):
 	if event.is_action("Plant"):

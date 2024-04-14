@@ -1,5 +1,9 @@
 extends Control
 
+@onready var saving_time = $"../../Saving_Time"
+@onready var player = $"../../player"
+
+
 # controls for the pause menu
 func _on_resume_button_pressed():
 	# unpauses the game and returns to the world
