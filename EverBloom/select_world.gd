@@ -10,7 +10,11 @@ func _on_start_world_pressed():
 
 
 func _on_new_world_pressed():
-	pass # Replace with function body.
+	var save_pathPlayer = "user://variable.save"
+	var save_tileMap = "user://map.json"
+	var save_Plants = "user://plants.json"
+	var save_Inv = "user://inventory.json"
+	
 
 
 func _on_back_pressed():

@@ -103,6 +103,7 @@ texture_normal = SubResource("AtlasTexture_w0cc6")
 texture_pressed = SubResource("AtlasTexture_wnehv")
 
 [node name="new_world" type="TextureButton" parent="Panel"]
+layout_mode = 0
 offset_left = 228.0
 offset_top = 3.0
 offset_right = 318.0
