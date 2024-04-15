@@ -15,7 +15,16 @@ func _on_new_world_pressed():
 	var save_Plants = "user://plants.json"
 	var save_Inv = "user://inventory.json"
 	
-
+	var file = FileAccess.open(save_pathPlayer, FileAccess.WRITE)
+	var file1 = FileAccess.open(save_Inv, FileAccess.WRITE)
+	var file2 = FileAccess.open(save_tileMap, FileAccess.WRITE)
+	var file3 = FileAccess.open(save_Plants, FileAccess.WRITE)
+	file.close()
+	file1.close()
+	file2.close()
+	file3.close()
+	print("NEW GAME STARTED")
+	get_tree().change_scene_to_file("res://World/world.tscn")
 
 func _on_back_pressed():
 	get_tree().change_scene_to_file("res://start_menu.tscn")

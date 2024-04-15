@@ -76,14 +76,14 @@ func savePlants():
 	
 
 func loadPlants():
-	#removes all the plants from the world
-	world.coordList = []
-	for plant in get_tree().get_nodes_in_group("Plants"):
-		plant.queue_free()
-		
+
 	#opens the file
 	var file = FileAccess.open(save_Plants, FileAccess.READ)
 	if file.get_length() != 0:
+		world.coordList = []
+	#removes all the plants from the world
+		for plant in get_tree().get_nodes_in_group("Plants"):
+			plant.queue_free()
 		var data = JSON.parse_string(file.get_line())
 		#creates a new plant coordinate list
 		var coordList = []
@@ -114,29 +114,32 @@ func load_game():
 	#loads the player
 	if FileAccess.file_exists(save_pathPlayer):
 		var file = FileAccess.open(save_pathPlayer, FileAccess.READ)
-		player.position.x = file.get_var(player.position.x)
-		player.position.y = file.get_var(player.position.y)
-		
-		while file.get_position() != file.get_length():
-			floor.set_cell()
-	else:
-		print("No save Data")
+		if file.get_length() != 0:
+			player.position.x = file.get_var(player.position.x)
+			player.position.y = file.get_var(player.position.y)
+			
+			while file.get_position() != file.get_length():
+				floor.set_cell()
+		else:
+			print("No save Data")
 		
 func load_Map():
 	#loads the saved tile map
 	#it clears the floor
-	floor.clear()
+
 	var file = FileAccess.open(save_tileMap, FileAccess.READ)
-	var data = JSON.parse_string(file.get_line())
-	#loops for each tile, creates a tile in that coordinate with its respective data
-	for tile_data in data["tiles"]:
-		var x = tile_data["x"]
-		var y = tile_data["y"]
-		var tileAtlasX = tile_data["tileAtlas.x"]
-		var tileAtlasY = tile_data["tileAtlas.y"]
-		var tileSource = tile_data["tileSource"]
-		var layer = tile_data["layer"]
-		floor.set_cell(layer, Vector2i(x,y), tileSource, Vector2i(tileAtlasX,tileAtlasY))
+	if file.get_length() != 0:
+		floor.clear()
+		var data = JSON.parse_string(file.get_line())
+		#loops for each tile, creates a tile in that coordinate with its respective data
+		for tile_data in data["tiles"]:
+			var x = tile_data["x"]
+			var y = tile_data["y"]
+			var tileAtlasX = tile_data["tileAtlas.x"]
+			var tileAtlasY = tile_data["tileAtlas.y"]
+			var tileSource = tile_data["tileSource"]
+			var layer = tile_data["layer"]
+			floor.set_cell(layer, Vector2i(x,y), tileSource, Vector2i(tileAtlasX,tileAtlasY))
 		
 	
 		

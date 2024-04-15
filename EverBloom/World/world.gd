@@ -23,7 +23,7 @@ func _ready():
 		saving_time.loadPlants()
 		player.loadInv()
 		print("GAME LOADED")
-
+	file.close()
 func _input(event):
 	if event.is_action("Plant"):
 		if hotbarSelected == 4:

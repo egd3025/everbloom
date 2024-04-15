@@ -63,4 +63,4 @@ func _on_new_world_pressed():
 	file2.close()
 	file3.close()
 	print("NEW GAME STARTED")
-	get_tree().change_scene_to_file("res://World/world.tscn")
+	get_tree().reload_current_scene()
