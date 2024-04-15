@@ -6,17 +6,23 @@ const plant = preload("res://Plants/Plant.tscn")
 @onready var player = $player
 @onready var saving_time = $Saving_Time
 
+var save_pathPlayer = "user://variable.save"
+var save_tileMap = "user://map.json"
+var save_Plants = "user://plants.json"
+var save_Inv = "user://inventory.json"
 #coordinate list for all the plants 
 var coordList = []
 # makes a variable to recieve the signal from hotbar
 var hotbarSelected = 1;
 
 func _ready():
-	saving_time.load_game()
-	saving_time.load_Map()
-	saving_time.loadPlants()
-	player.loadInv()
-	print("GAME LOADED")
+	var file = FileAccess.open(save_pathPlayer, FileAccess.READ)
+	if file.get_length() != 0:
+		saving_time.load_game()
+		saving_time.load_Map()
+		saving_time.loadPlants()
+		player.loadInv()
+		print("GAME LOADED")
 
 func _input(event):
 	if event.is_action("Plant"):

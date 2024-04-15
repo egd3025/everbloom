@@ -83,30 +83,31 @@ func loadPlants():
 		
 	#opens the file
 	var file = FileAccess.open(save_Plants, FileAccess.READ)
-	var data = JSON.parse_string(file.get_line())
-	#creates a new plant coordinate list
-	var coordList = []
-	#loads in the all the data for each plant
-	#it then creates a plant for each one saved and gives it
-	#that respective data
-	for tile_data in data["plants"]:
-		var x = tile_data["x"]
-		var y = tile_data["y"]
-		var stage = tile_data["stage"]
-		var timeLeft = tile_data["time"]
-		var plant1 = plant.instantiate()
-		plant1.position.x = x
-		plant1.position.y = y
-		
-		#add it to the coordinate list
-		var coord = floor.to_local(Vector2(x,y))
-		coord = floor.local_to_map(coord)
-		world.coordList.append([coord, plant1])
-		#set the stages and time and adds it to the group and as a child of the world
-		plant1.set_stage(stage)
-		plant1.add_to_group("Plants")
-		plant1.setTimerLeft(timeLeft)
-		world.add_child(plant1)
+	if file.get_length() != 0:
+		var data = JSON.parse_string(file.get_line())
+		#creates a new plant coordinate list
+		var coordList = []
+		#loads in the all the data for each plant
+		#it then creates a plant for each one saved and gives it
+		#that respective data
+		for tile_data in data["plants"]:
+			var x = tile_data["x"]
+			var y = tile_data["y"]
+			var stage = tile_data["stage"]
+			var timeLeft = tile_data["time"]
+			var plant1 = plant.instantiate()
+			plant1.position.x = x
+			plant1.position.y = y
+			
+			#add it to the coordinate list
+			var coord = floor.to_local(Vector2(x,y))
+			coord = floor.local_to_map(coord)
+			world.coordList.append([coord, plant1])
+			#set the stages and time and adds it to the group and as a child of the world
+			plant1.set_stage(stage)
+			plant1.add_to_group("Plants")
+			plant1.setTimerLeft(timeLeft)
+			world.add_child(plant1)
 		
 
 func load_game():
