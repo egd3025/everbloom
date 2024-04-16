@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://fadavi6p88di"
+path="res://.godot/imported/Menu Move.wav-9851b08b05a41f02ba6a850e9142dbfc.sample"
+
+[deps]
+
+source_file="res://Plants/godot_provided/Music and Sounds/Menu Move.wav"
+dest_files=["res://.godot/imported/Menu Move.wav-9851b08b05a41f02ba6a850e9142dbfc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
