@@ -65,9 +65,12 @@ func _input(event):
 			coord = floor.local_to_map(coord)
 			var coordList = []
 			#change the tile in the tile map and call the autotile operation
-			if floor.get_cell_source_id(1, coord) != 0:
-				floor.set_cell(2, coord, 6, Vector2(1,1))
-				floor.set_cells_terrain_connect(2, [coord], 0, 0)
+			
+			if floor.get_cell_atlas_coords(1, coord) != Vector2i(1,0):
+				if floor.get_cell_atlas_coords(1, coord) != Vector2i(0,0):
+					floor.erase_cell(1, coord)
+					floor.set_cell(2, coord, 6, Vector2(1,1))
+					floor.set_cells_terrain_connect(2, [coord], 0, 0)
 
 
 # Functions to process signal from hotbar

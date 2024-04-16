@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://8jjgk6pbe8af"]
+[gd_scene load_steps=14 format=3 uid="uid://8jjgk6pbe8af"]
 
 [ext_resource type="Theme" uid="uid://cs7pakuugysjy" path="res://default_pause_theme.tres" id="1_ykoja"]
 [ext_resource type="Script" path="res://Pause Menu.gd" id="2_mr4kv"]
 [ext_resource type="Texture2D" uid="uid://bgqw4o63yyj3h" path="res://custom_sprites/world screens.png" id="3_7sgdh"]
+[ext_resource type="Texture2D" uid="uid://drywlkm6flfgf" path="res://custom_sprites/inventory button.png" id="4_c5mve"]
 [ext_resource type="Texture2D" uid="uid://da3i2y8r7vbjo" path="res://custom_sprites/start screen buttons.png" id="4_eioc3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y62ot"]
@@ -12,6 +13,14 @@ region = Rect2(3, 34, 90, 27)
 [sub_resource type="AtlasTexture" id="AtlasTexture_sdql0"]
 atlas = ExtResource("3_7sgdh")
 region = Rect2(99, 36, 90, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61mlt"]
+atlas = ExtResource("4_c5mve")
+region = Rect2(3, 2, 90, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1rjmu"]
+atlas = ExtResource("4_c5mve")
+region = Rect2(99, 4, 90, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_74gfm"]
 atlas = ExtResource("4_eioc3")
@@ -56,7 +65,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -30.0
+offset_top = -14.0
+offset_bottom = 27.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 32
@@ -71,7 +81,7 @@ alignment = 1
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 34
 text = "EverBloom"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -91,7 +101,7 @@ focus_previous = NodePath("../QuitButton")
 texture_normal = SubResource("AtlasTexture_y62ot")
 texture_pressed = SubResource("AtlasTexture_sdql0")
 
-[node name="InventoryButton" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="InventoryButton" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -99,7 +109,8 @@ focus_neighbor_top = NodePath("../ResumeButton")
 focus_neighbor_bottom = NodePath("../OptionsButton")
 focus_next = NodePath("../OptionsButton")
 focus_previous = NodePath("../ResumeButton")
-text = "Inventory"
+texture_normal = SubResource("AtlasTexture_61mlt")
+texture_pressed = SubResource("AtlasTexture_1rjmu")
 
 [node name="OptionsButton" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
