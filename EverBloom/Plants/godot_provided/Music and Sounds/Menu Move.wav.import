@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://fadavi6p88di"
-path="res://.godot/imported/Menu Move.wav-53b0b0e634dd5d87c5482c40af278824.sample"
+path="res://.godot/imported/Menu Move.wav-9851b08b05a41f02ba6a850e9142dbfc.sample"
 
 [deps]
 
-source_file="res://godot_provided/Music and Sounds/Menu Move.wav"
-dest_files=["res://.godot/imported/Menu Move.wav-53b0b0e634dd5d87c5482c40af278824.sample"]
+source_file="res://Plants/godot_provided/Music and Sounds/Menu Move.wav"
+dest_files=["res://.godot/imported/Menu Move.wav-9851b08b05a41f02ba6a850e9142dbfc.sample"]
 
 [params]
 

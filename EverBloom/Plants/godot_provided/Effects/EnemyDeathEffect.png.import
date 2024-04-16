@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://u6mncpvvy3nv"
-path="res://.godot/imported/Bat.png-990ee3ac985bd1eab6b31da23740bd77.ctex"
+uid="uid://bvr0ya67get1i"
+path="res://.godot/imported/EnemyDeathEffect.png-493965505c0590d340514ab4e5431778.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://godot_provided/Enemies/Bat.png"
-dest_files=["res://.godot/imported/Bat.png-990ee3ac985bd1eab6b31da23740bd77.ctex"]
+source_file="res://Plants/godot_provided/Effects/EnemyDeathEffect.png"
+dest_files=["res://.godot/imported/EnemyDeathEffect.png-493965505c0590d340514ab4e5431778.ctex"]
 
 [params]
 

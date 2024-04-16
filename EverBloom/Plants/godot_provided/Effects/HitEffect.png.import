@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqxel7i30g3xk"
-path="res://.godot/imported/GrassEffect.png-a5e6216e33a262620645b9bb759efb71.ctex"
+uid="uid://b7k03wmcg7hpx"
+path="res://.godot/imported/HitEffect.png-6983f7f1459615e323d77ee7a682a77a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://godot_provided/Effects/GrassEffect.png"
-dest_files=["res://.godot/imported/GrassEffect.png-a5e6216e33a262620645b9bb759efb71.ctex"]
+source_file="res://Plants/godot_provided/Effects/HitEffect.png"
+dest_files=["res://.godot/imported/HitEffect.png-6983f7f1459615e323d77ee7a682a77a.ctex"]
 
 [params]
 
