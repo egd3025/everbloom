@@ -7,7 +7,10 @@ extends Control
 @export var game_manager : GameManager
 @onready var player = $"../../player"
 
-
+var save_pathPlayer = "user://variable.save"
+var save_tileMap = "user://map.json"
+var save_Plants = "user://plants.json"
+var save_Inv = "user://inventory.json"
 
 ## Called when the node enters the scene tree for the first time.
 func _ready():
@@ -48,3 +51,16 @@ func _on_load_button_pressed():
 ## quits the game directly 
 func _on_exit_button_pressed():
 	get_tree().quit()
+
+
+func _on_new_world_pressed():
+	var file = FileAccess.open(save_pathPlayer, FileAccess.WRITE)
+	var file1 = FileAccess.open(save_Inv, FileAccess.WRITE)
+	var file2 = FileAccess.open(save_tileMap, FileAccess.WRITE)
+	var file3 = FileAccess.open(save_Plants, FileAccess.WRITE)
+	file.close()
+	file1.close()
+	file2.close()
+	file3.close()
+	print("NEW GAME STARTED")
+	get_tree().reload_current_scene()
