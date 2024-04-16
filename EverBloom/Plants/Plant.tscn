@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://byhgnas87o1gb"]
 
 [ext_resource type="Script" path="res://Plants/Plant.gd" id="1_egb8p"]
-[ext_resource type="Resource" uid="uid://bov0m54vbd6lj" path="res://Inventory/items/Wheat.tres" id="2_58rtf"]
 [ext_resource type="Texture2D" uid="uid://c8a3mck1ac1vk" path="res://cup_noodle/Basic_Plants.png" id="2_rta03"]
+[ext_resource type="Resource" uid="uid://bov0m54vbd6lj" path="res://Inventory/items/Wheat.tres" id="2_t4qk8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_74do7"]
 radius = 15.0333
@@ -11,7 +11,7 @@ radius = 15.0333
 z_index = 1
 y_sort_enabled = true
 script = ExtResource("1_egb8p")
-item = ExtResource("2_58rtf")
+item = ExtResource("2_t4qk8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_rta03")
@@ -24,7 +24,6 @@ vframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pickable_area"]
 shape = SubResource("CircleShape2D_74do7")
-one_way_collision_margin = 5.0
 
 [node name="Marker2D" type="Marker2D" parent="."]
 
