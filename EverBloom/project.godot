@@ -13,7 +13,7 @@ config_version=5
 config/name="EverBloom_preEvan"
 run/main_scene="res://start_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://godot_provided/icon.svg"
+config/icon="res://Plants/godot_provided/icon.svg"
 
 [display]
 
@@ -23,6 +23,10 @@ window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="viewport"
 <<<<<<<Updatedupstreamwindow/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gut/plugin.cfg")
 
 [input]
 

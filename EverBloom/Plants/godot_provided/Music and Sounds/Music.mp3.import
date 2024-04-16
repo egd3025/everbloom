@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b6e7n5dp7ag3w"
+path="res://.godot/imported/Music.mp3-ea117c3934e2047b9f7130a3693f9f7e.mp3str"
+
+[deps]
+
+source_file="res://Plants/godot_provided/Music and Sounds/Music.mp3"
+dest_files=["res://.godot/imported/Music.mp3-ea117c3934e2047b9f7130a3693f9f7e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
