@@ -1,6 +1,8 @@
 extends Control
 ##start menu : changes scenes to the start game, options menu, and exit app options.
-
+func _ready():
+	AudioPlayer.play_music_level()
+	
 func _on_play_pressed():
 	get_tree().change_scene_to_file("res://select_world.tscn")
 
