@@ -3,6 +3,13 @@ extends CanvasLayer
 # go ahead and preselect the first slot in hotbar
 @onready var selectedNum = 1;
 @onready var selectedSlot: TextureRect = $Slot1/Slot1_Selected;
+# assign possible textures for our plantable items to variables
+var wheat = preload("res://Inventory/item_images/Wheat_Seed.png");
+var tomato = preload("res://Inventory/item_images/Tomato_Seed.png");
+# assign our hotbar seed texture to a variable to manipulate
+@onready var selectedSeed: Sprite2D = $Slot4/Sprite2D;
+var save_Hotbar = "user://hotbar.json"
+var textureRef = "res://Inventory/item_images/Wheat_Seed.png"
 # i couldn't find a way for a signal to just send off the selectedNum
 # variable directly so I just made some hard coded signals since
 # the hotbar is static anyways
@@ -41,3 +48,36 @@ func _input(_event):
 		selectedNum_4.emit();
 	# visibly select the correct thing
 	selectedSlot.visible = true;
+
+
+func _on_seed_select_tomato():
+	selectedSeed.texture = tomato;
+	textureRef = "res://Inventory/item_images/Tomato_Seed.png"
+	saveHotbar()
+
+
+func _on_seed_select_wheat():
+	selectedSeed.texture = wheat;
+	textureRef = "res://Inventory/item_images/Wheat_Seed.png"
+	saveHotbar()
+
+func saveHotbar():
+	# open the file
+	var file = FileAccess.open(save_Hotbar, FileAccess.WRITE)
+	# only really need to save the 4th slot since that is all that changes
+	# make it as a dictionary so we can store the others later if we need to
+	var data = {}
+	data["seeds"] = []
+	data["seeds"].append({"seed": textureRef})
+	file.store_line(JSON.stringify(data))
+	
+func loadHotbar():
+	# open the file
+	var file = FileAccess.open(save_Hotbar, FileAccess.READ)
+	if file.get_length() != 0:
+		var data = JSON.parse_string(file.get_line())
+		for select in data["seeds"]:
+			var seed = select["seed"]
+			selectedSeed.texture = load(seed)
+	else:
+		print("No save Data")

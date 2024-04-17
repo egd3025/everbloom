@@ -1,10 +1,21 @@
-[gd_scene load_steps=10 format=3 uid="uid://00dg16oiyej"]
+[gd_scene load_steps=15 format=3 uid="uid://00dg16oiyej"]
 
 [ext_resource type="Script" path="res://Inventory/Inventory_UI.gd" id="1_gwhdc"]
 [ext_resource type="Texture2D" uid="uid://blwuthsf8ljs3" path="res://cup_noodle_UI/Dialouge UI/Premade dialog box medium.png" id="2_ai6bu"]
 [ext_resource type="PackedScene" uid="uid://b56j1qcxe3igr" path="res://Inventory/inventory_ui_slot.tscn" id="3_1dwlq"]
+[ext_resource type="Texture2D" uid="uid://c8a3mck1ac1vk" path="res://cup_noodle/Basic_Plants.png" id="3_b8umb"]
 [ext_resource type="Texture2D" uid="uid://dnpnkgkxp8ev7" path="res://cup_noodle_UI/Dialouge UI/Emotes/Teemo Basic emote animations sprite sheet.png" id="3_cnyu8"]
+[ext_resource type="Script" path="res://Inventory/SeedSelect.gd" id="3_o2aef"]
 [ext_resource type="Texture2D" uid="uid://qymqgnh6bw34" path="res://cup_noodle_UI/Setting menu.png" id="4_uquv3"]
+[ext_resource type="PackedScene" uid="uid://dat3hur2wmdbq" path="res://Inventory/hotbar.tscn" id="8_fy0kq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3oyq0"]
+atlas = ExtResource("3_b8umb")
+region = Rect2(2, 2, 12, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsinv"]
+atlas = ExtResource("3_b8umb")
+region = Rect2(2, 18, 12, 13)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4rsoh"]
 atlas = ExtResource("3_cnyu8")
@@ -46,15 +57,16 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.682353, 0.941176, 0.686275, 1)
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="SeedSelect" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 42.0
 offset_top = 7.0
 offset_right = 282.0
 offset_bottom = 71.0
 texture = ExtResource("2_ai6bu")
+script = ExtResource("3_o2aef")
 
-[node name="Label" type="Label" parent="TextureRect2"]
+[node name="Label" type="Label" parent="SeedSelect"]
 layout_mode = 0
 offset_left = 66.0
 offset_top = 21.0
@@ -62,17 +74,43 @@ offset_right = 246.0
 offset_bottom = 138.0
 scale = Vector2(0.25, 0.25)
 theme_override_font_sizes/font_size = 33
-text = "REMINDER:"
+text = "What should I plant?"
 
-[node name="Label2" type="Label" parent="TextureRect2"]
+[node name="Wheat_Button" type="TextureButton" parent="SeedSelect"]
 layout_mode = 0
-offset_left = 73.0
+offset_left = 77.0
 offset_top = 33.0
-offset_right = 508.0
-offset_bottom = 150.0
-scale = Vector2(0.5, 0.5)
-theme_override_font_sizes/font_size = 15
-text = " - you smell, go water your plants"
+offset_right = 121.0
+offset_bottom = 46.0
+texture_normal = SubResource("AtlasTexture_3oyq0")
+
+[node name="wheat_Label" type="Label" parent="SeedSelect"]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 34.0
+offset_right = 209.0
+offset_bottom = 82.0
+scale = Vector2(0.25, 0.25)
+theme_override_font_sizes/font_size = 33
+text = "Wheat"
+
+[node name="Tomato_Button" type="TextureButton" parent="SeedSelect"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 33.0
+offset_right = 185.0
+offset_bottom = 46.0
+texture_normal = SubResource("AtlasTexture_gsinv")
+
+[node name="Tomato_Label" type="Label" parent="SeedSelect"]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 34.0
+offset_right = 283.0
+offset_bottom = 90.0
+scale = Vector2(0.25, 0.25)
+theme_override_font_sizes/font_size = 33
+text = "Tomato"
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 0
@@ -89,10 +127,10 @@ stretch_mode = 0
 layout_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 114.0
-offset_top = 88.0
-offset_right = 116.0
-offset_bottom = 92.0
+offset_left = 102.0
+offset_top = 76.0
+offset_right = 104.0
+offset_bottom = 80.0
 texture = SubResource("AtlasTexture_87p7j")
 patch_margin_left = 6
 patch_margin_top = 6
@@ -149,3 +187,12 @@ layout_mode = 2
 
 [node name="Inventory_UI_Slot12" parent="NinePatchRect/GridContainer" instance=ExtResource("3_1dwlq")]
 layout_mode = 2
+
+[node name="Hotbar" parent="." instance=ExtResource("8_fy0kq")]
+
+[connection signal="Tomato" from="SeedSelect" to="Hotbar" method="_on_seed_select_tomato"]
+[connection signal="Wheat" from="SeedSelect" to="Hotbar" method="_on_seed_select_wheat"]
+[connection signal="pressed" from="SeedSelect/Wheat_Button" to="SeedSelect" method="_on_wheat_button_pressed"]
+[connection signal="pressed" from="SeedSelect/Wheat_Button" to="Hotbar" method="_on_wheat_button_pressed"]
+[connection signal="pressed" from="SeedSelect/Tomato_Button" to="SeedSelect" method="_on_tomato_button_pressed"]
+[connection signal="pressed" from="SeedSelect/Tomato_Button" to="Hotbar" method="_on_tomato_button_pressed"]

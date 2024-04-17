@@ -5,6 +5,7 @@ const plant = preload("res://Plants/Plant.tscn")
 @onready var floor = $Floor
 @onready var player = $player
 @onready var saving_time = $Saving_Time
+@onready var Hotbar = $player/Hotbar
 
 var save_pathPlayer = "user://variable.save"
 var save_tileMap = "user://map.json"
@@ -22,6 +23,7 @@ func _ready():
 		saving_time.load_Map()
 		saving_time.loadPlants()
 		player.loadInv()
+		Hotbar.loadHotbar()
 		print("GAME LOADED")
 	file.close()
 func _input(event):
@@ -70,6 +72,7 @@ func _input(event):
 		saving_time.saveTileMap()
 		saving_time.savePlants()
 		player.saveInv()
+		Hotbar.saveHotbar()
 		print("GAME SAVED")
 		get_tree().paused = not get_tree().paused
 		get_tree().change_scene_to_file("res://Pause Menu.tscn")
@@ -79,6 +82,7 @@ func _input(event):
 		saving_time.saveTileMap()
 		saving_time.savePlants()
 		player.saveInv()
+		Hotbar.saveHotbar()
 		print("GAME SAVED")
 		get_tree().change_scene_to_file("res://Inventory/inventory_ui.tscn")
 		
