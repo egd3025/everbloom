@@ -12,6 +12,9 @@ var save_tileMap = "user://map.json"
 var save_Plants = "user://plants.json"
 var save_Inv = "user://inventory.json"
 
+# Add reference to the World scene
+var WorldScene = preload("World.tscn")
+
 ## Called when the node enters the scene tree for the first time.
 func _ready():
 	hide()

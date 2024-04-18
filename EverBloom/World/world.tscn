@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://bnakm63s4hcam"]
+[gd_scene load_steps=69 format=3 uid="uid://bnakm63s4hcam"]
 
 [ext_resource type="Script" path="res://World/game_manager.gd" id="1_2ss7h"]
 [ext_resource type="TileSet" uid="uid://cxa3a7h17ymwt" path="res://stardew.tres" id="1_5jp6c"]
