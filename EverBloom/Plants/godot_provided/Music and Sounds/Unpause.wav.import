@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://52476svpx8xd"
+path="res://.godot/imported/Unpause.wav-381b4b702b404fee3f259081f62e62bf.sample"
+
+[deps]
+
+source_file="res://Plants/godot_provided/Music and Sounds/Unpause.wav"
+dest_files=["res://.godot/imported/Unpause.wav-381b4b702b404fee3f259081f62e62bf.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

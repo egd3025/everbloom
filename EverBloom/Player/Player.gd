@@ -125,19 +125,21 @@ func loadInv():
 	#get the item logo
 	var item : InvItem = preload("res://Inventory/items/Wheat.tres")
 	#open the file with the json data
+	
 	var file = FileAccess.open(save_Inv, FileAccess.READ)
-	var data = JSON.parse_string(file.get_line())
-	#count used to index the item slots
-	var count = 0
-	#loop for each item saved
-	for savedItem in data["items"]:
-		#insert it and add the amount
-		inv.insert(item)
-		inv.slots[count].amount = savedItem["amount"]
+	if file.get_length() != 0:
+		var data = JSON.parse_string(file.get_line())
+		#count used to index the item slots
+		var count = 0
+		#loop for each item saved
+		for savedItem in data["items"]:
+			#insert it and add the amount
+			inv.insert(item)
+			inv.slots[count].amount = savedItem["amount"]
 
-		count += 1
-	#sends signal to the inventory ui to update
-	update.emit()
+			count += 1
+		#sends signal to the inventory ui to update
+		update.emit()
 
 # Functions to process the signal from hotbar
 func _on_hotbar_selected_num_1():

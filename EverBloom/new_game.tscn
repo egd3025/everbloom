@@ -1,0 +1,77 @@
+[gd_scene load_steps=7 format=3 uid="uid://csoritpt8nwj4"]
+
+[ext_resource type="Script" path="res://new_game.gd" id="1_vxkmi"]
+[ext_resource type="Texture2D" uid="uid://bgqw4o63yyj3h" path="res://custom_sprites/world screens.png" id="2_hhdhf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a07bx"]
+atlas = ExtResource("2_hhdhf")
+region = Rect2(3, 34, 90, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpc8c"]
+atlas = ExtResource("2_hhdhf")
+region = Rect2(99, 36, 90, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdqgl"]
+atlas = ExtResource("2_hhdhf")
+region = Rect2(4, 66, 90, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xpiw"]
+atlas = ExtResource("2_hhdhf")
+region = Rect2(100, 68, 90, 25)
+
+[node name="new_game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vxkmi")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.686275, 0.882353, 0.686275, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 320.0
+offset_bottom = 74.0
+text = "WARNING: This will overwrite the 
+                        previous save files.  
+Press NEW to create a new world."
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 20.0
+offset_right = 190.0
+offset_bottom = 121.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="back_button" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_a07bx")
+texture_pressed = SubResource("AtlasTexture_wpc8c")
+
+[node name="new_world_button" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_cdqgl")
+texture_pressed = SubResource("AtlasTexture_8xpiw")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/back_button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/new_world_button" to="." method="_on_new_world_button_pressed"]
