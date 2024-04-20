@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=3 uid="uid://bxqyrfj05fdqi"]
+
+[ext_resource type="Script" path="res://DayTransition.gd" id="1_aas8g"]
+[ext_resource type="Texture2D" uid="uid://bgqw4o63yyj3h" path="res://custom_sprites/world screens.png" id="1_d20sr"]
+[ext_resource type="Texture2D" uid="uid://da3i2y8r7vbjo" path="res://custom_sprites/start screen buttons.png" id="2_tu62n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88ov6"]
+atlas = ExtResource("1_d20sr")
+region = Rect2(3, 34, 90, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xy2j"]
+atlas = ExtResource("1_d20sr")
+region = Rect2(99, 36, 90, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6mji"]
+atlas = ExtResource("2_tu62n")
+region = Rect2(4, 66, 90, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkns7"]
+atlas = ExtResource("2_tu62n")
+region = Rect2(100, 68, 90, 25)
+
+[node name="Day Transition" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aas8g")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.686275, 0.882353, 0.686275, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_direction = 1
+layout_mode = 1
+offset_left = 39.0
+offset_top = 7.0
+offset_right = 281.0
+offset_bottom = 180.0
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 34
+text = "EverBloom"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="ResumeButton" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../QuitButton")
+focus_previous = NodePath("../QuitButton")
+texture_normal = SubResource("AtlasTexture_88ov6")
+texture_pressed = SubResource("AtlasTexture_2xy2j")
+
+[node name="QuitButton" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_bottom = NodePath("../ResumeButton")
+focus_next = NodePath("../ResumeButton")
+texture_normal = SubResource("AtlasTexture_a6mji")
+texture_pressed = SubResource("AtlasTexture_vkns7")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

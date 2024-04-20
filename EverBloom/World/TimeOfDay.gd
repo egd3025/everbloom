@@ -6,7 +6,7 @@ var time_index = 0
 var times = ["10:00 AM", "11:00 AM", "12:00 PM", " 1:00 PM", " 2:00 PM", " 3:00 PM", " 4:00 PM", " 5:00 PM", " 6:00 PM"]
 var time_accumulator = 0
 # after every 60 seconds, the label will update to account for 60 minutes in game
-var update_interval = 1
+var update_interval = .5
 var DayCycle_Label2: Label
 
 @onready var saving_time = $"../../Saving_Time"
@@ -43,13 +43,13 @@ func _process(delta):
 		DayCycle_Label2.text = times[time_index]
 		# Check if the time has cycled through all elements
 		if time_index == 0:
-			# Pause the game
-			get_tree().paused = true
 			# save everything
 			saving_time.savePlayer()
 			saving_time.saveTileMap()
 			saving_time.savePlants()
 			player.saveInv()
 			print("GAME SAVED")
-			# Load the Pause Menu scene
-			get_tree().change_scene_to_file("res://Pause Menu.tscn")
+			# Load the Day Transition scene
+			# get_tree().change_scene_to_file("res://day_transition.tscn")
+			# this works now
+			get_tree().change_scene_to_file("res://day_transition.tscn")
