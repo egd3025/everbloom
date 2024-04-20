@@ -6,7 +6,7 @@ var time_index = 0
 var times = ["10:00 AM", "11:00 AM", "12:00 PM", " 1:00 PM", " 2:00 PM", " 3:00 PM", " 4:00 PM", " 5:00 PM", " 6:00 PM"]
 var time_accumulator = 0
 # after every 60 seconds, the label will update to account for 60 minutes in game
-var update_interval = .5
+var update_interval = 60
 var DayCycle_Label2: Label
 
 @onready var saving_time = $"../../Saving_Time"
@@ -17,9 +17,6 @@ var save_pathPlayer = "user://variable.save"
 var save_tileMap = "user://map.json"
 var save_Plants = "user://plants.json"
 var save_Inv = "user://inventory.json"
-
-var EscMenuScene = preload("res://World/esc_menu.tscn")
-
 
 ## _ready() is called when the node enters the scene tree for the first time
 ## it conncets to the child node DayCyle_Label2 and initially sets the label text
@@ -48,7 +45,6 @@ func _process(delta):
 			saving_time.saveTileMap()
 			saving_time.savePlants()
 			player.saveInv()
-			print("GAME SAVED")
 			# Load the Day Transition scene
 			# get_tree().change_scene_to_file("res://day_transition.tscn")
 			# this works now

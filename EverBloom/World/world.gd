@@ -118,3 +118,11 @@ func _on_hotbar_selected_num_3():
 func _on_hotbar_selected_num_4():
 	# selected slot 4, matches hotbar variable
 	hotbarSelected = 4;
+
+
+func _on_next_day_collission_child_entered_tree(node):
+	pass # Replace with function body.
+
+
+func _on_next_day_collission_child_exiting_tree(node):
+	pass # Replace with function body.
