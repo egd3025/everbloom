@@ -8,6 +8,7 @@ var time_accumulator = 0
 # after every 60 seconds, the label will update to account for 60 minutes in game
 var update_interval = 60
 var DayCycle_Label2: Label
+var HintLabel: Label
 
 @onready var saving_time = $"../../Saving_Time"
 @export var game_manager : GameManager
@@ -24,6 +25,9 @@ var save_Inv = "user://inventory.json"
 func _ready():
 	DayCycle_Label2 = $DayCycleLabelImage/DayCycle_Label2
 	DayCycle_Label2.text = times[time_index]
+	
+	HintLabel = $NextDayHintImage/NextDayHint
+	HintLabel.text = "Press 'Enter' to skip to the next day!"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
