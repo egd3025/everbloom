@@ -7,6 +7,11 @@ var stage = 0
 var player_in_area = false
 # allows for the collectable version of the wheat to spawn in on command 
 var wheat = preload("res://Inventory/items/wheat_collectable.tscn")
+var tomato = preload("res://Inventory/items/tomato_collectable.tscn")
+# allows us to change the growth texture of the planted seed and collect correctly
+var textureGrowthRef = "res://cup_noodle/wheat_Growth.png"
+var itemCollect = "res://Inventory/items/Wheat.tres"
+
 
 
 @export var item: InvItem
@@ -91,4 +96,15 @@ func set_stage(newStage):
 	#sets stage (used in saving and loading)
 	stage = newStage
 
+func _on_hotbar_tomato_select():
+	textureGrowthRef = "res://cup_noodle/tomato_Growth.png"
+	itemCollect = "res://Inventory/items/Tomato.tres"
+	#$Sprite2D.texture = ResourceLoader.load(textureGrowthRef)
+	item = ResourceLoader.load(itemCollect)
+	$Sprite2D.texture.region = Rect2(0,16,96,16) 
 
+func _on_hotbar_wheat_select():
+	textureGrowthRef = "res://cup_noodle/wheat_Growth.png"
+	itemCollect = "res://Inventory/items/Wheat.tres"
+	$Sprite2D.texture.region = Rect2(0,0,96,16) 
+	item = ResourceLoader.load(itemCollect)

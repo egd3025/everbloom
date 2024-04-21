@@ -1,6 +1,6 @@
 extends Node2D
 
-const plant = preload("res://Plants/Plant.tscn")
+@onready var plant = preload("res://Plants/Plant.tscn")
 @onready var world = $"."
 @onready var floor = $Floor
 @onready var player = $player
@@ -13,7 +13,7 @@ var save_Plants = "user://plants.json"
 var save_Inv = "user://inventory.json"
 #coordinate list for all the plants 
 var coordList = []
-# makes a variable to recieve the signal from hotbar
+# makes variables to recieve the signals from hotbar
 var hotbarSelected = 1;
 
 func _ready():

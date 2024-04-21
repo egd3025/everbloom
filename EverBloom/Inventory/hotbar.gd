@@ -17,6 +17,8 @@ signal selectedNum_1
 signal selectedNum_2
 signal selectedNum_3
 signal selectedNum_4
+signal tomatoSelect
+signal wheatSelect
 
 func _ready():
 	# make the first slot visibly selected at start up
@@ -53,12 +55,15 @@ func _input(_event):
 func _on_seed_select_tomato():
 	selectedSeed.texture = tomato;
 	textureRef = "res://Inventory/item_images/Tomato_Seed.png"
+	tomatoSelect.emit()
 	saveHotbar()
+	
 
 
 func _on_seed_select_wheat():
 	selectedSeed.texture = wheat;
 	textureRef = "res://Inventory/item_images/Wheat_Seed.png"
+	wheatSelect.emit()
 	saveHotbar()
 
 func saveHotbar():
@@ -70,6 +75,7 @@ func saveHotbar():
 	data["seeds"] = []
 	data["seeds"].append({"seed": textureRef})
 	file.store_line(JSON.stringify(data))
+	file.close()
 	
 func loadHotbar():
 	# open the file
@@ -81,3 +87,4 @@ func loadHotbar():
 			selectedSeed.texture = load(seed)
 	else:
 		print("No save Data")
+	file.close()
