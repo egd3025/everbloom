@@ -6,7 +6,7 @@ var time_index = 0
 var times = ["10:00 AM", "11:00 AM", "12:00 PM", " 1:00 PM", " 2:00 PM", " 3:00 PM", " 4:00 PM", " 5:00 PM", " 6:00 PM"]
 var time_accumulator = 0
 # after every 60 seconds, the label will update to account for 60 minutes in game
-var update_interval = 60
+var update_interval = 1
 var DayCycle_Label2: Label
 var HintLabel: Label
 
@@ -45,6 +45,8 @@ func _process(delta):
 		# Check if the time has cycled through all elements
 		if time_index == 0:
 			# save everything
+			# Save the player's position at a specific location each "new day"
+			player.position = Vector2(9,23)
 			saving_time.savePlayer()
 			saving_time.saveTileMap()
 			saving_time.savePlants()

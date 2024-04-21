@@ -666,7 +666,7 @@ shape = SubResource("CapsuleShape2D_fgvhb")
 [node name="player" type="CharacterBody2D" parent="World"]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(9, 39)
+position = Vector2(9, 23)
 script = ExtResource("4_fn72k")
 inv = ExtResource("5_bvxdf")
 
