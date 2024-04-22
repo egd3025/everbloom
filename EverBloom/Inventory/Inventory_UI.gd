@@ -4,6 +4,8 @@ extends Control
 @onready var inv: Inv = preload("res://Inventory/player_inv.tres")
 # creates an array for our slot items so that we CAN iterate
 @onready var slots: Array = $NinePatchRect/GridContainer.get_children()
+@onready var almanac = $TextureRect
+@onready var hotbar = $Hotbar
 
 func _ready():
 	# whenever inventory sends the update signal after a collection,
@@ -22,17 +24,24 @@ func _input(event):
 	# scene changes depending on different inputs
 	# allows player to open inventory and pause menu
 	if event.is_action_pressed("pause"):
+		_on_almanac_close_pressed() #make sure almanac is closed and hotbar is visible
 		if !get_tree().paused:
 			get_tree().paused = !get_tree().paused
 		get_tree().change_scene_to_file("res://Pause Menu.tscn")
 	if event.is_action_pressed("inventory"):
+		_on_almanac_close_pressed()
 		get_tree().change_scene_to_file("res://World/world.tscn")
 
 func _on_inventory_button_pressed():
+	_on_almanac_close_pressed()
 	get_tree().change_scene_to_file("res://World/world.tscn")
 
 func _on_almanac_button_pressed():
-	pass
+	almanac.visible = true
+	hotbar.visible = false
 
-func _on_to_do_list_button_pressed():
-	pass
+
+
+func _on_almanac_close_pressed():
+	almanac.visible = false
+	hotbar.visible = true
