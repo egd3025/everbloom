@@ -77,8 +77,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 1.0
 offset_right = 234.0
-offset_bottom = 116.0
+offset_bottom = 117.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.682353, 0.941176, 0.686275, 1)
@@ -96,11 +97,10 @@ script = ExtResource("3_o2aef")
 layout_mode = 0
 offset_left = 66.0
 offset_top = 23.0
-offset_right = 502.0
-offset_bottom = 140.0
-scale = Vector2(0.25, 0.25)
+offset_right = 185.0
+offset_bottom = 32.0
 theme_override_fonts/font = ExtResource("4_t5han")
-theme_override_font_sizes/font_size = 33
+theme_override_font_sizes/font_size = 8
 text = "What should I plant?"
 
 [node name="Wheat_Button" type="TextureButton" parent="SeedSelect"]
@@ -115,11 +115,10 @@ texture_normal = SubResource("AtlasTexture_3oyq0")
 layout_mode = 0
 offset_left = 93.0
 offset_top = 37.0
-offset_right = 209.0
-offset_bottom = 85.0
-scale = Vector2(0.25, 0.25)
+offset_right = 122.0
+offset_bottom = 47.0
 theme_override_fonts/font = ExtResource("4_t5han")
-theme_override_font_sizes/font_size = 33
+theme_override_font_sizes/font_size = 8
 text = "Wheat"
 
 [node name="Tomato_Button" type="TextureButton" parent="SeedSelect"]
@@ -134,11 +133,10 @@ texture_normal = SubResource("AtlasTexture_gsinv")
 layout_mode = 0
 offset_left = 151.0
 offset_top = 37.0
-offset_right = 291.0
-offset_bottom = 93.0
-scale = Vector2(0.25, 0.25)
+offset_right = 187.0
+offset_bottom = 46.0
 theme_override_fonts/font = ExtResource("4_t5han")
-theme_override_font_sizes/font_size = 33
+theme_override_font_sizes/font_size = 8
 text = "Tomato"
 
 [node name="TextureButton" type="TextureButton" parent="."]
@@ -228,14 +226,14 @@ offset_bottom = 141.0
 texture_normal = SubResource("AtlasTexture_7wbtb")
 
 [node name="Label" type="Label" parent="AlmanacButton"]
+layout_direction = 1
 layout_mode = 0
-offset_left = 5.0
-offset_top = 29.0
-offset_right = 72.0
-offset_bottom = 102.0
-scale = Vector2(0.25, 0.25)
+offset_left = -20.0
+offset_top = 27.0
+offset_right = 47.0
+offset_bottom = 104.0
 theme_override_fonts/font = ExtResource("4_t5han")
-theme_override_font_sizes/font_size = 34
+theme_override_font_sizes/font_size = 8
 text = "Open Almanac"
 horizontal_alignment = 1
 autowrap_mode = 2

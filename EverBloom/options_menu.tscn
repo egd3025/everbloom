@@ -87,10 +87,10 @@ texture_pressed = SubResource("AtlasTexture_m3d5p")
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 layout_direction = 2
 layout_mode = 2
-offset_left = -8.0
-offset_top = 43.0
-offset_right = 252.0
-offset_bottom = 229.0
+offset_left = -72.0
+offset_top = 40.0
+offset_right = 318.0
+offset_bottom = 212.0
 scale = Vector2(0.5, 0.5)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2"]
@@ -101,14 +101,14 @@ theme_override_constants/separation = 17
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_vix2b")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 25
 text = "Volume"
 horizontal_alignment = 2
 
 [node name="E" type="Label" parent="MarginContainer2/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_vix2b")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 25
 text = "Environment"
 horizontal_alignment = 2
 
@@ -116,7 +116,7 @@ horizontal_alignment = 2
 layout_mode = 2
 theme_override_constants/line_spacing = -10
 theme_override_fonts/font = ExtResource("6_vix2b")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 25
 text = "Resolution 
 Scale"
 horizontal_alignment = 2
@@ -124,7 +124,7 @@ horizontal_alignment = 2
 [node name="FS" type="Label" parent="MarginContainer2/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_vix2b")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 25
 text = "Full Screen"
 horizontal_alignment = 2
 
