@@ -1,9 +1,10 @@
-[gd_scene load_steps=67 format=3 uid="uid://bnakm63s4hcam"]
+[gd_scene load_steps=71 format=3 uid="uid://bnakm63s4hcam"]
 
 [ext_resource type="Script" path="res://World/game_manager.gd" id="1_2ss7h"]
 [ext_resource type="TileSet" uid="uid://cxa3a7h17ymwt" path="res://stardew.tres" id="1_5jp6c"]
 [ext_resource type="Script" path="res://World/world.gd" id="1_a85sf"]
 [ext_resource type="Script" path="res://World/WorldGen.gd" id="2_rlebr"]
+[ext_resource type="Script" path="res://World/NextDayCollission.gd" id="3_w1jif"]
 [ext_resource type="Script" path="res://Player/Player.gd" id="4_fn72k"]
 [ext_resource type="Texture2D" uid="uid://br34h1te2q78s" path="res://cup_noodle/Basic Charakter Spritesheet.png" id="4_h38wm"]
 [ext_resource type="Resource" uid="uid://dsa4i547iaexd" path="res://Inventory/player_inv.tres" id="5_bvxdf"]
@@ -27,6 +28,13 @@
 [ext_resource type="Texture2D" uid="uid://cgym3jp30l7it" path="res://cup_noodle/Basic_Grass_Biom_things.png" id="19_opden"]
 [ext_resource type="Texture2D" uid="uid://cy560w18wxpeu" path="res://cup_noodle/Wood_Bridge.png" id="20_3q3v7"]
 [ext_resource type="Texture2D" uid="uid://da3i2y8r7vbjo" path="res://custom_sprites/start screen buttons.png" id="24_l7ytr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2cmh"]
+size = Vector2(53.75, 19.25)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fgvhb"]
+radius = 16.0
+height = 48.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cplsi"]
 radius = 4.0
@@ -266,6 +274,10 @@ animations = [{
 [sub_resource type="AtlasTexture" id="AtlasTexture_pg5m4"]
 atlas = ExtResource("10_piybb")
 region = Rect2(504, 155, 35, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdjrh"]
+atlas = ExtResource("24_l7ytr")
+region = Rect2(3, 2, 90, 27)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_443o3"]
 texture = ExtResource("5_n7xsd")
@@ -633,27 +645,28 @@ script = ExtResource("1_a85sf")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="World"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World/StaticBody2D"]
+[node name="WorldBorderCollission" type="CollisionPolygon2D" parent="World/StaticBody2D"]
 build_mode = 1
 polygon = PackedVector2Array(-34, -2, 321, -1, 319, 177, -32, 177, -31, 2, -178, 0, -176, 304, 447, 304, 446, -127, -176, -129, -176, -4)
 
-[node name="Floor" type="TileMap" parent="World"]
-y_sort_enabled = true
-tile_set = ExtResource("1_5jp6c")
-format = 2
-layer_0/name = "0"
-layer_0/tile_data = PackedInt32Array(-262134, 65539, 1, -262133, 65539, 1, -196597, 262147, 5, -196598, 65539, 2, -196599, 3, 2, -262135, 3, 1, -327671, 3, 0, -327670, 327683, 5, -327669, 65539, 0, -262132, 65539, 1, -196596, 65539, 1, -327668, 327683, 5, -262131, 589827, 5, -196595, 65539, 1, -327667, 131075, 0, -131059, 65539, 1, -131060, 65539, 1, -131061, 3, 1, -65523, 65539, 2, -65524, 65539, 2, -65525, 3, 2, -131058, 589827, 5, -65522, 131075, 2, -196594, 131075, 1, 131094, 65536, 0)
-layer_1/name = "1"
-layer_1/y_sort_enabled = true
-layer_1/z_index = 1
-layer_1/tile_data = PackedInt32Array()
-layer_2/tile_data = PackedInt32Array()
-script = ExtResource("2_rlebr")
+[node name="ExampleBearCollission" type="CollisionShape2D" parent="World/StaticBody2D"]
+position = Vector2(153.125, 6.375)
+shape = SubResource("RectangleShape2D_t2cmh")
+
+[node name="HouseCollision" type="CollisionPolygon2D" parent="World/StaticBody2D"]
+polygon = PackedVector2Array(-8, -5, -8, 1, -10, 1, -10, 7, -7, 7, -7, 21, -4, 21, -4, 28, 0, 28, 0, 21, 4, 21, 4, 12, 14, 12, 14, 21, 18, 21, 18, 28, 22, 28, 22, 21, 25, 21, 25, 7, 28, 7, 28, 1, 26, 1, 26, -5)
+
+[node name="Area2D" type="Area2D" parent="World"]
+script = ExtResource("3_w1jif")
+
+[node name="NextDayCollission" type="CollisionShape2D" parent="World/Area2D"]
+position = Vector2(9, 13)
+shape = SubResource("CapsuleShape2D_fgvhb")
 
 [node name="player" type="CharacterBody2D" parent="World"]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(9, 39)
+position = Vector2(9, 23)
 script = ExtResource("4_fn72k")
 inv = ExtResource("5_bvxdf")
 
@@ -687,7 +700,41 @@ theme_override_font_sizes/font_size = 12
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="NextDayHintImage" type="TextureRect" parent="World/player/Camera2D"]
+offset_left = 27.0
+offset_top = -85.0
+offset_right = 155.0
+offset_bottom = -35.0
+texture = SubResource("AtlasTexture_wdjrh")
+expand_mode = 1
+
+[node name="NextDayHint" type="Label" parent="World/player/Camera2D/NextDayHintImage"]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 3
+layout_mode = 0
+offset_left = 7.0
+offset_top = 5.0
+offset_right = 122.0
+offset_bottom = 38.0
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
 [node name="Hotbar" parent="World/player" instance=ExtResource("11_h2i3k")]
+
+[node name="Floor" type="TileMap" parent="World"]
+y_sort_enabled = true
+tile_set = ExtResource("1_5jp6c")
+format = 2
+layer_0/name = "0"
+layer_0/tile_data = PackedInt32Array(-262134, 65539, 1, -262133, 65539, 1, -196597, 262147, 5, -196598, 65539, 2, -196599, 3, 2, -262135, 3, 1, -327671, 3, 0, -327670, 327683, 5, -327669, 65539, 0, -262132, 65539, 1, -196596, 65539, 1, -327668, 327683, 5, -262131, 589827, 5, -196595, 65539, 1, -327667, 131075, 0, -131059, 65539, 1, -131060, 65539, 1, -131061, 3, 1, -65523, 65539, 2, -65524, 65539, 2, -65525, 3, 2, -131058, 589827, 5, -65522, 131075, 2, -196594, 131075, 1, 131094, 65536, 0)
+layer_1/name = "1"
+layer_1/y_sort_enabled = true
+layer_1/z_index = 1
+layer_1/tile_data = PackedInt32Array()
+layer_2/tile_data = PackedInt32Array()
+script = ExtResource("2_rlebr")
 
 [node name="Walls" type="TileMap" parent="World"]
 tile_set = SubResource("TileSet_gbyth")
@@ -761,6 +808,8 @@ texture = ExtResource("17_1m8h5")
 position = Vector2(153, 6)
 texture = ExtResource("18_tjon1")
 
+[connection signal="body_entered" from="World/Area2D" to="World/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="World/Area2D" to="World/Area2D" method="_on_body_exited"]
 [connection signal="animation_finished" from="World/player/AnimatedSprite2D" to="World/player" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="selectedNum_1" from="World/player/Hotbar" to="World" method="_on_hotbar_selected_num_1"]
 [connection signal="selectedNum_1" from="World/player/Hotbar" to="World/player" method="_on_hotbar_selected_num_1"]
