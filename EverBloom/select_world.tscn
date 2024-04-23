@@ -1,8 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://kcoae3wmv4aa"]
+[gd_scene load_steps=17 format=3 uid="uid://kcoae3wmv4aa"]
 
 [ext_resource type="Theme" uid="uid://cs7pakuugysjy" path="res://default_pause_theme.tres" id="1_6538b"]
 [ext_resource type="Script" path="res://select_world.gd" id="2_c8y5d"]
+[ext_resource type="FontFile" uid="uid://cojfm3kios6sf" path="res://texts/slkscre.ttf" id="3_0x3hv"]
 [ext_resource type="Texture2D" uid="uid://bgqw4o63yyj3h" path="res://custom_sprites/world screens.png" id="3_kv0oj"]
+[ext_resource type="Texture2D" uid="uid://c8gb4knaepo1v" path="res://cup_noodle_premium/Tilesets/ground tiles/Old tiles/Hills.png" id="5_6hnny"]
+[ext_resource type="Texture2D" uid="uid://cgym3jp30l7it" path="res://cup_noodle/Basic_Grass_Biom_things.png" id="6_60772"]
+[ext_resource type="Texture2D" uid="uid://dgebbku5jiew7" path="res://cup_noodle/wheat_Growth.png" id="7_drla7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ivnk1"]
 atlas = ExtResource("3_kv0oj")
@@ -28,6 +32,18 @@ region = Rect2(3, 34, 90, 27)
 atlas = ExtResource("3_kv0oj")
 region = Rect2(99, 36, 90, 25)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hv36y"]
+atlas = ExtResource("5_6hnny")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocnwn"]
+atlas = ExtResource("6_60772")
+region = Rect2(19, 0, 26, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alpot"]
+atlas = ExtResource("7_drla7")
+region = Rect2(80, 0, 16, 16)
+
 [node name="select_world" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -47,31 +63,65 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.686275, 0.882353, 0.686275, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_left = 120.0
-offset_top = 20.0
-offset_right = 190.0
-offset_bottom = 121.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="Label" type="Label" parent="."]
 layout_mode = 2
+offset_left = 68.0
+offset_top = 35.0
+offset_right = 458.0
+offset_bottom = 77.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("3_0x3hv")
+theme_override_font_sizes/font_size = 42
+text = "Select world"
+horizontal_alignment = 1
 
-[node name="start_world" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.0
+offset_top = 30.0
+offset_right = 139.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="start_world" type="TextureButton" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_ivnk1")
 texture_pressed = SubResource("AtlasTexture_l6fjv")
 
-[node name="new_world" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+[node name="new_world" type="TextureButton" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_vd7l2")
 texture_pressed = SubResource("AtlasTexture_gh87l")
 
-[node name="back" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+[node name="back" type="TextureButton" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_ofsf8")
 texture_pressed = SubResource("AtlasTexture_3geij")
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/start_world" to="." method="_on_start_world_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/new_world" to="." method="_on_new_world_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/back" to="." method="_on_back_pressed"]
+[node name="Hills" type="Sprite2D" parent="."]
+position = Vector2(161, 91)
+texture = SubResource("AtlasTexture_hv36y")
+
+[node name="BasicGrassBiomThings" type="Sprite2D" parent="."]
+position = Vector2(151, 69)
+texture = SubResource("AtlasTexture_ocnwn")
+
+[node name="WheatGrowth" type="Sprite2D" parent="."]
+position = Vector2(170, 91)
+texture = SubResource("AtlasTexture_alpot")
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/start_world" to="." method="_on_start_world_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/new_world" to="." method="_on_new_world_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/back" to="." method="_on_back_pressed"]

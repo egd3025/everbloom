@@ -246,6 +246,7 @@ scale = Vector2(0.807693, 0.769231)
 texture = SubResource("AtlasTexture_e3lvs")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 320.0
 offset_bottom = 181.0
@@ -266,6 +267,7 @@ scale = Vector2(0.807693, 0.769231)
 texture = SubResource("AtlasTexture_e3lvs")
 
 [node name="Label2" type="Label" parent="TextureRect/AlmanacClose"]
+layout_mode = 0
 offset_left = 5.0
 offset_top = 28.0
 offset_right = 72.0
