@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://bnakm63s4hcam"]
+[gd_scene load_steps=72 format=3 uid="uid://bnakm63s4hcam"]
 
 [ext_resource type="Script" path="res://World/game_manager.gd" id="1_2ss7h"]
 [ext_resource type="TileSet" uid="uid://cxa3a7h17ymwt" path="res://stardew.tres" id="1_5jp6c"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" path="res://World/TimeOfDay.gd" id="9_qo0eo"]
 [ext_resource type="Script" path="res://World/saveLoadMenu.gd" id="10_2aius"]
 [ext_resource type="Texture2D" uid="uid://bvag036rmdj4y" path="res://cup_noodle_UI/Sprite sheet for Basic Pack.png" id="10_piybb"]
+[ext_resource type="Texture2D" uid="uid://bs7j1yeolk0sv" path="res://custom_sprites/sleep_sign.png" id="10_thvj8"]
 [ext_resource type="PackedScene" uid="uid://dat3hur2wmdbq" path="res://Inventory/hotbar.tscn" id="11_h2i3k"]
 [ext_resource type="Texture2D" uid="uid://bgydg2ms2v0fv" path="res://cup_noodle/Water.png" id="13_j8cqf"]
 [ext_resource type="Texture2D" uid="uid://b5uvyi8dhgl6h" path="res://cup_noodle/Paths.png" id="14_jllkn"]
@@ -275,9 +276,9 @@ animations = [{
 atlas = ExtResource("10_piybb")
 region = Rect2(504, 155, 35, 17)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wdjrh"]
-atlas = ExtResource("24_l7ytr")
-region = Rect2(3, 2, 90, 27)
+[sub_resource type="AtlasTexture" id="AtlasTexture_viikf"]
+atlas = ExtResource("10_thvj8")
+region = Rect2(5, 17, 85, 20)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_443o3"]
 texture = ExtResource("5_n7xsd")
@@ -701,14 +702,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="NextDayHintImage" type="TextureRect" parent="World/player/Camera2D"]
-offset_left = 27.0
-offset_top = -85.0
-offset_right = 155.0
-offset_bottom = -35.0
-texture = SubResource("AtlasTexture_wdjrh")
-expand_mode = 1
+offset_left = 39.0
+offset_top = -87.0
+offset_right = 158.0
+offset_bottom = -59.0
+texture = SubResource("AtlasTexture_viikf")
 
 [node name="NextDayHint" type="Label" parent="World/player/Camera2D/NextDayHintImage"]
+visible = false
 modulate = Color(0, 0, 0, 1)
 texture_filter = 3
 layout_mode = 0
