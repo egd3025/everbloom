@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://00dg16oiyej"]
+[gd_scene load_steps=26 format=3 uid="uid://00dg16oiyej"]
 
 [ext_resource type="Script" path="res://Inventory/Inventory_UI.gd" id="1_gwhdc"]
 [ext_resource type="Texture2D" uid="uid://blwuthsf8ljs3" path="res://cup_noodle_UI/Dialouge UI/Premade dialog box medium.png" id="2_ai6bu"]
@@ -6,12 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://c8a3mck1ac1vk" path="res://cup_noodle/Basic_Plants.png" id="3_b8umb"]
 [ext_resource type="Texture2D" uid="uid://dnpnkgkxp8ev7" path="res://cup_noodle_UI/Dialouge UI/Emotes/Teemo Basic emote animations sprite sheet.png" id="3_cnyu8"]
 [ext_resource type="Script" path="res://Inventory/SeedSelect.gd" id="3_o2aef"]
+[ext_resource type="FontFile" uid="uid://xy6rdpn8hi7u" path="res://texts/slkscr.ttf" id="4_t5han"]
 [ext_resource type="Texture2D" uid="uid://qymqgnh6bw34" path="res://cup_noodle_UI/Setting menu.png" id="4_uquv3"]
 [ext_resource type="PackedScene" uid="uid://dat3hur2wmdbq" path="res://Inventory/hotbar.tscn" id="8_fy0kq"]
 [ext_resource type="Texture2D" uid="uid://d2anmtjgxw7ye" path="res://cup_noodle_UI/buttons/Square Buttons 26x26.png" id="9_c6m7j"]
-[ext_resource type="Texture2D" uid="uid://44ot25bnxoth" path="res://cup_noodle/Kyrise16x16/book_06g.png" id="10_y0ar7"]
+[ext_resource type="Texture2D" uid="uid://8robjsq6h8tq" path="res://cup_noodle/books_byBatuhan.png" id="10_atrhw"]
 [ext_resource type="Texture2D" uid="uid://dkqwy1if78s14" path="res://101Textures/36.jpg" id="11_46sui"]
-[ext_resource type="Texture2D" uid="uid://c2ko4ix1bqohx" path="res://cup_noodle/Kyrise16x16/book_06c.png" id="12_q72lw"]
 [ext_resource type="Texture2D" uid="uid://bvag036rmdj4y" path="res://cup_noodle_UI/Sprite sheet for Basic Pack.png" id="12_vau4l"]
 [ext_resource type="Texture2D" uid="uid://g6ke3qhpsgp8" path="res://cup_noodle/tomato_Growth.png" id="13_abho4"]
 
@@ -43,16 +43,9 @@ region = Rect2(139, 12, 106, 122)
 atlas = ExtResource("9_c6m7j")
 region = Rect2(11, 59, 26, 28)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_am24d"]
-atlas = ExtResource("10_y0ar7")
-region = Rect2(0, 0, 15, 16)
-
-[sub_resource type="LabelSettings" id="LabelSettings_r5qtx"]
-font_color = Color(0.168627, 0.556863, 0.670588, 1)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sknca"]
-atlas = ExtResource("12_q72lw")
-region = Rect2(2, 0, 12, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3lvs"]
+atlas = ExtResource("10_atrhw")
+region = Rect2(36, 37, 26, 26)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n068w"]
 atlas = ExtResource("12_vau4l")
@@ -102,10 +95,11 @@ script = ExtResource("3_o2aef")
 [node name="Label" type="Label" parent="SeedSelect"]
 layout_mode = 0
 offset_left = 66.0
-offset_top = 21.0
-offset_right = 246.0
-offset_bottom = 138.0
+offset_top = 23.0
+offset_right = 502.0
+offset_bottom = 140.0
 scale = Vector2(0.25, 0.25)
+theme_override_fonts/font = ExtResource("4_t5han")
 theme_override_font_sizes/font_size = 33
 text = "What should I plant?"
 
@@ -120,10 +114,11 @@ texture_normal = SubResource("AtlasTexture_3oyq0")
 [node name="wheat_Label" type="Label" parent="SeedSelect"]
 layout_mode = 0
 offset_left = 93.0
-offset_top = 34.0
+offset_top = 37.0
 offset_right = 209.0
-offset_bottom = 82.0
+offset_bottom = 85.0
 scale = Vector2(0.25, 0.25)
+theme_override_fonts/font = ExtResource("4_t5han")
 theme_override_font_sizes/font_size = 33
 text = "Wheat"
 
@@ -138,10 +133,11 @@ texture_normal = SubResource("AtlasTexture_gsinv")
 [node name="Tomato_Label" type="Label" parent="SeedSelect"]
 layout_mode = 0
 offset_left = 151.0
-offset_top = 34.0
-offset_right = 283.0
-offset_bottom = 90.0
+offset_top = 37.0
+offset_right = 291.0
+offset_bottom = 93.0
 scale = Vector2(0.25, 0.25)
+theme_override_fonts/font = ExtResource("4_t5han")
 theme_override_font_sizes/font_size = 33
 text = "Tomato"
 
@@ -233,19 +229,21 @@ texture_normal = SubResource("AtlasTexture_7wbtb")
 
 [node name="Label" type="Label" parent="AlmanacButton"]
 layout_mode = 0
-offset_left = -3.0
+offset_left = 5.0
 offset_top = 29.0
-offset_right = 64.0
-offset_bottom = 78.0
-scale = Vector2(0.5, 0.5)
+offset_right = 72.0
+offset_bottom = 102.0
+scale = Vector2(0.25, 0.25)
+theme_override_fonts/font = ExtResource("4_t5han")
+theme_override_font_sizes/font_size = 34
 text = "Open Almanac"
 horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="AlmanacButton"]
 position = Vector2(13, 13)
-scale = Vector2(1.20192, 0.947116)
-texture = SubResource("AtlasTexture_am24d")
+scale = Vector2(0.807693, 0.769231)
+texture = SubResource("AtlasTexture_e3lvs")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
@@ -258,26 +256,29 @@ expand_mode = 1
 [node name="AlmanacClose" type="TextureButton" parent="TextureRect"]
 layout_mode = 0
 offset_left = 27.0
-offset_top = 76.0
+offset_top = 68.0
 offset_right = 53.0
-offset_bottom = 131.0
+offset_bottom = 123.0
 texture_normal = SubResource("AtlasTexture_7wbtb")
-
-[node name="Label" type="Label" parent="TextureRect/AlmanacClose"]
-layout_mode = 0
-offset_left = -3.0
-offset_top = 29.0
-offset_right = 64.0
-offset_bottom = 78.0
-scale = Vector2(0.5, 0.5)
-text = "Close Almanac"
-label_settings = SubResource("LabelSettings_r5qtx")
-horizontal_alignment = 1
-autowrap_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="TextureRect/AlmanacClose"]
 position = Vector2(13, 13)
-texture = SubResource("AtlasTexture_sknca")
+scale = Vector2(0.807693, 0.769231)
+texture = SubResource("AtlasTexture_e3lvs")
+
+[node name="Label2" type="Label" parent="TextureRect/AlmanacClose"]
+layout_mode = 0
+offset_left = -18.0
+offset_top = 30.0
+offset_right = 49.0
+offset_bottom = 46.0
+theme_override_colors/font_color = Color(0.168627, 0.556863, 0.670588, 1)
+theme_override_constants/line_spacing = -2
+theme_override_fonts/font = ExtResource("4_t5han")
+theme_override_font_sizes/font_size = 8
+text = "Close Almanac"
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="Sprite2D2" type="Sprite2D" parent="TextureRect"]
 position = Vector2(198, 44)
@@ -293,14 +294,16 @@ texture = SubResource("AtlasTexture_38qsr")
 layout_mode = 0
 offset_left = 169.0
 offset_top = 34.0
-offset_right = 413.0
-offset_bottom = 109.0
-scale = Vector2(0.5, 0.5)
+offset_right = 295.0
+offset_bottom = 62.0
+theme_override_constants/line_spacing = -1
+theme_override_fonts/font = ExtResource("4_t5han")
+theme_override_font_sizes/font_size = 8
 text = "Wheat was first cultivated over 10,000 years ago!"
 autowrap_mode = 3
 
 [node name="Sprite2D3" type="Sprite2D" parent="TextureRect"]
-position = Vector2(198, 119)
+position = Vector2(200, 123)
 scale = Vector2(1.26176, 1.08333)
 texture = SubResource("AtlasTexture_n068w")
 
@@ -313,12 +316,16 @@ texture = SubResource("AtlasTexture_gmpny")
 layout_mode = 0
 offset_left = 172.0
 offset_top = 113.0
-offset_right = 418.0
-offset_bottom = 188.0
-scale = Vector2(0.5, 0.5)
+offset_right = 296.0
+offset_bottom = 140.0
+theme_override_constants/line_spacing = -1
+theme_override_fonts/font = ExtResource("4_t5han")
+theme_override_font_sizes/font_size = 8
 text = "Some tomatoes are yellow, pink, purple, black, or white!"
 autowrap_mode = 3
 
+[connection signal="Tomato" from="SeedSelect" to="Hotbar" method="_on_seed_select_tomato"]
+[connection signal="Wheat" from="SeedSelect" to="Hotbar" method="_on_seed_select_wheat"]
 [connection signal="pressed" from="SeedSelect/Wheat_Button" to="SeedSelect" method="_on_wheat_button_pressed"]
 [connection signal="pressed" from="SeedSelect/Wheat_Button" to="Hotbar" method="_on_wheat_button_pressed"]
 [connection signal="pressed" from="SeedSelect/Tomato_Button" to="SeedSelect" method="_on_tomato_button_pressed"]

@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://b8n44nunoqtra"
-path="res://.godot/imported/Inconsolata-VariableFont_wdth,wght.ttf-6b05999d0c854f5581f0c009f3147480.fontdata"
+uid="uid://cojfm3kios6sf"
+path="res://.godot/imported/slkscre.ttf-81ebf3823605725cf10051166591cf3b.fontdata"
 
 [deps]
 
-source_file="res://Inconsolata-VariableFont_wdth,wght.ttf"
-dest_files=["res://.godot/imported/Inconsolata-VariableFont_wdth,wght.ttf-6b05999d0c854f5581f0c009f3147480.fontdata"]
+source_file="res://texts/slkscre.ttf"
+dest_files=["res://.godot/imported/slkscre.ttf-81ebf3823605725cf10051166591cf3b.fontdata"]
 
 [params]
 

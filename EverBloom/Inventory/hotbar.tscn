@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dat3hur2wmdbq"]
+[gd_scene load_steps=14 format=3 uid="uid://dat3hur2wmdbq"]
 
 [ext_resource type="Texture2D" uid="uid://d2anmtjgxw7ye" path="res://cup_noodle_UI/buttons/Square Buttons 26x26.png" id="1_1xm2a"]
 [ext_resource type="Script" path="res://Inventory/hotbar.gd" id="1_d8k3b"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dfbik5hwsxri2" path="res://cup_noodle_UI/buttons/Small Square Buttons.png" id="3_bq25y"]
 [ext_resource type="Texture2D" uid="uid://cofy74lsnx5mt" path="res://Inventory/item_images/Hoe.png" id="3_cvqre"]
 [ext_resource type="Texture2D" uid="uid://di0t0tbdw2n5k" path="res://Inventory/item_images/Watering_Can.png" id="4_eqyvg"]
+[ext_resource type="FontFile" uid="uid://xy6rdpn8hi7u" path="res://texts/slkscr.ttf" id="5_d24et"]
 [ext_resource type="Texture2D" uid="uid://xlvtxf13flps" path="res://Inventory/item_images/Wheat_Seed.png" id="5_khgmj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nb1yd"]
@@ -51,17 +52,19 @@ offset_bottom = 44.0
 texture = SubResource("AtlasTexture_eog6s")
 
 [node name="Sprite2D" type="Sprite2D" parent="Slot1"]
-position = Vector2(20, 18.6667)
+position = Vector2(20, 20.33)
 scale = Vector2(1.41667, 1.33333)
 texture = ExtResource("2_uquvo")
 
 [node name="Label" type="Label" parent="Slot1"]
 layout_mode = 0
-offset_left = 5.33333
-offset_top = 1.33334
-offset_right = 21.3333
-offset_bottom = 24.3333
-scale = Vector2(0.75, 0.75)
+offset_left = 4.5
+offset_top = 2.0
+offset_right = 35.5
+offset_bottom = 53.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("5_d24et")
+theme_override_font_sizes/font_size = 34
 text = "1"
 
 [node name="Slot2" type="TextureRect" parent="."]
@@ -84,17 +87,19 @@ offset_bottom = 44.0
 texture = SubResource("AtlasTexture_5ih2f")
 
 [node name="Sprite2D" type="Sprite2D" parent="Slot2"]
-position = Vector2(20, 18.667)
+position = Vector2(20, 20.33)
 scale = Vector2(1.41667, 1.33333)
 texture = ExtResource("3_cvqre")
 
 [node name="Label" type="Label" parent="Slot2"]
 layout_mode = 0
-offset_left = 5.33333
-offset_top = 1.33333
-offset_right = 21.3333
-offset_bottom = 24.3333
-scale = Vector2(0.75, 0.75)
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 40.0
+offset_bottom = 53.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("5_d24et")
+theme_override_font_sizes/font_size = 34
 text = "2"
 
 [node name="Slot3" type="TextureRect" parent="."]
@@ -117,17 +122,19 @@ offset_bottom = 44.0
 texture = SubResource("AtlasTexture_n3l8t")
 
 [node name="Sprite2D" type="Sprite2D" parent="Slot3"]
-position = Vector2(20, 18.6667)
+position = Vector2(21.333, 20.333)
 scale = Vector2(1.41667, 1.41667)
 texture = ExtResource("4_eqyvg")
 
 [node name="Label" type="Label" parent="Slot3"]
 layout_mode = 0
-offset_left = 5.33333
-offset_top = 1.33333
-offset_right = 21.3333
-offset_bottom = 24.3333
-scale = Vector2(0.75, 0.75)
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 31.0
+offset_bottom = 37.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("5_d24et")
+theme_override_font_sizes/font_size = 34
 text = "3"
 
 [node name="Slot4" type="TextureRect" parent="."]
@@ -150,15 +157,17 @@ offset_bottom = 44.0
 texture = SubResource("AtlasTexture_r2jcc")
 
 [node name="Sprite2D" type="Sprite2D" parent="Slot4"]
-position = Vector2(21.3333, 18.6667)
+position = Vector2(21, 20.33)
 scale = Vector2(1.33333, 1.41667)
 texture = ExtResource("5_khgmj")
 
 [node name="Label" type="Label" parent="Slot4"]
 layout_mode = 0
-offset_left = 5.33333
-offset_top = 1.33333
-offset_right = 21.3333
-offset_bottom = 24.3333
-scale = Vector2(0.75, 0.75)
+offset_left = 2.667
+offset_top = 2.667
+offset_right = 38.667
+offset_bottom = 53.667
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("5_d24et")
+theme_override_font_sizes/font_size = 34
 text = "4"
