@@ -819,6 +819,8 @@ texture = ExtResource("18_tjon1")
 [connection signal="selectedNum_3" from="World/player/Hotbar" to="World/player" method="_on_hotbar_selected_num_3"]
 [connection signal="selectedNum_4" from="World/player/Hotbar" to="World" method="_on_hotbar_selected_num_4"]
 [connection signal="selectedNum_4" from="World/player/Hotbar" to="World/player" method="_on_hotbar_selected_num_4"]
+[connection signal="tomatoSelect" from="World/player/Hotbar" to="World/Plant" method="_on_hotbar_tomato_select"]
+[connection signal="wheatSelect" from="World/player/Hotbar" to="World/Plant" method="_on_hotbar_wheat_select"]
 [connection signal="pressed" from="World/Saving_Time/saveLoadMenu/resume" to="World/Saving_Time/saveLoadMenu" method="_on_resume_pressed"]
 [connection signal="pressed" from="World/Saving_Time/saveLoadMenu/save" to="World/Saving_Time" method="_on_save_pressed"]
 [connection signal="pressed" from="World/Saving_Time/saveLoadMenu/load" to="World/Saving_Time" method="_on_load_pressed"]

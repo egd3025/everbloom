@@ -1,10 +1,11 @@
 extends Node2D
 
-const plant = preload("res://Plants/Plant.tscn")
+@onready var plant = preload("res://Plants/Plant.tscn")
 @onready var world = $"."
 @onready var floor = $Floor
 @onready var player = $player
 @onready var saving_time = $Saving_Time
+@onready var Hotbar = $player/Hotbar
 
 var save_pathPlayer = "user://variable.save"
 var save_tileMap = "user://map.json"
@@ -12,7 +13,7 @@ var save_Plants = "user://plants.json"
 var save_Inv = "user://inventory.json"
 #coordinate list for all the plants 
 var coordList = []
-# makes a variable to recieve the signal from hotbar
+# makes variables to recieve the signals from hotbar
 var hotbarSelected = 1;
 
 func _ready():
@@ -22,6 +23,7 @@ func _ready():
 		saving_time.load_Map()
 		saving_time.loadPlants()
 		player.loadInv()
+		Hotbar.loadHotbar()
 		print("GAME LOADED")
 	file.close()
 
@@ -71,6 +73,7 @@ func _input(event):
 		saving_time.saveTileMap()
 		saving_time.savePlants()
 		player.saveInv()
+		Hotbar.saveHotbar()
 		print("GAME SAVED")
 		get_tree().paused = not get_tree().paused
 		get_tree().change_scene_to_file("res://Pause Menu.tscn")
@@ -80,6 +83,7 @@ func _input(event):
 		saving_time.saveTileMap()
 		saving_time.savePlants()
 		player.saveInv()
+		Hotbar.saveHotbar()
 		print("GAME SAVED")
 		get_tree().change_scene_to_file("res://Inventory/inventory_ui.tscn")
 		
