@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://00dg16oiyej"]
+[gd_scene load_steps=26 format=3 uid="uid://00dg16oiyej"]
 
 [ext_resource type="Script" path="res://Inventory/Inventory_UI.gd" id="1_gwhdc"]
 [ext_resource type="Texture2D" uid="uid://blwuthsf8ljs3" path="res://cup_noodle_UI/Dialouge UI/Premade dialog box medium.png" id="2_ai6bu"]
@@ -46,9 +46,6 @@ region = Rect2(11, 59, 26, 28)
 [sub_resource type="AtlasTexture" id="AtlasTexture_e3lvs"]
 atlas = ExtResource("10_atrhw")
 region = Rect2(36, 37, 26, 26)
-
-[sub_resource type="LabelSettings" id="LabelSettings_r5qtx"]
-font_color = Color(0.168627, 0.556863, 0.670588, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n068w"]
 atlas = ExtResource("12_vau4l")
@@ -249,7 +246,6 @@ scale = Vector2(0.807693, 0.769231)
 texture = SubResource("AtlasTexture_e3lvs")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
 layout_mode = 0
 offset_right = 320.0
 offset_bottom = 181.0
@@ -264,22 +260,23 @@ offset_right = 53.0
 offset_bottom = 131.0
 texture_normal = SubResource("AtlasTexture_7wbtb")
 
-[node name="Label" type="Label" parent="TextureRect/AlmanacClose"]
-layout_mode = 0
-offset_left = -3.0
-offset_top = 29.0
-offset_right = 64.0
-offset_bottom = 78.0
-scale = Vector2(0.5, 0.5)
-text = "Close Almanac"
-label_settings = SubResource("LabelSettings_r5qtx")
-horizontal_alignment = 1
-autowrap_mode = 2
-
 [node name="Sprite2D" type="Sprite2D" parent="TextureRect/AlmanacClose"]
 position = Vector2(13, 13)
 scale = Vector2(0.807693, 0.769231)
 texture = SubResource("AtlasTexture_e3lvs")
+
+[node name="Label2" type="Label" parent="TextureRect/AlmanacClose"]
+offset_left = 5.0
+offset_top = 28.0
+offset_right = 72.0
+offset_bottom = 101.0
+scale = Vector2(0.25, 0.25)
+theme_override_colors/font_color = Color(0.168627, 0.556863, 0.670588, 1)
+theme_override_fonts/font = ExtResource("4_t5han")
+theme_override_font_sizes/font_size = 34
+text = "Close Almanac"
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="Sprite2D2" type="Sprite2D" parent="TextureRect"]
 position = Vector2(198, 44)
@@ -295,9 +292,11 @@ texture = SubResource("AtlasTexture_38qsr")
 layout_mode = 0
 offset_left = 169.0
 offset_top = 34.0
-offset_right = 413.0
-offset_bottom = 109.0
-scale = Vector2(0.5, 0.5)
+offset_right = 665.0
+offset_bottom = 145.0
+scale = Vector2(0.25, 0.25)
+theme_override_fonts/font = ExtResource("4_t5han")
+theme_override_font_sizes/font_size = 34
 text = "Wheat was first cultivated over 10,000 years ago!"
 autowrap_mode = 3
 
@@ -315,9 +314,11 @@ texture = SubResource("AtlasTexture_gmpny")
 layout_mode = 0
 offset_left = 172.0
 offset_top = 113.0
-offset_right = 418.0
-offset_bottom = 188.0
-scale = Vector2(0.5, 0.5)
+offset_right = 664.0
+offset_bottom = 224.0
+scale = Vector2(0.25, 0.25)
+theme_override_fonts/font = ExtResource("4_t5han")
+theme_override_font_sizes/font_size = 34
 text = "Some tomatoes are yellow, pink, purple, black, or white!"
 autowrap_mode = 3
 
