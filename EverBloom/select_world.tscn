@@ -81,7 +81,9 @@ grow_vertical = 2
 texture = ExtResource("4_xt60e")
 
 [node name="WorldSelectIsland" type="Sprite2D" parent="."]
-position = Vector2(164, 89)
+texture_filter = 1
+position = Vector2(165, 89)
+scale = Vector2(0.99, 0.99)
 texture = SubResource("AtlasTexture_op27g")
 
 [node name="select world" type="Label" parent="."]
