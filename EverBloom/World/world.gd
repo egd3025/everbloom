@@ -118,3 +118,4 @@ func _on_hotbar_selected_num_3():
 func _on_hotbar_selected_num_4():
 	# selected slot 4, matches hotbar variable
 	hotbarSelected = 4;
+
