@@ -1,8 +1,19 @@
-[gd_scene load_steps=10 format=3 uid="uid://kcoae3wmv4aa"]
+[gd_scene load_steps=16 format=3 uid="uid://kcoae3wmv4aa"]
 
 [ext_resource type="Theme" uid="uid://cs7pakuugysjy" path="res://default_pause_theme.tres" id="1_6538b"]
 [ext_resource type="Script" path="res://select_world.gd" id="2_c8y5d"]
+[ext_resource type="FontFile" uid="uid://cojfm3kios6sf" path="res://texts/slkscre.ttf" id="3_0x3hv"]
 [ext_resource type="Texture2D" uid="uid://bgqw4o63yyj3h" path="res://custom_sprites/world screens.png" id="3_kv0oj"]
+[ext_resource type="Shader" path="res://shader/move.gdshader" id="3_lpaxq"]
+[ext_resource type="Texture2D" uid="uid://bgydg2ms2v0fv" path="res://cup_noodle/Water.png" id="4_xt60e"]
+[ext_resource type="Texture2D" uid="uid://b273qgjkwycoi" path="res://custom_sprites/decorated_island_long.png" id="5_okawx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y2hqo"]
+shader = ExtResource("3_lpaxq")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_op27g"]
+atlas = ExtResource("5_okawx")
+region = Rect2(19, 94, 225, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ivnk1"]
 atlas = ExtResource("3_kv0oj")
@@ -39,6 +50,7 @@ theme = ExtResource("1_6538b")
 script = ExtResource("2_c8y5d")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -47,31 +59,81 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.686275, 0.882353, 0.686275, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_left = 120.0
-offset_top = 20.0
-offset_right = 190.0
-offset_bottom = 121.0
+[node name="animated background" type="TextureRect" parent="."]
+editor_description = "SHADER FOLDER HOLD ANIMATION CODE:
+or accessed by ...
+under canvas item >  material > material - shadermaterial > \"move.gdshader\" is the code to animate the background
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+horixontal from left to right
+(UV.x - TIME * 0.01, UV.y )
+vertical from top down
+(UV.x , UV.y  - TIME * 0.01)
+
+https://www.youtube.com/watch?v=6Vfu1PhTiqo"
+texture_repeat = 2
+material = SubResource("ShaderMaterial_y2hqo")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_xt60e")
+
+[node name="WorldSelectIsland" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(165, 89)
+scale = Vector2(0.99, 0.99)
+texture = SubResource("AtlasTexture_op27g")
+
+[node name="select world" type="Label" parent="."]
 layout_mode = 2
+offset_left = 70.0
+offset_top = 22.0
+offset_right = 460.0
+offset_bottom = 64.0
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("3_0x3hv")
+theme_override_font_sizes/font_size = 42
+text = "Select world"
+horizontal_alignment = 1
 
-[node name="start_world" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.0
+offset_top = 41.0
+offset_right = 139.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="start_world" type="TextureButton" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_ivnk1")
 texture_pressed = SubResource("AtlasTexture_l6fjv")
 
-[node name="new_world" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+[node name="new_world" type="TextureButton" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_vd7l2")
 texture_pressed = SubResource("AtlasTexture_gh87l")
 
-[node name="back" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+[node name="back" type="TextureButton" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_ofsf8")
 texture_pressed = SubResource("AtlasTexture_3geij")
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/start_world" to="." method="_on_start_world_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/new_world" to="." method="_on_new_world_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/start_world" to="." method="_on_start_world_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/new_world" to="." method="_on_new_world_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/back" to="." method="_on_back_pressed"]

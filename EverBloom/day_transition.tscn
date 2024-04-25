@@ -1,16 +1,16 @@
 [gd_scene load_steps=8 format=3 uid="uid://bxqyrfj05fdqi"]
 
 [ext_resource type="Script" path="res://DayTransition.gd" id="1_aas8g"]
-[ext_resource type="Texture2D" uid="uid://bgqw4o63yyj3h" path="res://custom_sprites/world screens.png" id="1_d20sr"]
+[ext_resource type="Texture2D" uid="uid://85vk0yquukyo" path="res://custom_sprites/next_day.png" id="2_qg5jp"]
 [ext_resource type="Texture2D" uid="uid://da3i2y8r7vbjo" path="res://custom_sprites/start screen buttons.png" id="2_tu62n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_88ov6"]
-atlas = ExtResource("1_d20sr")
-region = Rect2(3, 34, 90, 27)
+atlas = ExtResource("2_qg5jp")
+region = Rect2(3, 2, 90, 27)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2xy2j"]
-atlas = ExtResource("1_d20sr")
-region = Rect2(99, 36, 90, 25)
+atlas = ExtResource("2_qg5jp")
+region = Rect2(99, 4, 90, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a6mji"]
 atlas = ExtResource("2_tu62n")
