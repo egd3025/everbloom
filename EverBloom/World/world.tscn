@@ -278,7 +278,7 @@ region = Rect2(504, 155, 35, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_viikf"]
 atlas = ExtResource("10_thvj8")
-region = Rect2(5, 17, 85, 20)
+region = Rect2(0, 20, 96, 23)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_443o3"]
 texture = ExtResource("5_n7xsd")
@@ -702,10 +702,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="NextDayHintImage" type="TextureRect" parent="World/player/Camera2D"]
-offset_left = 39.0
-offset_top = -87.0
-offset_right = 158.0
-offset_bottom = -59.0
+offset_left = -156.0
+offset_top = -68.0
+offset_right = -58.0
+offset_bottom = -45.0
 texture = SubResource("AtlasTexture_viikf")
 
 [node name="NextDayHint" type="Label" parent="World/player/Camera2D/NextDayHintImage"]
