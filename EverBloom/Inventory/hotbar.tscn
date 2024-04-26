@@ -45,10 +45,8 @@ texture = SubResource("AtlasTexture_nb1yd")
 visible = false
 custom_minimum_size = Vector2(37, 37)
 layout_mode = 0
-offset_left = -1.0
-offset_top = -3.0
-offset_right = 43.0
-offset_bottom = 44.0
+offset_right = 44.0
+offset_bottom = 47.0
 texture = SubResource("AtlasTexture_eog6s")
 
 [node name="Sprite2D" type="Sprite2D" parent="Slot1"]
@@ -58,13 +56,12 @@ texture = ExtResource("2_uquvo")
 
 [node name="Label" type="Label" parent="Slot1"]
 layout_mode = 0
-offset_left = 4.5
-offset_top = 2.0
-offset_right = 35.5
-offset_bottom = 53.0
-scale = Vector2(0.5, 0.5)
+offset_left = 2.66667
+offset_top = 1.33333
+offset_right = 12.6667
+offset_bottom = 19.3333
 theme_override_fonts/font = ExtResource("5_d24et")
-theme_override_font_sizes/font_size = 34
+theme_override_font_sizes/font_size = 17
 text = "1"
 
 [node name="Slot2" type="TextureRect" parent="."]
@@ -93,13 +90,12 @@ texture = ExtResource("3_cvqre")
 
 [node name="Label" type="Label" parent="Slot2"]
 layout_mode = 0
-offset_left = 4.0
-offset_top = 2.0
-offset_right = 40.0
-offset_bottom = 53.0
-scale = Vector2(0.5, 0.5)
+offset_left = 2.66667
+offset_top = 1.33333
+offset_right = 14.6667
+offset_bottom = 19.3333
 theme_override_fonts/font = ExtResource("5_d24et")
-theme_override_font_sizes/font_size = 34
+theme_override_font_sizes/font_size = 17
 text = "2"
 
 [node name="Slot3" type="TextureRect" parent="."]
@@ -128,13 +124,12 @@ texture = ExtResource("4_eqyvg")
 
 [node name="Label" type="Label" parent="Slot3"]
 layout_mode = 0
-offset_left = 4.0
-offset_top = 2.0
-offset_right = 31.0
-offset_bottom = 37.0
-scale = Vector2(0.5, 0.5)
+offset_left = 3.0
+offset_top = 1.33333
+offset_right = 15.0
+offset_bottom = 19.3333
 theme_override_fonts/font = ExtResource("5_d24et")
-theme_override_font_sizes/font_size = 34
+theme_override_font_sizes/font_size = 17
 text = "3"
 
 [node name="Slot4" type="TextureRect" parent="."]
@@ -163,11 +158,10 @@ texture = ExtResource("5_khgmj")
 
 [node name="Label" type="Label" parent="Slot4"]
 layout_mode = 0
-offset_left = 2.667
-offset_top = 2.667
-offset_right = 38.667
-offset_bottom = 53.667
-scale = Vector2(0.5, 0.5)
+offset_left = 2.66633
+offset_top = 1.33333
+offset_right = 14.6663
+offset_bottom = 19.3333
 theme_override_fonts/font = ExtResource("5_d24et")
-theme_override_font_sizes/font_size = 34
+theme_override_font_sizes/font_size = 17
 text = "4"
