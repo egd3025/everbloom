@@ -45,8 +45,10 @@ texture = SubResource("AtlasTexture_nb1yd")
 visible = false
 custom_minimum_size = Vector2(37, 37)
 layout_mode = 0
-offset_right = 44.0
-offset_bottom = 47.0
+offset_left = -1.33333
+offset_top = -4.0
+offset_right = 42.6667
+offset_bottom = 43.0
 texture = SubResource("AtlasTexture_eog6s")
 
 [node name="Sprite2D" type="Sprite2D" parent="Slot1"]
