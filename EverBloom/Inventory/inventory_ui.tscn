@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://dnpnkgkxp8ev7" path="res://cup_noodle_UI/Dialouge UI/Emotes/Teemo Basic emote animations sprite sheet.png" id="3_cnyu8"]
 [ext_resource type="Script" path="res://Inventory/SeedSelect.gd" id="3_o2aef"]
 [ext_resource type="FontFile" uid="uid://xy6rdpn8hi7u" path="res://texts/slkscr.ttf" id="4_t5han"]
-[ext_resource type="Texture2D" uid="uid://qymqgnh6bw34" path="res://cup_noodle_UI/Setting menu.png" id="4_uquv3"]
 [ext_resource type="PackedScene" uid="uid://dat3hur2wmdbq" path="res://Inventory/hotbar.tscn" id="8_fy0kq"]
+[ext_resource type="Texture2D" uid="uid://cutooa580tgv5" path="res://custom_sprites/inventory_slots.png" id="8_t04eu"]
 [ext_resource type="Texture2D" uid="uid://bylw17btqeig3" path="res://custom_sprites/book_buttons.png" id="10_gxa8q"]
 [ext_resource type="Texture2D" uid="uid://dkqwy1if78s14" path="res://101Textures/36.jpg" id="11_46sui"]
 [ext_resource type="Texture2D" uid="uid://bvag036rmdj4y" path="res://cup_noodle_UI/Sprite sheet for Basic Pack.png" id="12_vau4l"]
@@ -35,9 +35,9 @@ region = Rect2(37, 290, 23, 30)
 atlas = ExtResource("3_cnyu8")
 region = Rect2(37, 258, 23, 30)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_87p7j"]
-atlas = ExtResource("4_uquv3")
-region = Rect2(139, 12, 106, 122)
+[sub_resource type="AtlasTexture" id="AtlasTexture_djmaj"]
+atlas = ExtResource("8_t04eu")
+region = Rect2(26, 64, 98, 82)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7wbtb"]
 atlas = ExtResource("10_gxa8q")
@@ -156,11 +156,13 @@ stretch_mode = 0
 layout_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 102.0
-offset_top = 76.0
-offset_right = 104.0
-offset_bottom = 80.0
-texture = SubResource("AtlasTexture_87p7j")
+offset_left = 110.0
+offset_top = 51.0
+offset_right = 123.0
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_djmaj")
 patch_margin_left = 6
 patch_margin_top = 6
 patch_margin_right = 6
@@ -170,15 +172,17 @@ patch_margin_bottom = 6
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.471
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.471
-offset_left = -39.0
-offset_top = -27.144
-offset_right = 37.0
-offset_bottom = 28.856
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -36.0
+offset_right = 28.135
+offset_bottom = 27.733
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 8
 columns = 4
 
 [node name="Inventory_UI_Slot1" parent="NinePatchRect/GridContainer" instance=ExtResource("3_1dwlq")]
