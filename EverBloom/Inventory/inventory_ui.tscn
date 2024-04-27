@@ -1,6 +1,7 @@
-[gd_scene load_steps=27 format=3 uid="uid://00dg16oiyej"]
+[gd_scene load_steps=28 format=3 uid="uid://00dg16oiyej"]
 
 [ext_resource type="Script" path="res://Inventory/Inventory_UI.gd" id="1_gwhdc"]
+[ext_resource type="Texture2D" uid="uid://ba53lkl8c0efw" path="res://cup_noodle_premium/Tilesets/ground tiles/water frames/Water.png" id="2_0orsm"]
 [ext_resource type="Texture2D" uid="uid://blwuthsf8ljs3" path="res://cup_noodle_UI/Dialouge UI/Premade dialog box medium.png" id="2_ai6bu"]
 [ext_resource type="PackedScene" uid="uid://b56j1qcxe3igr" path="res://Inventory/inventory_ui_slot.tscn" id="3_1dwlq"]
 [ext_resource type="Texture2D" uid="uid://c8a3mck1ac1vk" path="res://cup_noodle/Basic_Plants.png" id="3_b8umb"]
@@ -79,17 +80,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gwhdc")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 1.0
-offset_right = 234.0
-offset_bottom = 117.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.682353, 0.941176, 0.686275, 1)
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 180.0
+texture = ExtResource("2_0orsm")
 
 [node name="SeedSelect" type="TextureRect" parent="."]
 layout_mode = 0
