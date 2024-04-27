@@ -1,5 +1,13 @@
 extends HSlider
 
+#this is a custum slider with art from the game.
+#this is a copy able node type to create a linked slider for
+# an aduo bus to operate against.
+
+#any time there is a need for a audio slider take this 
+#  and copy it to the spot and link in the inspector to the 
+#  aduio bus that you wish to slave
+
 @export
 
 var bus_name: String

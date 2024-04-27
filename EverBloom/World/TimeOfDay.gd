@@ -26,8 +26,8 @@ func _ready():
 	DayCycle_Label2 = $DayCycleLabelImage/DayCycle_Label2
 	DayCycle_Label2.text = times[time_index]
 	
-	HintLabel = $NextDayHintImage/NextDayHint
-	HintLabel.text = "Press 'Enter' to skip to the next day!"
+	#HintLabel = $NextDayHintImage/NextDayHint
+	#HintLabel.text = "Press 'Enter' to skip to the next day!"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
