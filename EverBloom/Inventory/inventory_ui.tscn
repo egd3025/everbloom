@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://00dg16oiyej"]
+[gd_scene load_steps=33 format=3 uid="uid://00dg16oiyej"]
 
 [ext_resource type="Script" path="res://Inventory/Inventory_UI.gd" id="1_gwhdc"]
 [ext_resource type="Texture2D" uid="uid://ba53lkl8c0efw" path="res://cup_noodle_premium/Tilesets/ground tiles/water frames/Water.png" id="2_0orsm"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dnpnkgkxp8ev7" path="res://cup_noodle_UI/Dialouge UI/Emotes/Teemo Basic emote animations sprite sheet.png" id="3_cnyu8"]
 [ext_resource type="Script" path="res://Inventory/SeedSelect.gd" id="3_o2aef"]
 [ext_resource type="FontFile" uid="uid://xy6rdpn8hi7u" path="res://texts/slkscr.ttf" id="4_t5han"]
+[ext_resource type="Texture2D" uid="uid://qyk8oofmr6gc" path="res://custom_sprites/sale bear.png" id="5_ynrur"]
 [ext_resource type="PackedScene" uid="uid://dat3hur2wmdbq" path="res://Inventory/hotbar.tscn" id="8_fy0kq"]
 [ext_resource type="Texture2D" uid="uid://cutooa580tgv5" path="res://custom_sprites/inventory_slots.png" id="8_t04eu"]
 [ext_resource type="Texture2D" uid="uid://bylw17btqeig3" path="res://custom_sprites/book_buttons.png" id="10_gxa8q"]
@@ -108,6 +109,10 @@ offset_bottom = 172.0
 texture = SubResource("AtlasTexture_oeofc")
 script = ExtResource("3_o2aef")
 
+[node name="SaleBear" type="Sprite2D" parent="SeedSelect"]
+position = Vector2(33, 16)
+texture = ExtResource("5_ynrur")
+
 [node name="Label" type="Label" parent="SeedSelect"]
 layout_mode = 0
 offset_left = 19.0
@@ -158,16 +163,30 @@ text = "Tomato"
 position = Vector2(48, 101)
 texture = SubResource("AtlasTexture_m5f1c")
 
-[node name="teemo" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 37.0
-offset_top = 45.0
-offset_right = 60.0
-offset_bottom = 75.0
+[node name="teemo" type="TextureButton" parent="DialogueBoxesCustom"]
+offset_left = -11.0
+offset_top = -56.0
+offset_right = 12.0
+offset_bottom = -26.0
 texture_normal = SubResource("AtlasTexture_4rsoh")
 texture_pressed = SubResource("AtlasTexture_xnl4g")
 texture_hover = SubResource("AtlasTexture_d6own")
 stretch_mode = 0
+
+[node name="Label" type="Label" parent="DialogueBoxesCustom"]
+offset_left = -20.0
+offset_top = -11.0
+offset_right = 20.0
+offset_bottom = 58.0
+theme_override_fonts/font = ExtResource("4_t5han")
+theme_override_font_sizes/font_size = 8
+text = "DO NOT 
+FORGET 
+TO 
+COLLECT 
+YOUR 
+PLANTS!"
+horizontal_alignment = 1
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 2
