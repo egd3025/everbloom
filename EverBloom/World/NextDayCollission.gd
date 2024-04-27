@@ -19,12 +19,12 @@ var save_Inv = "user://inventory.json"
 
 func _on_body_entered(body: PhysicsBody2D):
 	# NextDayHint = $/World/player/Camera2D/NextDayHintImage/NextDayHint
-	NextDayHint_label.visible = true
+	#NextDayHint_label.visible = true
 	NextDayHint_image.visible = true
 	entered = true
 
 func _on_body_exited(body):
-	NextDayHint_label.visible = false
+	#NextDayHint_label.visible = false
 	NextDayHint_image.visible = false
 	entered = false
 	
