@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://00dg16oiyej"]
+[gd_scene load_steps=32 format=3 uid="uid://00dg16oiyej"]
 
 [ext_resource type="Script" path="res://Inventory/Inventory_UI.gd" id="1_gwhdc"]
 [ext_resource type="Texture2D" uid="uid://ba53lkl8c0efw" path="res://cup_noodle_premium/Tilesets/ground tiles/water frames/Water.png" id="2_0orsm"]
@@ -27,6 +27,10 @@ region = Rect2(2, 2, 12, 13)
 [sub_resource type="AtlasTexture" id="AtlasTexture_gsinv"]
 atlas = ExtResource("3_b8umb")
 region = Rect2(2, 18, 12, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5f1c"]
+atlas = ExtResource("3_411ue")
+region = Rect2(160, 123, 66, 142)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4rsoh"]
 atlas = ExtResource("3_cnyu8")
@@ -97,66 +101,69 @@ texture = ExtResource("2_0orsm")
 
 [node name="SeedSelect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 15.0
-offset_top = 48.0
-offset_right = 81.0
-offset_bottom = 166.0
+offset_left = 241.0
+offset_top = 54.0
+offset_right = 307.0
+offset_bottom = 172.0
 texture = SubResource("AtlasTexture_oeofc")
 script = ExtResource("3_o2aef")
 
 [node name="Label" type="Label" parent="SeedSelect"]
 layout_mode = 0
-offset_left = 5.0
+offset_left = 19.0
 offset_top = 39.0
-offset_right = 68.0
-offset_bottom = 60.0
+offset_right = 47.0
+offset_bottom = 48.0
 theme_override_fonts/font = ExtResource("4_t5han")
 theme_override_font_sizes/font_size = 8
-text = "What should 
-I plant?"
+text = "SEEDS"
 
 [node name="Wheat_Button" type="TextureButton" parent="SeedSelect"]
 layout_mode = 0
-offset_left = 14.0
-offset_top = 61.0
-offset_right = 58.0
-offset_bottom = 74.0
+offset_left = 26.0
+offset_top = 53.0
+offset_right = 38.0
+offset_bottom = 66.0
 texture_normal = SubResource("AtlasTexture_3oyq0")
 
 [node name="wheat_Label" type="Label" parent="SeedSelect"]
 layout_mode = 0
-offset_left = 27.0
-offset_top = 63.0
-offset_right = 56.0
-offset_bottom = 73.0
+offset_left = 18.0
+offset_top = 66.0
+offset_right = 47.0
+offset_bottom = 76.0
 theme_override_fonts/font = ExtResource("4_t5han")
 theme_override_font_sizes/font_size = 8
 text = "Wheat"
 
 [node name="Tomato_Button" type="TextureButton" parent="SeedSelect"]
 layout_mode = 0
-offset_left = 14.0
-offset_top = 76.0
-offset_right = 63.0
-offset_bottom = 89.0
+offset_left = 26.0
+offset_top = 77.0
+offset_right = 38.0
+offset_bottom = 90.0
 texture_normal = SubResource("AtlasTexture_gsinv")
 
 [node name="Tomato_Label" type="Label" parent="SeedSelect"]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 90.0
-offset_right = 52.0
-offset_bottom = 99.0
+offset_left = 15.0
+offset_top = 91.0
+offset_right = 51.0
+offset_bottom = 100.0
 theme_override_fonts/font = ExtResource("4_t5han")
 theme_override_font_sizes/font_size = 8
 text = "Tomato"
 
+[node name="DialogueBoxesCustom" type="Sprite2D" parent="."]
+position = Vector2(48, 101)
+texture = SubResource("AtlasTexture_m5f1c")
+
 [node name="teemo" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 17.0
-offset_right = 47.0
-offset_bottom = 47.0
+offset_left = 37.0
+offset_top = 45.0
+offset_right = 60.0
+offset_bottom = 75.0
 texture_normal = SubResource("AtlasTexture_4rsoh")
 texture_pressed = SubResource("AtlasTexture_xnl4g")
 texture_hover = SubResource("AtlasTexture_d6own")
