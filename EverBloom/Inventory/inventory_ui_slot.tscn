@@ -1,31 +1,30 @@
 [gd_scene load_steps=5 format=3 uid="uid://b56j1qcxe3igr"]
 
 [ext_resource type="Script" path="res://Inventory/inventory_ui_slot.gd" id="1_p0wm6"]
-[ext_resource type="Texture2D" uid="uid://d2anmtjgxw7ye" path="res://cup_noodle_UI/buttons/Square Buttons 26x26.png" id="2_8yua6"]
+[ext_resource type="Texture2D" uid="uid://cutooa580tgv5" path="res://custom_sprites/inventory_slots.png" id="2_ppjnc"]
 [ext_resource type="FontFile" uid="uid://xy6rdpn8hi7u" path="res://texts/slkscr.ttf" id="3_5pic5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kp3wx"]
-atlas = ExtResource("2_8yua6")
-region = Rect2(11, 59, 26, 28)
+atlas = ExtResource("2_ppjnc")
+region = Rect2(42, 5, 22, 24)
 
 [node name="Inventory_UI_Slot" type="Panel"]
 process_mode = 3
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(16, 16)
-offset_right = 16.0
-offset_bottom = 16.0
+offset_right = 26.0
+offset_bottom = 28.0
 script = ExtResource("1_p0wm6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.653846, 0.653846)
 texture = SubResource("AtlasTexture_kp3wx")
 centered = false
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
+offset_right = 22.0
+offset_bottom = 24.0
 
 [node name="Panel" type="Panel" parent="CenterContainer"]
 layout_mode = 2
@@ -37,12 +36,11 @@ centered = false
 [node name="Label" type="Label" parent="CenterContainer/Panel"]
 custom_minimum_size = Vector2(19, 23)
 layout_mode = 0
-offset_left = -2.0
+offset_left = -11.0
 offset_top = 1.0
-offset_right = 34.0
-offset_bottom = 27.0
-scale = Vector2(0.25, 0.25)
+offset_right = 8.0
+offset_bottom = 24.0
 theme_override_fonts/font = ExtResource("3_5pic5")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 8
 text = "99"
 horizontal_alignment = 2
