@@ -1,12 +1,19 @@
-[gd_scene load_steps=17 format=3 uid="uid://kcoae3wmv4aa"]
+[gd_scene load_steps=16 format=3 uid="uid://kcoae3wmv4aa"]
 
 [ext_resource type="Theme" uid="uid://cs7pakuugysjy" path="res://default_pause_theme.tres" id="1_6538b"]
 [ext_resource type="Script" path="res://select_world.gd" id="2_c8y5d"]
 [ext_resource type="FontFile" uid="uid://cojfm3kios6sf" path="res://texts/slkscre.ttf" id="3_0x3hv"]
 [ext_resource type="Texture2D" uid="uid://bgqw4o63yyj3h" path="res://custom_sprites/world screens.png" id="3_kv0oj"]
-[ext_resource type="Texture2D" uid="uid://c8gb4knaepo1v" path="res://cup_noodle_premium/Tilesets/ground tiles/Old tiles/Hills.png" id="5_6hnny"]
-[ext_resource type="Texture2D" uid="uid://cgym3jp30l7it" path="res://cup_noodle/Basic_Grass_Biom_things.png" id="6_60772"]
-[ext_resource type="Texture2D" uid="uid://dgebbku5jiew7" path="res://cup_noodle/wheat_Growth.png" id="7_drla7"]
+[ext_resource type="Shader" path="res://shader/move.gdshader" id="3_lpaxq"]
+[ext_resource type="Texture2D" uid="uid://bgydg2ms2v0fv" path="res://cup_noodle/Water.png" id="4_xt60e"]
+[ext_resource type="Texture2D" uid="uid://b273qgjkwycoi" path="res://custom_sprites/decorated_island_long.png" id="5_okawx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y2hqo"]
+shader = ExtResource("3_lpaxq")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_op27g"]
+atlas = ExtResource("5_okawx")
+region = Rect2(19, 94, 225, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ivnk1"]
 atlas = ExtResource("3_kv0oj")
@@ -32,18 +39,6 @@ region = Rect2(3, 34, 90, 27)
 atlas = ExtResource("3_kv0oj")
 region = Rect2(99, 36, 90, 25)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hv36y"]
-atlas = ExtResource("5_6hnny")
-region = Rect2(0, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ocnwn"]
-atlas = ExtResource("6_60772")
-region = Rect2(19, 0, 26, 31)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_alpot"]
-atlas = ExtResource("7_drla7")
-region = Rect2(80, 0, 16, 16)
-
 [node name="select_world" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -55,6 +50,7 @@ theme = ExtResource("1_6538b")
 script = ExtResource("2_c8y5d")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -63,12 +59,40 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.686275, 0.882353, 0.686275, 1)
 
-[node name="Label" type="Label" parent="."]
+[node name="animated background" type="TextureRect" parent="."]
+editor_description = "SHADER FOLDER HOLD ANIMATION CODE:
+or accessed by ...
+under canvas item >  material > material - shadermaterial > \"move.gdshader\" is the code to animate the background
+
+horixontal from left to right
+(UV.x - TIME * 0.01, UV.y )
+vertical from top down
+(UV.x , UV.y  - TIME * 0.01)
+
+https://www.youtube.com/watch?v=6Vfu1PhTiqo"
+texture_repeat = 2
+material = SubResource("ShaderMaterial_y2hqo")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_xt60e")
+
+[node name="WorldSelectIsland" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(165, 89)
+scale = Vector2(0.99, 0.99)
+texture = SubResource("AtlasTexture_op27g")
+
+[node name="select world" type="Label" parent="."]
 layout_mode = 2
-offset_left = 68.0
-offset_top = 35.0
-offset_right = 458.0
-offset_bottom = 77.0
+offset_left = 70.0
+offset_top = 22.0
+offset_right = 460.0
+offset_bottom = 64.0
+grow_horizontal = 2
 scale = Vector2(0.5, 0.5)
 theme_override_fonts/font = ExtResource("3_0x3hv")
 theme_override_font_sizes/font_size = 42
@@ -83,9 +107,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -139.0
-offset_top = 30.0
+offset_top = 41.0
 offset_right = 139.0
-offset_bottom = 61.0
+offset_bottom = 72.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -109,18 +133,6 @@ texture_pressed = SubResource("AtlasTexture_gh87l")
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_ofsf8")
 texture_pressed = SubResource("AtlasTexture_3geij")
-
-[node name="Hills" type="Sprite2D" parent="."]
-position = Vector2(161, 91)
-texture = SubResource("AtlasTexture_hv36y")
-
-[node name="BasicGrassBiomThings" type="Sprite2D" parent="."]
-position = Vector2(151, 69)
-texture = SubResource("AtlasTexture_ocnwn")
-
-[node name="WheatGrowth" type="Sprite2D" parent="."]
-position = Vector2(170, 91)
-texture = SubResource("AtlasTexture_alpot")
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/start_world" to="." method="_on_start_world_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/new_world" to="." method="_on_new_world_pressed"]
