@@ -83,8 +83,8 @@ func loadHotbar():
 	if file.get_length() != 0:
 		var data = JSON.parse_string(file.get_line())
 		for select in data["seeds"]:
-			var seed = select["seed"]
-			selectedSeed.texture = load(seed)
+			var seeds = select["seed"]
+			selectedSeed.texture = load(seeds)
 	else:
 		print("No save Data")
 	file.close()
