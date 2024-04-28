@@ -12,10 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://dat3hur2wmdbq" path="res://Inventory/hotbar.tscn" id="8_fy0kq"]
 [ext_resource type="Texture2D" uid="uid://cutooa580tgv5" path="res://custom_sprites/inventory_slots.png" id="8_t04eu"]
 [ext_resource type="Texture2D" uid="uid://bylw17btqeig3" path="res://custom_sprites/book_buttons.png" id="10_gxa8q"]
-[ext_resource type="Texture2D" uid="uid://dkqwy1if78s14" path="res://101Textures/36.jpg" id="11_46sui"]
 [ext_resource type="Texture2D" uid="uid://ca4y1kklw84n" path="res://custom_sprites/inventory tab.png" id="12_7hgjh"]
 [ext_resource type="Texture2D" uid="uid://bvag036rmdj4y" path="res://cup_noodle_UI/Sprite sheet for Basic Pack.png" id="12_vau4l"]
 [ext_resource type="Texture2D" uid="uid://g6ke3qhpsgp8" path="res://cup_noodle/tomato_Growth.png" id="13_abho4"]
+[ext_resource type="Texture2D" uid="uid://wlmv5g6psf3b" path="res://custom_sprites/almanac book.png" id="14_6ptna"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oeofc"]
 atlas = ExtResource("3_411ue")
@@ -62,12 +62,12 @@ atlas = ExtResource("12_7hgjh")
 region = Rect2(42, 21, 320, 28)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fcgad"]
-atlas = ExtResource("10_gxa8q")
-region = Rect2(11, 155, 27, 29)
+atlas = ExtResource("12_vau4l")
+region = Rect2(837, 100, 22, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cn201"]
-atlas = ExtResource("10_gxa8q")
-region = Rect2(59, 155, 27, 27)
+atlas = ExtResource("12_vau4l")
+region = Rect2(869, 102, 22, 22)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n068w"]
 atlas = ExtResource("12_vau4l")
@@ -290,16 +290,16 @@ texture = SubResource("AtlasTexture_h7fio")
 visible = false
 layout_mode = 0
 offset_right = 320.0
-offset_bottom = 181.0
-texture = ExtResource("11_46sui")
+offset_bottom = 180.0
+texture = ExtResource("2_0orsm")
 expand_mode = 1
 
 [node name="AlmanacClose" type="TextureButton" parent="TextureRect"]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 29.0
-offset_bottom = 31.0
+offset_left = 37.0
+offset_top = 71.0
+offset_right = 59.0
+offset_bottom = 95.0
 texture_normal = SubResource("AtlasTexture_fcgad")
 texture_pressed = SubResource("AtlasTexture_cn201")
 
@@ -318,7 +318,13 @@ text = "Close Almanac"
 horizontal_alignment = 1
 autowrap_mode = 2
 
+[node name="AlmanacBook" type="Sprite2D" parent="TextureRect"]
+position = Vector2(158.5, 89.5)
+scale = Vector2(0.996732, 1)
+texture = ExtResource("14_6ptna")
+
 [node name="Sprite2D2" type="Sprite2D" parent="TextureRect"]
+visible = false
 position = Vector2(198, 44)
 scale = Vector2(1.25882, 1.08333)
 texture = SubResource("AtlasTexture_n068w")
@@ -329,6 +335,7 @@ scale = Vector2(1.96706, 1.97656)
 texture = SubResource("AtlasTexture_38qsr")
 
 [node name="Label" type="Label" parent="TextureRect"]
+visible = false
 layout_mode = 0
 offset_left = 169.0
 offset_top = 34.0
@@ -341,6 +348,7 @@ text = "Wheat was first cultivated over 10,000 years ago!"
 autowrap_mode = 3
 
 [node name="Sprite2D3" type="Sprite2D" parent="TextureRect"]
+visible = false
 position = Vector2(200, 123)
 scale = Vector2(1.26176, 1.08333)
 texture = SubResource("AtlasTexture_n068w")
@@ -351,6 +359,7 @@ scale = Vector2(2.43849, 2.27219)
 texture = SubResource("AtlasTexture_gmpny")
 
 [node name="Label2" type="Label" parent="TextureRect"]
+visible = false
 layout_mode = 0
 offset_left = 172.0
 offset_top = 113.0
