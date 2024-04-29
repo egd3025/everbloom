@@ -66,6 +66,7 @@ Hit run, and the test should run, the view may look oversized but you can exit a
 - If this is your first time opening the project you will need to select the project repository in the Godot project list.
 - On the project list view in the editor select import and then select the location of where the project is located.
   This often is in "Documents/GitHub/ProjectTeamName/EverBloom" or something similar.
+  You can download or use git's location for a source.
 - After that all you have to do is open the project and everything should populate.
 
 
