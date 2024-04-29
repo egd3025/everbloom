@@ -1,8 +1,25 @@
-[gd_scene load_steps=8 format=3 uid="uid://bxqyrfj05fdqi"]
+[gd_scene load_steps=15 format=3 uid="uid://bxqyrfj05fdqi"]
 
 [ext_resource type="Script" path="res://DayTransition.gd" id="1_aas8g"]
+[ext_resource type="Shader" path="res://shader/move.gdshader" id="2_n84pv"]
 [ext_resource type="Texture2D" uid="uid://85vk0yquukyo" path="res://custom_sprites/next_day.png" id="2_qg5jp"]
 [ext_resource type="Texture2D" uid="uid://da3i2y8r7vbjo" path="res://custom_sprites/start screen buttons.png" id="2_tu62n"]
+[ext_resource type="Texture2D" uid="uid://bgydg2ms2v0fv" path="res://cup_noodle/Water.png" id="3_co4bw"]
+[ext_resource type="Texture2D" uid="uid://02ybf0he334w" path="res://custom_sprites/custom-teemo-box.png" id="4_qpax7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c1qli"]
+shader = ExtResource("2_n84pv")
+
+[sub_resource type="Gradient" id="Gradient_uu2f0"]
+offsets = PackedFloat32Array(0, 0.613095)
+colors = PackedColorArray(0.0835819, 0.224857, 0.527784, 0.588235, 0.0747552, 0.00800509, 0.270093, 0.588235)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_audvw"]
+gradient = SubResource("Gradient_uu2f0")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lbd1"]
+atlas = ExtResource("4_qpax7")
+region = Rect2(62, 137, 82, 77)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_88ov6"]
 atlas = ExtResource("2_qg5jp")
@@ -29,42 +46,65 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_aas8g")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="animated background" type="TextureRect" parent="."]
+editor_description = "SHADER FOLDER HOLD ANIMATION CODE:
+or accessed by ...
+under canvas item >  material > material - shadermaterial > \"move.gdshader\" is the code to animate the background
+
+horixontal from left to right
+(UV.x - TIME * 0.01, UV.y )
+vertical from top down
+(UV.x , UV.y  - TIME * 0.01)
+
+https://www.youtube.com/watch?v=6Vfu1PhTiqo"
+texture_repeat = 2
+material = SubResource("ShaderMaterial_c1qli")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.686275, 0.882353, 0.686275, 1)
+texture = ExtResource("3_co4bw")
+
+[node name="Sprite2D" type="Sprite2D" parent="animated background"]
+position = Vector2(160.183, 90.1363)
+rotation = 1.5708
+scale = Vector2(0.704019, 320.587)
+texture = SubResource("GradientTexture1D_audvw")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_direction = 1
 layout_mode = 1
-offset_left = 39.0
-offset_top = 7.0
-offset_right = 281.0
-offset_bottom = 180.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = -83.5
+offset_right = 124.0
+offset_bottom = 89.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
+[node name="TitleScreenVertical" type="Sprite2D" parent="MarginContainer"]
+position = Vector2(124, 66.5)
+texture = SubResource("AtlasTexture_7lbd1")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 34
-text = "EverBloom"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 10
 
-[node name="ResumeButton" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="ResumeButton" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -73,7 +113,7 @@ focus_previous = NodePath("../QuitButton")
 texture_normal = SubResource("AtlasTexture_88ov6")
 texture_pressed = SubResource("AtlasTexture_2xy2j")
 
-[node name="QuitButton" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="QuitButton" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -82,5 +122,5 @@ focus_next = NodePath("../ResumeButton")
 texture_normal = SubResource("AtlasTexture_a6mji")
 texture_pressed = SubResource("AtlasTexture_vkns7")
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

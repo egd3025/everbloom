@@ -1,8 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://xlvekay0oy2t"]
+[gd_scene load_steps=11 format=3 uid="uid://xlvekay0oy2t"]
 
 [ext_resource type="Script" path="res://new_game.gd" id="1_vxkmi"]
 [ext_resource type="Texture2D" uid="uid://bgqw4o63yyj3h" path="res://custom_sprites/world screens.png" id="2_hhdhf"]
 [ext_resource type="FontFile" uid="uid://xy6rdpn8hi7u" path="res://texts/slkscr.ttf" id="2_jjpt6"]
+[ext_resource type="Shader" path="res://shader/move.gdshader" id="2_o28lm"]
+[ext_resource type="Texture2D" uid="uid://bgydg2ms2v0fv" path="res://cup_noodle/Water.png" id="3_xlxlv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_te0l5"]
+shader = ExtResource("2_o28lm")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a07bx"]
 atlas = ExtResource("2_hhdhf")
@@ -29,14 +34,26 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vxkmi")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="animated background" type="TextureRect" parent="."]
+editor_description = "SHADER FOLDER HOLD ANIMATION CODE:
+or accessed by ...
+under canvas item >  material > material - shadermaterial > \"move.gdshader\" is the code to animate the background
+
+horixontal from left to right
+(UV.x - TIME * 0.01, UV.y )
+vertical from top down
+(UV.x , UV.y  - TIME * 0.01)
+
+https://www.youtube.com/watch?v=6Vfu1PhTiqo"
+texture_repeat = 2
+material = SubResource("ShaderMaterial_te0l5")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.686275, 0.882353, 0.686275, 1)
+texture = ExtResource("3_xlxlv")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
