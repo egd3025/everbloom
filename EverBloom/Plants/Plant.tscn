@@ -1,8 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://byhgnas87o1gb"]
+[gd_scene load_steps=6 format=3 uid="uid://byhgnas87o1gb"]
 
 [ext_resource type="Script" path="res://Plants/Plant.gd" id="1_egb8p"]
 [ext_resource type="Texture2D" uid="uid://c8a3mck1ac1vk" path="res://cup_noodle/Basic_Plants.png" id="2_rta03"]
 [ext_resource type="Resource" uid="uid://bov0m54vbd6lj" path="res://Inventory/items/Wheat.tres" id="2_t4qk8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3x4ru"]
+resource_local_to_scene = true
+atlas = ExtResource("2_rta03")
+region = Rect2(0, 0, 96, 16)
+margin = Rect2(0, 0, 0, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_74do7"]
 radius = 15.0333
@@ -14,7 +20,7 @@ script = ExtResource("1_egb8p")
 item = ExtResource("2_t4qk8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_rta03")
+texture = SubResource("AtlasTexture_3x4ru")
 hframes = 6
 vframes = 2
 
@@ -24,6 +30,7 @@ vframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pickable_area"]
 shape = SubResource("CircleShape2D_74do7")
+one_way_collision_margin = 5.0
 
 [node name="Marker2D" type="Marker2D" parent="."]
 

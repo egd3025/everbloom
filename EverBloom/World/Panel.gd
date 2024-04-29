@@ -10,6 +10,7 @@ extends Panel
 @onready var world = $".."
 
 const plant = preload("res://Plants/Plant.tscn")
+const hotBar = preload("res://Inventory/hotbar.tscn")
 
 var save_pathPlayer = "user://variable.save"
 var save_tileMap = "user://map.json"
