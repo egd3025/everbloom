@@ -5,7 +5,6 @@
 [ext_resource type="Resource" uid="uid://bov0m54vbd6lj" path="res://Inventory/items/Wheat.tres" id="2_t4qk8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3x4ru"]
-resource_local_to_scene = true
 atlas = ExtResource("2_rta03")
 region = Rect2(0, 0, 96, 16)
 margin = Rect2(0, 0, 0, 16)
