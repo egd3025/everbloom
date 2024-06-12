@@ -1,16 +1,17 @@
-# Title: EverBloom
+# EverBloom Game Archive
+UNCW Spring 2024 Software Engineering (450) class capstone project
 
-# Created by:
-
+### Created by: Team 10
 - Evan Berlin
 - Jaden McIlhenny
 - Elizabeth Daly
 - Pine Gragg
-- Jude Denton.
+- Jude Denton
 
+# Prior Dev Entry
+NOTE: All informtation featured below this point is from **past** entries from everbloom devs.
 
-
-# Test Instructions
+## Test Instructions
 
 In the Godot editor install the GUT for Godot 4. 
   This is found in the AssetLib located at the top in the middle of the editor toolbar.
@@ -61,7 +62,7 @@ Hit run, and the test should run, the view may look oversized but you can exit a
 
 
 
-# Set Up Instructions.
+## Set Up Instructions.
 
 - If this is your first time opening the project you will need to select the project repository in the Godot project list.
 - On the project list view in the editor select import and then select the location of where the project is located.
